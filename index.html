@@ -12,8 +12,8 @@ needs_blog_js: true
   <img class="home-hero__watermark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
   <div class="home-hero__inner">
     <p class="eyebrow">We’re here to help</p>
-    <h1>Technology help for humans, by humans.</h1>
-    <p class="home-hero__lede">FIDDLE,GREEN is a small technology company that focuses on helping Mainers and the organizations they build. We sit down with you, sort out what's actually going on, and leave you more confident than we found you. No jargon, no upselling, we're just here to help.</p>
+    <h1>Make technology a good thing.</h1>
+    <p class="home-hero__lede">FIDDLE,GREEN is a small technology group based in Portland, Maine, that helps neighbors, their businesses and organizations, and communities put technology to work for them. We sit down with you, sort out what's actually going on, and leave you more confident than we found you. No jargon, no upselling, we're just here to help.</p>
     <div class="actions">
       <a class="btn btn--amber" href="{{ '/contact/' | relative_url }}">Start a conversation</a>
       <a class="btn btn--ghost" href="{{ '/how-we-work/' | relative_url }}">See how we work</a>
@@ -23,7 +23,6 @@ needs_blog_js: true
 
 <section class="band band--cream home-segments">
   {% include section-heading.html title="Who we help" class="section-heading--lede" %}
-  <p class="section-lede">Pick the description that sounds most like you. Every path leads to the same thing: a real person who will help.</p>
   <div class="card-grid">
     {%- for seg in site.data.segments -%}
       <a class="card card--num" href="{{ seg.url | relative_url }}">
@@ -40,7 +39,6 @@ needs_blog_js: true
   <div class="split split--ruled">
     <div class="split__aside">
       {% include section-heading.html title="What we're good at" class="section-heading--sm" %}
-      <p class="split__note">Four kinds of work, one way of doing it: at your pace, in your words.</p>
     </div>
     <div class="exp-list">
       {%- for exp in site.data.expertise -%}
@@ -89,7 +87,3 @@ needs_blog_js: true
     </div>
   </div>
 </section>
-
-{% include cta-band.html
-   title="Ready when you are."
-   body="The first conversation costs nothing and commits you to nothing." %}
