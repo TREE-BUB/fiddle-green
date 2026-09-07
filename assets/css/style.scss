@@ -1411,6 +1411,10 @@ a.contact-card__value {
 .home-segments  .section-heading { margin-bottom: 34px; }
 .home-expertise .section-heading { margin-bottom: 28px; }
 
+/* The blog heading lost its note too, but .carousel__head already spaces the
+   row off the track, so it needs none of its own. */
+.home-blog .section-heading { margin-bottom: 0; }
+
 @media (max-width: $bp-sm) {
   .home-segments,
   .home-expertise,

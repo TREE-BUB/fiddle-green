@@ -13,7 +13,7 @@ description: The technology changes; the approach doesn't. Find the page that so
     {%- for seg in site.data.segments -%}
       <a class="card" href="{{ seg.url | relative_url }}">
         <img class="mark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-        <h3>{{ seg.label }}</h3>
+        <h3>{{ seg.label | escape_once }}</h3>
         <p class="card__body">{{ seg.blurb }}</p>
         <span class="link-more">Learn more &rarr;</span>
       </a>

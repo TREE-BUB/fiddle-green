@@ -1,4 +1,4 @@
-# Drives the home "What we're good at" icons and the hub "What we do" cards.
+# Drives the home "How we help" icons and the hub "What we do" cards.
 # The home row shows icon + label only; blurb is used by the hub cards.
 - key: support
   icon: /assets/icons/noun_Headset_8456463_338A4A.svg
@@ -10,14 +10,14 @@
 - key: education
   icon: /assets/icons/noun_Class_8362686_338A4A.svg
   letter: B
-  label: Education
+  label: Training & Education
   url: /expertise/education/
   blurb: Teaching you and your staff the parts worth knowing.
 
 - key: advising
   icon: /assets/icons/noun_strategy_8273592_338A4A.svg
   letter: C
-  label: Advising
+  label: Strategy & Operations
   url: /expertise/advising/
   blurb: Second opinions, vendor questions, and plans you can afford.
 

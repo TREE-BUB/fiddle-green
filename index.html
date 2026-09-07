@@ -32,29 +32,28 @@ needs_blog_js: true
     {%- for seg in site.data.segments -%}
       <a class="icon-row__item" href="{{ seg.url | relative_url }}">
         <span class="icon-row__icon" style="--icon: url('{{ seg.icon | relative_url }}')"></span>
-        <span class="icon-row__label">{{ seg.label }}</span>
+        <span class="icon-row__label">{{ seg.label | escape_once }}</span>
       </a>
     {%- endfor -%}
   </div>
 </section>
 
-<section class="band band--cream home-expertise">
-  {% include section-heading.html title="What we're good at" %}
+<section class="band band--sand home-expertise">
+  {% include section-heading.html title="How we help" %}
   <div class="icon-row">
     {%- for exp in site.data.expertise -%}
       <a class="icon-row__item" href="{{ exp.url | relative_url }}">
         <span class="icon-row__icon" style="--icon: url('{{ exp.icon | relative_url }}')"></span>
-        <span class="icon-row__label">{{ exp.label }}</span>
+        <span class="icon-row__label">{{ exp.label | escape_once }}</span>
       </a>
     {%- endfor -%}
   </div>
 </section>
 
-<section class="band band--sand home-blog" data-carousel>
+<section class="band band--cream home-blog" data-carousel>
   <div class="carousel__head">
     <div>
-      {% include section-heading.html title="From the blog" class="section-heading--sm" %}
-      <p class="split__note">Plain-language notes, sorted by who they're for.</p>
+      {% include section-heading.html title="From the blog" %}
     </div>
     <div class="carousel__nav">
       <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous posts">&larr;</button>
