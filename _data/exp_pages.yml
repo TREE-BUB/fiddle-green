@@ -1,0 +1,68 @@
+# Copy for the four data-driven Areas of Expertise sub-pages.
+support:
+  note: Most support work is same-week, and urgent things get triaged the day you call.
+  bullets:
+    - "Computers and phones: slowdowns, crashes, upgrades, and honest replace-or-repair advice"
+    - "Networks: wifi coverage, routers, wiring, and internet-provider problems"
+    - "Accounts and email: recovery, migration, two-factor setup, and shared-access cleanup"
+    - "Backups: setting them up, testing them, and restoring when you need it"
+    - "Security response: suspected scams, compromised accounts, and what to do next"
+  outcomes:
+    - h: The thing works again
+      p: Plus a plain explanation of what went wrong, in language you can repeat to someone else.
+    - h: Notes you keep
+      p: What we changed, what to watch for, and what you can safely ignore.
+    - h: A smaller next problem
+      p: We fix the cause where we can, not just the symptom that got your attention.
+  cta_title: Need a hand with something specific?
+
+education:
+  note: Sessions run 60–90 minutes and can be repeated for different shifts or skill levels.
+  bullets:
+    - "Staff onboarding: the tools your team uses, taught in the order they will use them"
+    - "Security awareness: spotting scams, handling passwords, and what to do after a mistake"
+    - "Digital literacy for older adults and first-time users, at a genuinely unhurried pace"
+    - "Practical AI workshops: useful prompts, real limits, and what not to paste into a chatbot"
+    - "Written guides and short recordings your team can revisit later"
+  outcomes:
+    - h: Fewer support calls
+      p: People handle the small things themselves and escalate the right ones sooner.
+    - h: Materials you own
+      p: Slides, handouts, and quick-reference sheets in your words, yours to reuse.
+    - h: A calmer team
+      p: The measurable part is confidence. It shows up as fewer avoidable mistakes.
+  cta_title: Want a session for your team?
+
+advising:
+  note: Advising engagements are often a single session plus a written summary.
+  bullets:
+    - "Buy-or-wait decisions on hardware, software, and subscriptions"
+    - "Reviewing a quote or proposal from another vendor before you sign it"
+    - "Scoping and writing technology requirements, including for public bids"
+    - "Technology assessments for boards, funders, and lenders"
+    - "Planning a migration, a move, or a growth step before it becomes urgent"
+  outcomes:
+    - h: A recommendation, in writing
+      p: With the reasoning shown, so you can defend it to a board or a partner.
+    - h: Options, honestly priced
+      p: Including the option of doing nothing yet, when that is the right answer.
+    - h: No lock-in
+      p: You can take our plan and have anyone execute it. That is a feature.
+  cta_title: Have a decision to make?
+
+ai:
+  note: We are not here to sell you an AI strategy. Often the honest answer is "not yet, and here is why."
+  bullets:
+    - "Where AI tools save your team real time — and where they quietly create rework"
+    - "Privacy first: what data must never be pasted into a public tool, and why"
+    - "Short, readable internal AI policies for staff, volunteers, and contractors"
+    - "Hands-on training on the tools you already pay for, before buying new ones"
+    - "Evaluating an AI vendor claim, including the questions their sales team hopes you skip"
+  outcomes:
+    - h: A shortlist, not a shopping spree
+      p: One or two places where this actually helps your work, tried before committing.
+    - h: Guardrails in plain language
+      p: A one-page policy your whole team can follow without a legal review.
+    - h: Confidence either way
+      p: Including the confidence to say no when a tool is not ready for your data.
+  cta_title: Curious whether AI is worth it for you?

@@ -1,0 +1,68 @@
+# Single source of truth for the header dropdowns, the mobile drawer, the hub
+# hero rails, and the footer sitemap.
+#
+# Per-child switches:
+#   in_footer: false    omit from the footer column
+#   footer_only: true   footer column only, not the dropdown or drawer
+#   rail_url:           override the URL used by the hub hero rail button
+
+- title: Home
+  url: /
+
+- title: Who We Help
+  url: /who-we-help/
+  footer_title: Who we help
+  children:
+    - title: Individuals
+      url: /who-we-help/individuals/
+    - title: Startups
+      url: /who-we-help/startups/
+    - title: Small Businesses
+      url: /who-we-help/small-businesses/
+    - title: Non-profits
+      url: /who-we-help/nonprofits/
+    - title: Government
+      url: /who-we-help/government/
+
+- title: Expertise
+  url: /expertise/
+  drawer_title: Areas of Expertise
+  footer_title: Expertise
+  children:
+    - title: Technical Support
+      url: /expertise/technical-support/
+    - title: Education
+      url: /expertise/education/
+    - title: Advising
+      url: /expertise/advising/
+    - title: Artificial Intelligence
+      url: /expertise/artificial-intelligence/
+
+- title: How We Work
+  url: /how-we-work/
+  footer_title: How we work
+  children:
+    - title: Pricing
+      url: /how-we-work/pricing/
+    - title: Engagement Models
+      url: /how-we-work/engagement-models/
+    - title: "Access & Discounts"
+      url: /how-we-work/access-and-discounts/
+
+- title: About
+  url: /about/
+  footer_title: About
+  children:
+    - title: About Us
+      url: /about/
+      rail_url: "#about-story"
+      in_footer: false
+    - title: Team
+      url: /about/team/
+    - title: Blog
+      url: /about/blog/
+    - title: "History & Testimonials"
+      url: /about/history-and-testimonials/
+    - title: Contact
+      url: /contact/
+      footer_only: true

@@ -1,0 +1,24 @@
+# Drives the home "What we're good at" list and the hub "What we do" grid.
+- key: support
+  letter: A
+  label: Technical Support
+  url: /expertise/technical-support/
+  blurb: Fixing what's broken and hardening what isn't.
+
+- key: education
+  letter: B
+  label: Education
+  url: /expertise/education/
+  blurb: Teaching you and your staff the parts worth knowing.
+
+- key: advising
+  letter: C
+  label: Advising
+  url: /expertise/advising/
+  blurb: Second opinions, vendor questions, and plans you can afford.
+
+- key: ai
+  letter: D
+  label: Artificial Intelligence
+  url: /expertise/artificial-intelligence/
+  blurb: A grounded read on what AI can do for you — and what it should not touch.

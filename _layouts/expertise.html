@@ -1,0 +1,38 @@
+---
+layout: page
+---
+{%- assign d = site.data.exp_pages[page.exp_key] -%}
+
+<section class="band band--cream bullets-band">
+  <div class="split">
+    <div class="split__aside">
+      {% include section-heading.html title="What this looks like" class="section-heading--sm" %}
+      <p class="split__note">{{ d.note | escape_once }}</p>
+    </div>
+    <ul class="bullets">
+      {%- for b in d.bullets -%}
+        <li><span class="bullets__dot" aria-hidden="true"></span><span>{{ b | escape_once }}</span></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<section class="band band--cream outcomes-band">
+  <div class="panel">
+    {% include section-heading.html title="What you walk away with" class="section-heading--sm" %}
+    <div class="rule-cards rule-cards--wide">
+      {%- for o in d.outcomes -%}
+        <div class="rule-card">
+          <h3>{{ o.h | escape_once }}</h3>
+          <p>{{ o.p | escape_once }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   title=d.cta_title
+   body="Sliding-scale rates, nonprofit discounts, and a quote before any work starts. The engagement models are on How We Work."
+   url="/how-we-work/" label="How we work"
+   secondary_url="/contact/" secondary_label="Contact" %}

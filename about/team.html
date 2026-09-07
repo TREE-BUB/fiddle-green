@@ -1,0 +1,59 @@
+---
+layout: page
+permalink: /about/team/
+title: Team
+parent_title: About
+parent_url: /about/
+headline: Three people, and no one in between.
+description: The people who take your call and do the work — plus how we staff engagements.
+people:
+  - name: Jimi Michel
+    role: Founder & Principal
+    bio: Started FIDDLE,GREEN after years of being the person friends and neighbors called first. Handles most engagements start to finish, and does the explaining.
+  - name: Meryn Robinson
+    role: Contractor · Education
+    bio: Runs staff trainings and digital-literacy sessions. Has a gift for making a room full of nervous people relax.
+  - name: Elvis Agah
+    role: Contractor · Systems
+    bio: Networks, servers, and the deep end of troubleshooting. Comes in when a problem needs a specialist.
+---
+
+<section class="band band--cream cards-band">
+  {% include section-heading.html title="The people" %}
+  <div class="roster">
+    {%- for p in page.people -%}
+      <div class="person">
+        <div class="person__portrait" aria-hidden="true">portrait</div>
+        <div class="person__body">
+          <h3>{{ p.name | escape_once }}</h3>
+          <p class="person__role">{{ p.role | escape_once }}</p>
+          <p>{{ p.bio | escape_once }}</p>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="band band--sand staffing-band">
+  <div class="measure-900">
+    {% include section-heading.html title="How we staff the work" class="section-heading--sm section-heading--gap" %}
+    <div class="columns">
+      <div class="column">
+        <h3>One name on the job</h3>
+        <p>Whoever takes your first call stays with your account. They already know your setup by the second visit.</p>
+      </div>
+      <div class="column">
+        <h3>Specialists when it helps</h3>
+        <p>If a problem needs deeper networking or training expertise, we bring in the person who does that — at the same rate.</p>
+      </div>
+      <div class="column">
+        <h3>We grow slowly</h3>
+        <p>When the work outpaces us we hire people we would trust in our own homes, not the cheapest bid available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   title="Talk to one of us."
+   body="The first call is free, and it is with a person who could end up doing the work." %}

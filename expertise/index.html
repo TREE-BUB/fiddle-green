@@ -1,0 +1,22 @@
+---
+layout: hub
+permalink: /expertise/
+title: Expertise
+eyebrow: Areas of Expertise
+headline: Four ways we're useful.
+description: Most engagements are a mix. Start with whichever describes the thing keeping you up at night.
+---
+
+<section class="band band--cream grid-band">
+  {% include section-heading.html title="What we do" %}
+  <div class="card-grid">
+    {%- for exp in site.data.expertise -%}
+      <a class="card" href="{{ exp.url | relative_url }}">
+        <img class="mark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+        <h3>{{ exp.label }}</h3>
+        <p class="card__body">{{ exp.blurb }}</p>
+        <span class="link-more">Learn more &rarr;</span>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>

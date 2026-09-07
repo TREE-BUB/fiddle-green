@@ -1,0 +1,22 @@
+{%- comment -%}
+The amber-outlined pill stack in a hub hero. Reads the nav child list for the
+hub whose URL matches include.url.
+{%- endcomment -%}
+<div class="rail">
+  {%- for item in site.data.nav -%}
+    {%- if item.url == include.url -%}
+      {%- for child in item.children -%}
+        {%- unless child.footer_only -%}
+          {%- if child.rail_url -%}
+            {%- assign href = child.rail_url -%}
+          {%- else -%}
+            {%- assign href = child.url | relative_url -%}
+          {%- endif -%}
+          <a class="rail__btn" href="{{ href }}">
+            {{ child.title | escape_once }}<span class="rail__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+</div>

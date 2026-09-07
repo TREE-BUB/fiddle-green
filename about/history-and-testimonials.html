@@ -1,0 +1,83 @@
+---
+layout: page
+permalink: /about/history-and-testimonials/
+title: History & Testimonials
+parent_title: About
+parent_url: /about/
+headline: We started with one neighbor's laptop.
+description: How FIDDLE,GREEN grew from evening calls into a Maine technology practice — and what clients say about it.
+milestones:
+  - year: "2019"
+    h: A side practice
+    p: Jimi Michel starts taking evening calls from friends, neighbors, and their parents — mostly laptops, printers, and accounts nobody could get back into.
+  - year: "2021"
+    h: Word gets around
+    p: "A handful of Portland nonprofits ask for help with remote work. The pattern becomes obvious: the technology is fine, the explaining is missing."
+  - year: "2023"
+    h: FIDDLE,GREEN
+    p: The practice becomes a company, named after the first green thing to come up in a Maine spring. Sliding-scale rates and nonprofit discounts are written in from day one.
+  - year: "2024"
+    h: Beyond the laptop
+    p: Trainings, network buildouts, and advisory work follow. Meryn Robinson and Elvis Agah join as contractors so the work never outruns the quality.
+  - year: "2026"
+    h: Public sector work
+    p: Registrations complete, we begin supporting municipal and county offices — the same approach, on a longer timeline.
+testimonials:
+  - quote: I had been putting this off for two years because I was embarrassed to ask. Nobody made me feel stupid once.
+    name: Diane L.
+    role: Individual · Portland
+  - quote: They set up our accounts so that when our director left, nothing broke and nothing was lost. That has never happened to us before.
+    name: Erin Castonguay
+    role: Executive Director · Food access nonprofit
+  - quote: We got an estimate in plain English, and the invoice matched it. I have hired a lot of technology vendors and that is rare.
+    name: Marcus Bell
+    role: Owner · Six-person contractor
+  - quote: The training was the first one my staff did not dread. People asked questions out loud.
+    name: Sam Okoye
+    role: Operations Lead · Community health center
+  - quote: They told us we did not need the thing we called about, and why. Then they fixed the actual problem for less.
+    name: Priya Raman
+    role: Co-founder · Early-stage startup
+  - quote: Documentation we can actually read, in our own files, in our own names. Our auditor was pleased.
+    name: Town of Cape Wren
+    role: Municipal client
+---
+
+<section class="band band--cream timeline-band">
+  {% include section-heading.html title="How we got here" class="section-heading--tight" %}
+  <div class="timeline">
+    {%- for m in page.milestones -%}
+      <div class="milestone">
+        <p class="milestone__year">{{ m.year }}</p>
+        <div class="milestone__body">
+          <h3>{{ m.h | escape_once }}</h3>
+          <p>{{ m.p | escape_once }}</p>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="band band--cream quotes-band">
+  {% include section-heading.html title="In their words" %}
+  <div class="card-grid">
+    {%- for t in page.testimonials -%}
+      <figure class="quote">
+        <img class="mark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+        <blockquote>&ldquo;{{ t.quote | escape_once }}&rdquo;</blockquote>
+        <figcaption>
+          <p class="quote__name">{{ t.name | escape_once }}</p>
+          <p class="quote__role">{{ t.role | escape_once }}</p>
+        </figcaption>
+      </figure>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% include callout.html
+   eyebrow="References"
+   text="Happy to connect you with a client whose situation looks like yours — including public sector references for procurement." %}
+
+{% include cta-band.html
+   title="Still a small shop, on purpose."
+   body="We grow only as fast as we can keep answering the phone ourselves." %}

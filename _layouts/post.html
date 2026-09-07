@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- assign cat = page.categories | first -%}
+<section class="band band--hero">
+  <p class="breadcrumb">
+    <a href="{{ '/about/' | relative_url }}">About</a>
+    &nbsp;/&nbsp;
+    <a href="{{ '/about/blog/' | relative_url }}">Blog</a>
+    &nbsp;/&nbsp;
+    <span class="breadcrumb__current">{{ cat | escape_once }}</span>
+  </p>
+  <h1>{{ page.title | escape_once }}</h1>
+</section>
+
+<section class="band band--cream post-band">
+  <article class="prose">
+    <p class="post__meta">{{ cat | escape_once }} &middot; {{ page.date | date: "%b %Y" }}</p>
+    {{ content }}
+    <p class="post__back"><a href="{{ '/about/blog/' | relative_url }}">&larr; All posts</a></p>
+  </article>
+</section>
+
+{% include cta-band.html
+   title="Have a question this did not answer?"
+   body="The first conversation costs nothing and commits you to nothing." %}

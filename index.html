@@ -1,52 +1,95 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;1,200;1,400&amp;display=swap" rel="stylesheet">
-<style>
-  html, body { margin: 0; padding: 0; }
-  *, *::before, *::after { box-sizing: border-box; }
-</style>
-</helmet>
+---
+layout: default
+title: Home
+description: >-
+  FIDDLE,GREEN is a small technology company in Portland, Maine. Patient,
+  plain-language help for individuals, startups, small businesses, nonprofits,
+  and public agencies.
+needs_blog_js: true
+---
 
-<div style="min-height: 100vh; width: 100%; background: #1a4a28; font-family: 'Jost', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 56px 24px; overflow: hidden;">
-
-  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 720px; text-align: center; gap: 0;">
-
-    <div style="font-size: 13px; letter-spacing: 0.42em; text-transform: uppercase; color: #d4882a; font-weight: 500; margin-bottom: 2px; padding-left: 0.42em;">Coming very soon</div>
-
-    <img src="assets/wordmark-tight.png" alt="FIDDLE,GREEN" style="display: block; width: 100%; max-width: 520px; height: auto; margin: 0; user-select: none;" draggable="false">
-
-    
-
-    <div style="margin: 6px 0 0; font-family: 'Jost', sans-serif; font-size: 21px; line-height: 1.7; font-weight: 200; color: #ffffff; max-width: 540px; text-wrap: pretty; display: flex; flex-direction: column; gap: 1.1em;">
-      
-      <div style="font-style: italic">FIDDLE,GREEN is a new business I started because I kept meeting people — neighbors, small business owners, and folks running nonprofits — who were stuck on technology problems and didn't know where to turn.</div>
-      <div style="font-style: italic">Maybe you're not sure if your business is protected online. Maybe you've got questions about AI and don't know who to ask. Maybe someone offered you a tech solution and you just want a second opinion from someone you can trust.</div>
-      <div style="font-style: italic">Whatever it is, you don't need to figure it out alone. That's exactly what we're here for. Click below to say hello — no jargon, no pressure, just a conversation to see if we can help.</div><div style="font-style: italic"><span style="font-style: normal;">Jimi Michel, Founder</span></div>
+<section class="band band--hero band--home-hero">
+  <img class="home-hero__watermark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+  <div class="home-hero__inner">
+    <p class="eyebrow">Portland, Maine</p>
+    <h1>Technology help for humans, by humans.</h1>
+    <p class="home-hero__lede">FIDDLE,GREEN is a small technology company that focuses on helping Mainers and the organizations they build. We sit down with you, sort out what's actually going on, and leave you more confident than we found you. No jargon, no upselling, we're just here to help.</p>
+    <div class="actions">
+      <a class="btn btn--amber" href="{{ '/contact/' | relative_url }}">Start a conversation</a>
+      <a class="btn btn--ghost" href="{{ '/how-we-work/' | relative_url }}">See how we work</a>
     </div>
+  </div>
+</section>
 
-    <a href="mailto:hello@fiddle.green" style="display: inline-flex; align-items: center; gap: 12px; margin-top: 40px; background: #d4882a; color: #1a1f1a; text-decoration: none; font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.02em; padding: 16px 30px; border-radius: 999px; transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;" style-hover="background: #e0974a; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.28);">
-      <span style="width: 7px; height: 7px; border-radius: 50%; background: #1a4a28;"></span>
-      hello@fiddle.green
-    </a>
+<section class="band band--cream home-segments">
+  {% include section-heading.html title="Who we help" class="section-heading--lede" %}
+  <p class="section-lede">Pick the description that sounds most like you. Every path leads to the same thing: a real person who will help.</p>
+  <div class="card-grid">
+    {%- for seg in site.data.segments -%}
+      <a class="card card--num" href="{{ seg.url | relative_url }}">
+        <p class="card__num">{{ seg.num }}</p>
+        <h3>{{ seg.label }}</h3>
+        <p class="card__body">{{ seg.blurb }}</p>
+        <span class="link-more">Learn more &rarr;</span>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>
 
-    <div style="margin-top: 28px; font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: 0.04em; color: #a8b89c;">Made with ❤️ in Deering Center, Portland (Maine)</div>
+<section class="band band--cream home-expertise">
+  <div class="split split--ruled">
+    <div class="split__aside">
+      {% include section-heading.html title="What we're good at" class="section-heading--sm" %}
+      <p class="split__note">Four kinds of work, one way of doing it: at your pace, in your words.</p>
+    </div>
+    <div class="exp-list">
+      {%- for exp in site.data.expertise -%}
+        <a class="exp-list__item" href="{{ exp.url | relative_url }}">
+          <span class="exp-list__letter">{{ exp.letter }}</span>
+          <span>
+            <span class="exp-list__label">{{ exp.label }}</span>
+            <span class="exp-list__blurb">{{ exp.blurb }}</span>
+          </span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
 
+<section class="band band--sand home-blog" data-carousel>
+  <div class="carousel__head">
+    <div>
+      {% include section-heading.html title="From the blog" class="section-heading--sm" %}
+      <p class="split__note">Plain-language notes, sorted by who they're for.</p>
+    </div>
+    <div class="carousel__nav">
+      <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous posts">&larr;</button>
+      <button class="carousel__btn" type="button" data-carousel-next aria-label="Next posts">&rarr;</button>
+    </div>
   </div>
 
-  
+  <div class="filters" data-filters-for="home-posts">
+    {%- assign cats = "All,Individuals,Startups,Small Businesses,Nonprofits,Government,Other" | split: "," -%}
+    {%- for c in cats -%}
+      <button class="filter" type="button" data-filter="{{ c }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ c }}</button>
+    {%- endfor -%}
+  </div>
 
-</div>
-</x-dc>
-</body>
-</html>
+  <div class="carousel__window">
+    <div class="carousel__track" id="home-posts">
+      {%- for post in site.posts -%}
+        {%- assign cat = post.categories | first -%}
+        <a class="card--carousel" href="{{ post.url | relative_url }}" data-category="{{ cat }}">
+          <span class="tag-chip">{{ cat }}</span>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.summary }}</p>
+          <span class="card--carousel__date">{{ post.date | date: "%b %Y" }}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   title="Ready when you are."
+   body="The first conversation costs nothing and commits you to nothing." %}

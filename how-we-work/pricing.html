@@ -1,0 +1,70 @@
+---
+layout: page
+permalink: /how-we-work/pricing/
+title: Pricing
+parent_title: How We Work
+parent_url: /how-we-work/
+headline: Plain rates, written down.
+description: Sliding-scale hourly rates, flat project pricing, and monthly support — all quoted in writing before any work starts.
+rates:
+  - name: Individuals & households
+    body: In-home or remote. Billed in 15-minute increments after the first hour, with no travel charge in Greater Portland.
+    price: $95
+    unit: / hour
+  - name: Startups & small businesses
+    body: Setup, troubleshooting, and vendor wrangling. Most first engagements land between three and eight hours.
+    price: $140
+    unit: / hour
+  - name: Nonprofits
+    body: Our individual rate applied to organizational work. Deeper relief is available — see Access & discounts.
+    price: $95
+    unit: / hour
+  - name: Monthly support
+    body: A set number of hours, priority response, and a standing check-in. Cancel with 30 days notice.
+    price: from $600
+    unit: / month
+  - name: Projects
+    body: Migrations, buildouts, and assessments. You get a written scope and a fixed number before we start.
+    price: quoted
+    unit: flat
+  - name: Government
+    body: Rates follow the applicable schedule or solicitation. See the Government page for codes and registrations.
+    price: per contract
+---
+
+<section class="band band--cream rates-band">
+  {% include section-heading.html title="Our rates" class="section-heading--gap" %}
+  <div class="rates">
+    {%- for r in page.rates -%}
+      {% include rate-row.html name=r.name body=r.body price=r.price unit=r.unit %}
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="band band--cream billing-band">
+  {% include section-heading.html title="How billing works" class="section-heading--sm section-heading--gap" %}
+  <div class="card-grid">
+    <div class="card">
+      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+      <h3 class="card__title-lg">The first call is free</h3>
+      <p class="card__body card__body--lg">Twenty or thirty minutes to hear what is going on and tell you whether we are the right people for it.</p>
+      <p class="card__tail">No obligation</p>
+    </div>
+    <div class="card">
+      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+      <h3 class="card__title-lg">An estimate before work</h3>
+      <p class="card__body card__body--lg">For anything past an hour, you get a range in writing. If we are going to exceed it, we stop and ask first.</p>
+      <p class="card__tail">Written up front</p>
+    </div>
+    <div class="card">
+      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+      <h3 class="card__title-lg">Invoices you can read</h3>
+      <p class="card__body card__body--lg">One line per session, in words, with the hours shown. Net 15, and we take cards, checks, and ACH.</p>
+      <p class="card__tail">Net 15</p>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   title="Not sure which rate applies to you?"
+   body="Tell us what you are trying to fix and we will tell you what it is likely to cost — before you commit to anything." %}

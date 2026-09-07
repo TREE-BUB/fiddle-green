@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="band band--hero">
+  {%- if page.parent_url -%}
+    <p class="breadcrumb">
+      <a href="{{ page.parent_url | relative_url }}">{{ page.parent_title | escape_once }}</a>
+      &nbsp;/&nbsp;
+      <span class="breadcrumb__current">{{ page.headline_crumb | default: page.title | escape_once }}</span>
+    </p>
+  {%- endif -%}
+  <h1>{{ page.headline | escape_once }}</h1>
+</section>
+
+{{ content }}

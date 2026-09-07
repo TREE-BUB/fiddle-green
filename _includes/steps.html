@@ -1,0 +1,20 @@
+{%- comment -%} Sand panel: heading + note on the left, numbered steps on the right. {%- endcomment -%}
+<section class="band band--cream steps-band">
+  <div class="panel panel--split">
+    <div class="panel__aside">
+      {% include section-heading.html title=include.title class="section-heading--sm" %}
+      <p class="panel__note">{{ include.note | escape_once }}</p>
+    </div>
+    <ol class="steps">
+      {%- for step in include.steps -%}
+        <li class="step">
+          <span class="step__num">{{ step.num }}</span>
+          <span class="step__body">
+            <b>{{ step.h | escape_once }}</b>
+            <span>{{ step.p | escape_once }}</span>
+          </span>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+# Drives the home "Who we help" grid and the hub "Choose your path" grid.
+- key: individuals
+  num: "01"
+  label: Individuals
+  url: /who-we-help/individuals/
+  blurb: A slow laptop, a full inbox, a router nobody understands. Patient one-on-one help at your kitchen table.
+
+- key: startups
+  num: "02"
+  label: Startups
+  url: /who-we-help/startups/
+  blurb: Set things up right the first time — accounts, security, and tooling that won't box you in later.
+
+- key: businesses
+  num: "03"
+  label: Small Businesses
+  url: /who-we-help/small-businesses/
+  blurb: Someone to call when the register goes down, and someone to plan with when it doesn't.
+
+- key: nonprofits
+  num: "04"
+  label: Non-profits
+  url: /who-we-help/nonprofits/
+  blurb: Mission-sized budgets, grant-friendly documentation, and discounted rates as a matter of course.
+
+- key: government
+  num: "05"
+  label: Government
+  url: /who-we-help/government/
+  blurb: Capability statement, procurement paperwork, and a partner who answers the phone.

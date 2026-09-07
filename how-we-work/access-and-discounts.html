@@ -1,0 +1,66 @@
+---
+layout: page
+permalink: /how-we-work/access-and-discounts/
+title: Access & Discounts
+parent_title: How We Work
+parent_url: /how-we-work/
+headline: Good technology help should not be the thing you cannot afford.
+description: Nonprofit discounts, sliding-scale rates for marginalized-owned businesses, pro bono hours, and no-interest payment plans.
+relief:
+  - name: Nonprofits
+    body: Any 501(c)(3) with an annual operating budget under $2M. Larger organizations get 15%.
+    price: 30% off
+    unit: our rate
+  - name: Marginalized-owned businesses
+    body: Businesses majority-owned by BIPOC, women, LGBTQ+, immigrant, veteran, or disabled Mainers. You pick the point on the scale.
+    price: sliding scale
+    unit: $60–$140 / hr
+  - name: Pro bono hours
+    body: Set aside for organizations and one-person shops where any rate would be the reason they went without.
+    price: 20 hours
+    unit: / quarter
+  - name: Payment plans
+    body: Any invoice can be split across up to three months. Ask before or after — it does not change the price.
+    price: no interest
+---
+
+<section class="band band--cream relief-band">
+  {% include section-heading.html title="Who this is for" class="section-heading--gap" %}
+  <div class="rates">
+    {%- for r in page.relief -%}
+      {% include rate-row.html name=r.name body=r.body price=r.price unit=r.unit %}
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="band band--cream ask-band">
+  {% include section-heading.html title="How to ask" class="section-heading--sm section-heading--gap" %}
+  <div class="card-grid">
+    <div class="card card--flat">
+      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+      <h3 class="card__title-lg">Just say so</h3>
+      <p class="card__body card__body--lg">On the first call, tell us the reduced rate is what you need. That is the whole process.</p>
+      <p class="card__tail">No application</p>
+    </div>
+    <div class="card card--flat">
+      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+      <h3 class="card__title-lg">No documentation</h3>
+      <p class="card__body card__body--lg">We do not ask for tax returns, budgets, or proof of who owns what. We take your word for it.</p>
+      <p class="card__tail">No paperwork</p>
+    </div>
+    <div class="card card--flat">
+      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+      <h3 class="card__title-lg">Same work, same people</h3>
+      <p class="card__body card__body--lg">A reduced rate does not buy you a junior version of us. It is the same work, scheduled the same way.</p>
+      <p class="card__tail">No difference</p>
+    </div>
+  </div>
+</section>
+
+{% include callout.html
+   eyebrow="Why we do it this way"
+   text="Every hour of technology help we give away comes back as a food pantry that can take appointments, or a shop that gets paid on time. We would rather be busy and useful than fully billable." %}
+
+{% include cta-band.html
+   title="Tell us what you need."
+   body="If the rate is the obstacle, say that first and we will work backward from what you can do." %}

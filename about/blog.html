@@ -1,0 +1,24 @@
+---
+layout: page
+permalink: /about/blog/
+title: Blog
+parent_title: About
+parent_url: /about/
+headline: Notes from the work.
+description: Plain-language notes on technology, sorted by who they're for.
+needs_blog_js: true
+---
+
+<section class="band band--cream blog-band">
+  <div class="filters" data-filters-for="blog-grid">
+    {%- assign cats = "All,Individuals,Startups,Small Businesses,Nonprofits,Government,Other" | split: "," -%}
+    {%- for c in cats -%}
+      <button class="filter" type="button" data-filter="{{ c }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ c }}</button>
+    {%- endfor -%}
+  </div>
+  <div class="card-grid" id="blog-grid">
+    {%- for post in site.posts -%}
+      {% include post-card.html post=post %}
+    {%- endfor -%}
+  </div>
+</section>

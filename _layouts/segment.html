@@ -1,0 +1,24 @@
+---
+layout: page
+---
+{%- assign d = site.data.seg_pages[page.seg_key] -%}
+
+<section class="band band--cream cards-band">
+  {% include section-heading.html title=d.cards_title %}
+  <div class="rule-cards">
+    {%- for card in d.cards -%}
+      <div class="rule-card">
+        <h3>{{ card.h | escape_once }}</h3>
+        <p>{{ card.p | escape_once }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% include steps.html title="How we'd start" note=d.steps_note steps=d.steps %}
+
+{% include cta-band.html
+   title=d.cta_title
+   body=d.cta_body
+   url="/how-we-work/" label="How we work"
+   secondary_url="/contact/" secondary_label="Contact" %}
