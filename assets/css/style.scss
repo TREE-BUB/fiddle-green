@@ -1067,6 +1067,12 @@ a.card:hover { border-color: var(--amber); }
   text-align: center;
 }
 
+/* The photos are square, so cover only trims the frame, never distorts. */
+.person__portrait--photo {
+  object-fit: cover;
+  background: var(--sand);
+}
+
 .person__body {
   flex: 1 1 220px;
 
