@@ -1,23 +1,28 @@
-# Drives the home "What we're good at" list and the hub "What we do" grid.
+# Drives the home "What we're good at" icons and the hub "What we do" cards.
+# The home row shows icon + label only; blurb is used by the hub cards.
 - key: support
+  icon: /assets/icons/noun_Headset_8456463_338A4A.svg
   letter: A
   label: Technical Support
   url: /expertise/technical-support/
   blurb: Fixing what's broken and hardening what isn't.
 
 - key: education
+  icon: /assets/icons/noun_Class_8362686_338A4A.svg
   letter: B
   label: Education
   url: /expertise/education/
   blurb: Teaching you and your staff the parts worth knowing.
 
 - key: advising
+  icon: /assets/icons/noun_strategy_8273592_338A4A.svg
   letter: C
   label: Advising
   url: /expertise/advising/
   blurb: Second opinions, vendor questions, and plans you can afford.
 
 - key: ai
+  icon: /assets/icons/noun_AI_8215905_338A4A.svg
   letter: D
   label: Artificial Intelligence
   url: /expertise/artificial-intelligence/
