@@ -1,0 +1,123 @@
+# One build, two destinations.
+#
+#   push to the staging branch -> commit _site/ so Cloudflare serves it
+#   push to main               -> deploy the same output to GitHub Pages
+#
+# Cloudflare (wrangler.jsonc) uploads _site/ as static files and never builds,
+# so the committed output is what visitors get. Without this workflow a source
+# edit made through the GitHub web UI leaves _site/ stale: new pages go
+# missing and deleted ones stay live.
+#
+# If the staging branch is ever renamed, update the branch list below.
+
+name: Build site
+
+on:
+  push:
+    branches:
+      - main
+      - claude/staging-branch-deployment-ow3zgc
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Queue pushes to the same branch rather than racing them; two runs committing
+# _site/ concurrently would conflict.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace
+
+      # Guard against a build that silently produces nothing.
+      - name: Sanity-check the output
+        run: |
+          test -f _site/index.html || { echo "::error::_site/index.html missing"; exit 1; }
+          echo "Built $(find _site -type f | wc -l) files."
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          retention-days: 7
+
+  publish-staging:
+    name: Commit output for Cloudflare
+    needs: build
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      # Drop the committed output first: downloading the artifact over the top
+      # would leave behind pages for posts that have since been deleted.
+      - name: Clear the previous output
+        run: rm -rf _site
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+
+      - name: Commit if the output changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # _site/ is gitignored, so --force is needed to stage new files;
+          # --all picks up deletions.
+          git add --all --force _site
+
+          if git diff --cached --quiet; then
+            echo "Output unchanged; nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "Rebuild site output for ${GITHUB_SHA::7}"
+          git push
+          # Pushes made with GITHUB_TOKEN do not trigger workflows, so this
+          # cannot re-enter the build.
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
