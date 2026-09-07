@@ -125,28 +125,24 @@ h1, h2, h3 { text-wrap: pretty; }
 
 .band--hero-hub { padding-top: 132px; }
 
-/* Hub heroes sit on the page background rather than the forest block, so every
-   colour that assumed a dark ground is restated here: the heading, the
-   description, the rail pills, and - because the header is transparent and
-   overlays this band - the nav and hamburger above it. */
+/* Hub heroes sit on the page background rather than the forest block, so the
+   colours that assumed a dark ground are restated: the heading, the
+   description, and the rail pills.
+
+   The header keeps its green everywhere. Elsewhere it gets that for free by
+   being transparent over a forest hero; here the hero is light, so the bar
+   carries the colour itself and its white type needs no changes. */
 .has-light-hero {
+  .site-header-wrap { background: var(--forest); }
+
   .band--hero-hub {
     background: var(--cream);
+    padding-top: calc(var(--header-h) + 60px);
 
     h1 { color: var(--forest); }
   }
 
   .hero__desc { color: var(--ink-muted); }
-
-  .nav__link {
-    color: var(--forest);
-
-    &:hover { color: var(--amber); }
-  }
-
-  .nav__caret { opacity: .6; }
-
-  .hamburger span { background: var(--forest); }
 
   .rail__btn {
     color: var(--forest);

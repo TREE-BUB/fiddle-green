@@ -55,8 +55,8 @@
   url: /about/
   footer_title: About
   children:
-    - title: About Us
-      url: /about/about-us/
+    - title: History and Approach
+      url: /about/history-and-approach/
     - title: Team
       url: /about/team/
     - title: Blog
