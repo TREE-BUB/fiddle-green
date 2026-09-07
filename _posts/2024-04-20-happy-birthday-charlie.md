@@ -1,6 +1,6 @@
 ---
 title: "Happy Birthday, Charlie"
-categories: ["Individuals"]
+categories: ["Other"]
 summary: "A birthday note for charlie"
 ---
 
