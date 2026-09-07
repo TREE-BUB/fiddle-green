@@ -77,6 +77,19 @@ h1, h2, h3 { text-wrap: pretty; }
   border-radius: 3px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -124,6 +137,14 @@ h1, h2, h3 { text-wrap: pretty; }
 }
 
 .band--hero-hub { padding-top: 132px; }
+
+/* Breadcrumb-only hero: the green stops just under the crumb rather than
+   holding space for a headline that is no longer shown. */
+.band--hero-crumb {
+  padding-bottom: 26px;
+
+  .breadcrumb { margin-bottom: 0; }
+}
 
 /* Hub heroes sit on the page background rather than the forest block, so the
    colours that assumed a dark ground are restated: the heading, the

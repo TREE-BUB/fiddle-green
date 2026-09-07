@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<section class="band band--hero">
+<section class="band band--hero band--hero-crumb">
   {%- if page.parent_url -%}
     <p class="breadcrumb">
       <a href="{{ page.parent_url | relative_url }}">{{ page.parent_title | escape_once }}</a>
@@ -9,7 +9,11 @@ layout: default
       <span class="breadcrumb__current">{{ page.headline_crumb | default: page.title | escape_once }}</span>
     </p>
   {%- endif -%}
-  <h1>{{ page.headline | escape_once }}</h1>
+  {%- comment -%}
+    The hero shows the breadcrumb only. The h1 stays for the document outline
+    and for search results, where a page with no h1 reads as untitled.
+  {%- endcomment -%}
+  <h1 class="visually-hidden">{{ page.title | escape_once }}</h1>
 </section>
 
 {{ content }}
