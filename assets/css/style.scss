@@ -1060,6 +1060,11 @@ a.card:hover { border-color: var(--amber); }
   margin: 0 0 10px !important;
 }
 
+.person__expertise span {
+  font-weight: 500;
+  color: var(--forest);
+}
+
 /* ==========================================================================
    Timeline & testimonials
    ========================================================================== */

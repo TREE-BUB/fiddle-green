@@ -4,18 +4,21 @@ permalink: /about/team/
 title: Team
 parent_title: About
 parent_url: /about/
-headline: Three people, and no one in between.
+headline: Four people, and no one in between.
 description: The people who take your call and do the work — plus how we staff engagements.
 people:
   - name: Jimi Michel
-    role: Founder & Principal
-    bio: Started FIDDLE,GREEN after years of being the person friends and neighbors called first. Handles most engagements start to finish, and does the explaining.
+    role: Founder and Principal
+    expertise: Training, AI, Strategy, Product
   - name: Meryn Robinson
-    role: Contractor · Education
-    bio: Runs staff trainings and digital-literacy sessions. Has a gift for making a room full of nervous people relax.
+    role: Training and Small Business Lead
+    expertise: Technology evaluation, training
   - name: Elvis Agah
-    role: Contractor · Systems
-    bio: Networks, servers, and the deep end of troubleshooting. Comes in when a problem needs a specialist.
+    role: Engineering Lead
+    expertise: Software development, product
+  - name: Sherri Lysy
+    role: Operations and Non-Profit Lead
+    expertise: Data analysis, business workflow optimization, project management
 ---
 
 <section class="band band--cream cards-band">
@@ -27,7 +30,7 @@ people:
         <div class="person__body">
           <h3>{{ p.name | escape_once }}</h3>
           <p class="person__role">{{ p.role | escape_once }}</p>
-          <p>{{ p.bio | escape_once }}</p>
+          <p class="person__expertise"><span>Areas of expertise:</span> {{ p.expertise | escape_once }}</p>
         </div>
       </div>
     {%- endfor -%}
