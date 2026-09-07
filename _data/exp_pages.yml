@@ -1,4 +1,4 @@
-# Copy for the four data-driven Areas of Expertise sub-pages.
+# Copy for the five data-driven Areas of Expertise sub-pages.
 support:
   note: Most support work is same-week, and urgent things get triaged the day you call.
   bullets:
@@ -66,3 +66,22 @@ ai:
     - h: Confidence either way
       p: Including the confidence to say no when a tool is not ready for your data.
   cta_title: Curious whether AI is worth it for you?
+
+# DRAFT: written to the house voice as a starting point, not from a briefing.
+# Every line here is up for rewriting.
+product:
+  note: Product work usually starts with a scoping conversation and a fixed-price first phase, so you can stop after it if the answer changes.
+  bullets:
+    - "Turning a rough idea into something buildable: scope, constraints, and what to leave out of version one"
+    - "Building the first working version, small enough to put in front of real people and learn from"
+    - "Websites, forms, dashboards, and the integrations that connect the systems you already run"
+    - "Picking up work someone else started, including code you inherited without documentation"
+    - "Handover notes and documentation, so the next developer is not starting from scratch"
+  outcomes:
+    - h: Something that actually runs
+      p: Working software in front of real users, not a demo that needs someone standing next to it.
+    - h: Code you own outright
+      p: In your accounts, under your license, with the keys in your name from the first day.
+    - h: A scope you can hold us to
+      p: What it costs, what it will not do yet, and which parts are safe to postpone.
+  cta_title: Have something you need built?

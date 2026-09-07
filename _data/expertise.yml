@@ -27,3 +27,12 @@
   label: Artificial Intelligence
   url: /expertise/artificial-intelligence/
   blurb: A grounded read on what AI can do for you — and what it should not touch.
+
+# PLACEHOLDER ICON: the fiddlehead mark stands in until the real icon lands in
+# assets/icons/. Swap the path below and nothing else needs to change.
+- key: product
+  icon: /assets/fiddlehead.png
+  letter: E
+  label: Product and Engineering
+  url: /expertise/product-and-engineering/
+  blurb: Building the thing, at the size of the problem rather than the size of the vendor.

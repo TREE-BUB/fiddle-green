@@ -31,12 +31,14 @@
   children:
     - title: Technical Support
       url: /expertise/technical-support/
-    - title: Training & Education
+    - title: "Training & Education"
       url: /expertise/education/
-    - title: Strategy & Operations
+    - title: "Strategy & Operations"
       url: /expertise/advising/
     - title: Artificial Intelligence
       url: /expertise/artificial-intelligence/
+    - title: Product and Engineering
+      url: /expertise/product-and-engineering/
 
 - title: How We Work
   url: /how-we-work/
