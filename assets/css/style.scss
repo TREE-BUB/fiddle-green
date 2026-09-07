@@ -77,19 +77,6 @@ h1, h2, h3 { text-wrap: pretty; }
   border-radius: 3px;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -138,12 +125,27 @@ h1, h2, h3 { text-wrap: pretty; }
 
 .band--hero-hub { padding-top: 132px; }
 
-/* Breadcrumb-only hero: the green stops just under the crumb rather than
-   holding space for a headline that is no longer shown. */
+/* The green carries the breadcrumb and stops under it; the tagline picks up
+   below, on the page background. The band that follows supplies the space
+   under the tagline, so this one has no bottom padding of its own. */
 .band--hero-crumb {
   padding-bottom: 26px;
 
   .breadcrumb { margin-bottom: 0; }
+}
+
+.page-title-band {
+  padding-top: 54px;
+  padding-bottom: 0;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.16;
+    color: var(--forest);
+    margin: 0;
+    max-width: 620px;
+  }
 }
 
 /* Hub heroes sit on the page background rather than the forest block, so the
@@ -1435,6 +1437,8 @@ a.contact-card__value {
   .hero__desc { font-size: 16px; }
 
   .section-heading h2 { font-size: 24px; }
+  .page-title-band { padding-top: 38px; }
+  .page-title-band h1 { font-size: 28px; }
   .callout__lede { font-size: 21px; }
   .band--cta h2 { font-size: 23px; }
 
