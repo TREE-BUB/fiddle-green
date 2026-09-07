@@ -192,6 +192,16 @@ h1, h2, h3 { text-wrap: pretty; }
 
 .site-header__mobile { display: none; align-items: center; gap: 12px; }
 
+/* The mobile CTA is smaller than the footer's, per the design: at 375px and
+   under, a full-size pill plus a full-size wordmark pushed the hamburger off
+   the right edge and left no way to open the menu. */
+.site-header__mobile .btn {
+  font-size: 11.5px;
+  letter-spacing: .06em;
+  padding: 9px 16px;
+  border-radius: 20px;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -392,12 +402,18 @@ h1, h2, h3 { text-wrap: pretty; }
   }
 }
 
+/* The fern mark sits whole in the empty right half of the hero, the same
+   column the other hub heroes give to their button rails. Sizing by height
+   keeps it proportional to the band as the copy reflows; the prototype sized
+   by width, which cropped the stem away and left an unreadable coil. */
 .home-hero__watermark {
   position: absolute;
-  right: -60px;
-  top: -70px;
-  width: 420px;
-  opacity: .13;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 74%;
+  width: auto;
+  opacity: .11;
   pointer-events: none;
 }
 
@@ -1363,8 +1379,29 @@ a.contact-card__value {
   .rail { align-items: stretch; }
   .rail__btn { min-width: 0; }
 
+  .home-hero__watermark {
+    top: auto;
+    bottom: 5%;
+    right: 3%;
+    transform: none;
+    height: 34%;
+    opacity: .13;
+  }
+
   .panel { padding: 36px 7%; }
   .procurement { padding: 32px 7%; }
+}
+
+/* Step the wordmark down so the brand, the CTA and the hamburger all fit the
+   header on small phones. */
+@media (max-width: 480px) {
+  .site-header__brand img { height: 22px; }
+  .site-header__mobile { gap: 10px; }
+}
+
+@media (max-width: 380px) {
+  .site-header__brand img { height: 19px; }
+  .site-header__mobile .btn { padding: 8px 13px; }
 }
 
 @media (max-width: $bp-sm) {
