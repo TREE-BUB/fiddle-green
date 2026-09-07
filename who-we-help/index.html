@@ -6,18 +6,3 @@ eyebrow: Who We Help
 headline: Five kinds of clients, one way of working.
 description: The technology changes; the approach doesn't. Find the page that sounds like your situation and you'll see how we'd start.
 ---
-
-<section class="band band--cream grid-band">
-  {% include section-heading.html title="Choose your path" %}
-  <div class="card-grid">
-    {%- for seg in site.data.segments -%}
-      <a class="card" href="{{ seg.url | relative_url }}">
-        <img class="mark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-        <h3>{{ seg.label | escape_once }}</h3>
-        <p class="card__body">{{ seg.blurb }}</p>
-        <span class="link-more">Learn more &rarr;</span>
-      </a>
-    {%- endfor -%}
-  </div>
-  <p class="grid-band__note">Not sure which one fits? <a href="{{ '/contact/' | relative_url }}">Just get in touch</a> and we'll figure it out together.</p>
-</section>

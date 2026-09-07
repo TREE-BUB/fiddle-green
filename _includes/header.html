@@ -5,7 +5,11 @@ watermark reads behind it. Nav tree comes from _data/nav.yml.
 <div class="site-header-wrap">
   <header class="site-header">
     <a class="site-header__brand" href="{{ '/' | relative_url }}">
-      <img src="{{ '/assets/wordmark-light.png' | relative_url }}" alt="FIDDLE,GREEN" width="987" height="133">
+      {%- if page.layout == "hub" -%}
+        <img src="{{ '/assets/wordmark-dark.png' | relative_url }}" alt="FIDDLE,GREEN" width="987" height="133">
+      {%- else -%}
+        <img src="{{ '/assets/wordmark-light.png' | relative_url }}" alt="FIDDLE,GREEN" width="987" height="133">
+      {%- endif -%}
     </a>
 
     <nav class="nav" aria-label="Primary">

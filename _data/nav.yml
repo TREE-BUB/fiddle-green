@@ -56,9 +56,7 @@
   footer_title: About
   children:
     - title: About Us
-      url: /about/
-      rail_url: "#about-story"
-      in_footer: false
+      url: /about/about-us/
     - title: Team
       url: /about/team/
     - title: Blog

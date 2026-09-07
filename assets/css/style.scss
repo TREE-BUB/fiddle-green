@@ -45,14 +45,21 @@ $bp-sm: 640px;
 
 html { -webkit-text-size-adjust: 100%; }
 
+/* The hub pages are a hero and nothing else, which is shorter than a tall
+   viewport; without this the footer floats with dead space beneath it. */
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--cream);
   color: var(--ink);
   font-family: var(--font);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
+
+main { flex: 1 0 auto; }
 
 img { max-width: 100%; }
 
@@ -117,6 +124,37 @@ h1, h2, h3 { text-wrap: pretty; }
 }
 
 .band--hero-hub { padding-top: 132px; }
+
+/* Hub heroes sit on the page background rather than the forest block, so every
+   colour that assumed a dark ground is restated here: the heading, the
+   description, the rail pills, and - because the header is transparent and
+   overlays this band - the nav and hamburger above it. */
+.has-light-hero {
+  .band--hero-hub {
+    background: var(--cream);
+
+    h1 { color: var(--forest); }
+  }
+
+  .hero__desc { color: var(--ink-muted); }
+
+  .nav__link {
+    color: var(--forest);
+
+    &:hover { color: var(--amber); }
+  }
+
+  .nav__caret { opacity: .6; }
+
+  .hamburger span { background: var(--forest); }
+
+  .rail__btn {
+    color: var(--forest);
+    background: rgba(212, 136, 42, .08);
+
+    &:hover { color: var(--on-amber); }
+  }
+}
 
 .band--cream { background: var(--cream); }
 .band--sand  { background: var(--sand); }
