@@ -22,7 +22,7 @@ needs_blog_js: true
 </section>
 
 <section class="band band--cream home-segments">
-  {% include section-heading.html title="Who we help" class="section-heading--lede" %}
+  {% include section-heading.html title="Who we help" %}
   <div class="card-grid">
     {%- for seg in site.data.segments -%}
       <a class="card card--num" href="{{ seg.url | relative_url }}">
