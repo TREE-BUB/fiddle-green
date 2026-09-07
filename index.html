@@ -23,13 +23,15 @@ needs_blog_js: true
 
 <section class="band band--cream home-segments">
   {% include section-heading.html title="Who we help" %}
-  <div class="card-grid">
+  <div class="seg-icons">
     {%- for seg in site.data.segments -%}
-      <a class="card card--num" href="{{ seg.url | relative_url }}">
-        <p class="card__num">{{ seg.num }}</p>
-        <h3>{{ seg.label }}</h3>
-        <p class="card__body">{{ seg.blurb }}</p>
-        <span class="link-more">Learn more &rarr;</span>
+      {%- comment -%}
+        Icon and label sit inside one link: two links to the same page would
+        make a screen reader announce every destination twice.
+      {%- endcomment -%}
+      <a class="seg-icons__item" href="{{ seg.url | relative_url }}">
+        <img src="{{ seg.icon | relative_url }}" alt="" width="120" height="120" loading="lazy">
+        <span class="seg-icons__label">{{ seg.label }}</span>
       </a>
     {%- endfor -%}
   </div>
