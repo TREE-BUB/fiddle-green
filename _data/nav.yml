@@ -71,9 +71,9 @@
     - title: Supporting Maine
       url: /about/supporting-maine/
       blurb: Discounted or free travel statewide, and an hour donated in every community we visit.
-    - title: "History & Testimonials"
-      url: /about/history-and-testimonials/
-      blurb: How the company got here, and what clients say about working with us.
+    - title: Testimonials
+      url: /about/testimonials/
+      blurb: What clients say about working with us, grouped by the kind of organization they run.
     - title: Contact
       url: /contact/
       footer_only: true
