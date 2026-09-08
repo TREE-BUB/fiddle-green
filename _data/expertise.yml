@@ -1,4 +1,5 @@
-# Drives the home "How we help" icons, which show icon + label only.
+# Drives the home "How we help" icons, which show icon + label only, and the
+# blurbs on the /expertise/ hub cards.
 # on_home: false keeps an entry here but off that row.
 - key: support
   icon: /assets/icons/noun_Headset_8456463_338A4A.svg

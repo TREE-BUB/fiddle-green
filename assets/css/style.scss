@@ -634,6 +634,27 @@ h1, h2, h3 { text-wrap: pretty; }
 
 a.card:hover { border-color: var(--amber); }
 
+/* A hub card is a whole link, so the arrow marks it as one and the body copy
+   is pushed apart from it however tall the card ends up. */
+.hub-card {
+  display: flex;
+  flex-direction: column;
+
+  .card__body { flex: 1 0 auto; margin-bottom: 14px; }
+}
+
+.hub-card__arrow {
+  font-size: 15px;
+  color: var(--amber);
+  transition: transform .15s ease;
+}
+
+.hub-card:hover .hub-card__arrow { transform: translateX(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-card__arrow { transition: none; }
+}
+
 .card__body {
   font-size: 15px;
   line-height: 1.6;
@@ -1733,6 +1754,12 @@ a.contact-card__value {
 .relief-band  { padding-top: 66px; padding-bottom: 20px; }
 .probono-band { padding-top: 52px; padding-bottom: 20px; }
 .ask-band     { padding-top: 52px; padding-bottom: 74px; }
+
+/* Hub pages: a run of prose under the hero, then the children as cards. The
+   cards band brings its own headroom, so the lede adds none of its own. */
+.hub-lede-band    { padding-top: 60px; padding-bottom: 0; }
+.hub-lede-band .prose-lede { margin-bottom: 0; max-width: 660px; }
+.hub-cards-band   { padding-bottom: 74px; }
 
 .approach-band    { padding-top: 56px; padding-bottom: 0; }
 .approach-band .prose-lede { margin-bottom: 0; }
