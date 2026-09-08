@@ -4,9 +4,9 @@
 # Per-child switches:
 #   in_footer: false    omit from the footer column
 #   footer_only: true   footer column only, not the dropdown or drawer
-#   rail_only: true     hub hero rail only — off the dropdown, the drawer, and
-#                       the footer, so the page stays reachable from its hub
-#                       without being advertised sitewide
+#   hidden: true        off every surface — the dropdown, the drawer, the hub
+#                       rail, and the footer. The page stays live at its URL,
+#                       but nothing on the site links to it
 #   rail_url:           override the URL used by the hub hero rail button
 
 - title: Home
@@ -18,10 +18,10 @@
   children:
     - title: People and Families
       url: /who-we-help/individuals/
-      rail_only: true
+      hidden: true
     - title: Startups
       url: /who-we-help/startups/
-      rail_only: true
+      hidden: true
     - title: Small Businesses
       url: /who-we-help/small-businesses/
     - title: Non-profits
@@ -40,7 +40,6 @@
       url: /expertise/education/
     - title: "Strategy & Operations"
       url: /expertise/advising/
-      rail_only: true
     - title: Artificial Intelligence
       url: /expertise/artificial-intelligence/
     - title: Data Science
