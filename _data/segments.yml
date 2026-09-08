@@ -6,7 +6,6 @@
   num: "02"
   label: Startups
   url: /who-we-help/startups/
-  on_home: false
   blurb: Set things up right the first time — accounts, security, and tooling that won't box you in later.
 
 - key: businesses

@@ -21,7 +21,6 @@
   children:
     - title: Startups
       url: /who-we-help/startups/
-      hidden: true
     - title: Small Businesses
       url: /who-we-help/small-businesses/
     - title: Non-profits
