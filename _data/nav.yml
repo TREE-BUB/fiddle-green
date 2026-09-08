@@ -52,10 +52,8 @@
   url: /how-we-work/
   footer_title: How we work
   children:
-    - title: Pricing
+    - title: "Pricing & Engagement"
       url: /how-we-work/pricing/
-    - title: Engagement Models
-      url: /how-we-work/engagement-models/
     - title: "Access & Discounts"
       url: /how-we-work/access-and-discounts/
 

@@ -1,56 +1,25 @@
 ---
-layout: page
+layout: null
 permalink: /how-we-work/engagement-models/
-title: Engagement Models
-parent_title: How We Work
-parent_url: /how-we-work/
-headline: Four ways to work with us.
-description: One-time visits, fixed-price projects, ongoing monthly support, or a standing advisory hour.
-shapes:
-  - h: One-time visit
-    p: "A single session for a specific thing: a new machine, a locked account, a printer that has never once cooperated."
-    meta: Hourly · same week
-  - h: Project
-    p: A defined start and finish with a fixed price. Email migrations, network rebuilds, technology assessments.
-    meta: Flat fee · 2–8 weeks
-  - h: Ongoing support
-    p: We are your technology department. Set hours each month, priority response, and someone who already knows your setup.
-    meta: Monthly · from $600
-  - h: Advising
-    p: A recurring hour with whoever makes the decisions. Vendor choices, budgets, roadmaps, and second opinions.
-    meta: Monthly or quarterly
+sitemap: false
 ---
-
-<section class="band band--cream shapes-band">
-  {% include section-heading.html title="Choose a shape" class="section-heading--gap" %}
-  <div class="card-grid">
-    {%- for s in page.shapes -%}
-      <div class="card card--flat">
-        <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-        <h3 class="card__title-lg">{{ s.h | escape_once }}</h3>
-        <p class="card__body card__body--lg">{{ s.p | escape_once }}</p>
-        <p class="card__tail">{{ s.meta | escape_once }}</p>
-      </div>
-    {%- endfor -%}
-  </div>
-</section>
-
-<section class="band band--sand includes-band">
-  <div class="measure-900">
-    {% include section-heading.html title="What every engagement includes" class="section-heading--sm section-heading--gap" %}
-    <div class="columns">
-      <div class="column">
-        <h3>Notes you keep</h3>
-        <p>Passwords, accounts, and what we changed — documented in plain language and handed to you.</p>
-      </div>
-      <div class="column">
-        <h3>One person</h3>
-        <p>You talk to the person doing the work. No tiers, no tickets, no repeating your story.</p>
-      </div>
-      <div class="column">
-        <h3>No lock-in</h3>
-        <p>Everything is in your name and under your control. If you leave, nothing has to be untangled.</p>
-      </div>
-    </div>
-  </div>
-</section>
+{%- comment -%}
+  The engagement models were folded into Pricing. This stub keeps the old URL
+  working for anything that already links here. The site pins itself to GitHub
+  Pages' plugin whitelist, so there is no jekyll-redirect-from to lean on and
+  the redirect is written out by hand.
+{%- endcomment -%}
+{%- assign target = '/how-we-work/pricing/' | relative_url -%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting to Pricing &amp; Engagement</title>
+    <link rel="canonical" href="{{ '/how-we-work/pricing/' | absolute_url }}">
+    <meta http-equiv="refresh" content="0; url={{ target }}">
+    <meta name="robots" content="noindex">
+  </head>
+  <body>
+    <p>This page has moved to <a href="{{ target }}">Pricing &amp; Engagement</a>.</p>
+  </body>
+</html>

@@ -836,6 +836,36 @@ a.card:hover { border-color: var(--amber); }
    Rate rows (Pricing, Access & Discounts)
    ========================================================================== */
 
+/* Worked examples inside an engagement-model card, between the description and
+   the billing basis in the tail. */
+.card__examples {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: rgba(35, 41, 31, .68);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+  }
+}
+
 .rates { max-width: 900px; }
 
 .rate {
@@ -1649,7 +1679,7 @@ a.contact-card__value {
 
 .rates-band   { padding-top: 66px; padding-bottom: 20px; }
 .billing-band { padding-top: 52px; padding-bottom: 74px; }
-.shapes-band  { padding-top: 66px; padding-bottom: 74px; }
+.models-band  { padding-top: 66px; padding-bottom: 20px; }
 .relief-band  { padding-top: 66px; padding-bottom: 20px; }
 .ask-band     { padding-top: 52px; padding-bottom: 74px; }
 
