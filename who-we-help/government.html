@@ -2,7 +2,7 @@
 layout: default
 permalink: /who-we-help/government/
 title: Government
-description: A Maine technology partner for municipal, county, state, and tribal work — responsive support, staff training, and independent advising.
+description: A Maine technology partner for government — municipal, county, state, and tribal. Responsive support, staff training, and independent advising.
 ---
 
 <section class="band band--hero gov-band">
@@ -13,59 +13,63 @@ description: A Maine technology partner for municipal, county, state, and tribal
   </p>
   <div class="gov-hero">
     <div class="gov-hero__text">
-      <h1>A Maine technology partner for public sector work.</h1>
+      <h1>A Maine technology partner for government work.</h1>
       <p>FIDDLE,GREEN supports municipal, county, state, and tribal entities with responsive technical support, staff training, and independent technology advising. Small enough to answer the phone; documented enough to satisfy procurement.</p>
     </div>
-    <div class="capability">
-      <p class="eyebrow eyebrow--sm capability__title">Capability statement</p>
-      <dl class="capability__list">
-        <div class="capability__row"><dt>Founded</dt><dd>2024</dd></div>
-        <div class="capability__row"><dt>Location</dt><dd>Portland, ME</dd></div>
-        <div class="capability__row"><dt>Business size</dt><dd>Small</dd></div>
-        <div class="capability__row"><dt>Service radius</dt><dd>Statewide</dd></div>
-      </dl>
-    </div>
   </div>
 </section>
 
-<section class="band band--cream gov-panels-band">
-  <div class="gov-panels">
-    <div class="gov-panel">
-      {% include section-heading.html eyebrow="Codes &amp; registrations" class="gov-panel__heading" %}
-      <dl class="codes">
-        <div class="code-row"><dt>NAICS</dt><dd>541512 &middot; 541519 &middot; 611420</dd></div>
-        <div class="code-row code-row--pending"><dt>UEI</dt><dd>[ pending ]</dd></div>
-        <div class="code-row code-row--pending"><dt>CAGE</dt><dd>[ pending ]</dd></div>
-        <div class="code-row code-row--pending"><dt>SAM.gov</dt><dd>[ registration status ]</dd></div>
-      </dl>
-    </div>
-    <div class="gov-panel">
-      {% include section-heading.html eyebrow="Core capabilities" class="gov-panel__heading" %}
-      <ul>
-        <li>Help desk &amp; end-user technical support</li>
-        <li>Staff technology training &amp; digital literacy programs</li>
-        <li>Independent technology assessment &amp; advising</li>
-        <li>Responsible AI evaluation &amp; policy support</li>
-        <li>Accessibility &amp; public-facing service usability review</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="band band--cream gov-perf-band">
-  {% include section-heading.html title="Past performance" class="section-heading--sm section-heading--lede-tight" %}
-  <p class="section-lede section-lede--perf">Contract references available on request. Placeholders below show the format each entry will follow.</p>
-  <div class="perf">
-    {%- for i in (1..3) -%}
-      <div class="perf__row">
-        <div class="perf__main">
-          <p>[ Client / agency name ]</p>
-          <p>Scope of work summary in one line.</p>
-        </div>
-        <div class="perf__cell">[ Period ]</div>
-        <div class="perf__cell">[ Value ]</div>
+{%- comment -%}
+  The prose runs down the left two thirds; the reference panels sit stacked in
+  the right third, where a procurement reader can find them without them
+  interrupting the reading.
+{%- endcomment -%}
+<section class="band band--cream gov-body-band">
+  <div class="gov-body">
+    <div class="gov-body__main">
+      {% include section-heading.html title="Our approach" class="section-heading--sm section-heading--lede-tight" %}
+      <div class="gov-approach">
+        <p>We have deep experience on local, state, and federal contracts, and we know what that work asks of a vendor: documentation that survives an audit, timelines we can actually hold, and advice that stands up when someone else has to defend it.</p>
+        <p>Government technology is paid for by the public and used by the public, and we take that responsibility seriously. We also live here. The work we do for Maine towns, agencies, and tribal governments makes the places we call home a little better, and we are proud of that.</p>
       </div>
-    {%- endfor -%}
+
+      {% include section-heading.html title="Past performance" class="section-heading--sm section-heading--lede-tight" %}
+      <p class="section-lede section-lede--perf">Contract references available on request. Placeholders below show the format each entry will follow.</p>
+      <div class="perf">
+        {%- for i in (1..3) -%}
+          <div class="perf__row">
+            <div class="perf__main">
+              <p>[ Client / agency name ]</p>
+              <p>Scope of work summary in one line.</p>
+            </div>
+            <div class="perf__cell">[ Period ]</div>
+            <div class="perf__cell">[ Value ]</div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <aside class="gov-body__aside">
+      <div class="gov-panel">
+        {% include section-heading.html eyebrow="Codes &amp; registrations" class="gov-panel__heading" %}
+        <dl class="codes">
+          <div class="code-row"><dt>NAICS</dt><dd>541512 &middot; 541519 &middot; 611420</dd></div>
+          <div class="code-row code-row--pending"><dt>UEI</dt><dd>[ pending ]</dd></div>
+          <div class="code-row code-row--pending"><dt>CAGE</dt><dd>[ pending ]</dd></div>
+          <div class="code-row code-row--pending"><dt>SAM.gov</dt><dd>[ registration status ]</dd></div>
+        </dl>
+      </div>
+      <div class="gov-panel">
+        {% include section-heading.html eyebrow="Core capabilities" class="gov-panel__heading" %}
+        <ul>
+          <li>Help desk &amp; end-user technical support</li>
+          <li>Staff technology training &amp; digital literacy programs</li>
+          <li>Independent technology assessment &amp; advising</li>
+          <li>Responsible AI evaluation &amp; policy support</li>
+          <li>Accessibility &amp; public-facing service usability review</li>
+        </ul>
+      </div>
+    </aside>
   </div>
 </section>
 

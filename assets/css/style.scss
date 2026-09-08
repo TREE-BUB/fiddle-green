@@ -1174,30 +1174,35 @@ a.card:hover { border-color: var(--amber); }
   }
 }
 
-.capability {
-  flex: 0 1 300px;
-  border: 1px solid rgba(255, 255, 255, .28);
-  border-radius: 10px;
-  padding: 24px 26px;
-}
+/* Prose on the left, reference panels stacked in the right third. Both columns
+   keep a text-length basis, so the pair drops to one column before the panels
+   get too narrow to read. */
+.gov-body { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
 
-.capability__list { display: flex; flex-direction: column; gap: 12px; }
+.gov-body__main { flex: 2 1 400px; }
 
-.capability__row {
+.gov-body__aside {
+  flex: 1 1 260px;
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 14px;
-  color: #FFF;
-
-  dt { opacity: .75; }
-  dd { margin: 0; }
+  flex-direction: column;
+  gap: 20px;
 }
 
-.gov-panels { display: flex; flex-wrap: wrap; gap: 20px; }
+.gov-approach {
+  max-width: 620px;
+  margin-bottom: 44px;
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(35, 41, 31, .78);
+    margin: 0 0 16px;
+
+    &:last-child { margin-bottom: 0; }
+  }
+}
 
 .gov-panel {
-  flex: 1 1 300px;
   background: var(--sand);
   border: 1px solid var(--hairline);
   border-radius: 10px;
@@ -1615,11 +1620,9 @@ a.contact-card__value {
 }
 
 .gov-band       { padding-bottom: 60px; }
-.gov-panels-band{ padding-top: 56px; padding-bottom: 0; }
-.gov-perf-band  { padding-top: 52px; padding-bottom: 0; }
+.gov-body-band  { padding-top: 56px; padding-bottom: 0; }
 .gov-proc-band  { padding-top: 56px; padding-bottom: 78px; }
 
-.capability__title { margin-bottom: 16px; }
 .procurement__eyebrow { margin-bottom: 12px; }
 
 .section-lede--perf {
