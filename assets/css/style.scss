@@ -1812,6 +1812,78 @@ a.contact-card__value {
 .probono-band { padding-top: 52px; padding-bottom: 20px; }
 .ask-band     { padding-top: 52px; padding-bottom: 74px; }
 
+/* Services on the home page: six cards, three across, each carrying what the
+   service actually covers. The icon is painted from the stylesheet the same
+   way the icon rows do it, so it picks up the amber on hover. */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 26px;
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  color: var(--forest);
+  transition: border-color .18s ease;
+
+  &:hover {
+    border-color: var(--amber);
+
+    .service-card__icon { background: var(--amber); }
+  }
+}
+
+.service-card__icon { width: 46px; height: 46px; }
+
+.service-card__title {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--forest);
+  margin: 0;
+}
+
+.service-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: rgba(35, 41, 31, .7);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: $bp-sm) {
+  .service-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* The home page's closing pitch: a short case, then the four places to go
    next in a 2x2. The buttons fill their cells rather than sitting at their
    own widths, so the block reads as a grid and not a ragged pile. */

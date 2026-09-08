@@ -38,14 +38,24 @@ description: >-
   </div>
 </section>
 
+{%- comment -%}
+  Each service gets its own card so the three things it actually covers are on
+  the page, rather than a label the reader has to click to understand. The
+  whole card is the link, so the icon and the list are not separate stops.
+{%- endcomment -%}
 <section class="band band--sand home-expertise">
-  {% include section-heading.html title="How we help" %}
-  <div class="icon-row">
+  {% include section-heading.html title="Services" %}
+  <div class="service-grid">
     {%- for exp in site.data.expertise -%}
       {%- unless exp.on_home == false -%}
-        <a class="icon-row__item" href="{{ exp.url | relative_url }}">
-          <span class="icon-row__icon" style="--icon: url('{{ exp.icon | relative_url }}')"></span>
-          <span class="icon-row__label">{{ exp.label | escape_once }}</span>
+        <a class="service-card" href="{{ exp.url | relative_url }}">
+          <span class="icon-row__icon service-card__icon" style="--icon: url('{{ exp.icon | relative_url }}')"></span>
+          <h3 class="service-card__title">{{ exp.label | escape_once }}</h3>
+          <ul class="service-card__list">
+            {%- for d in exp.details -%}
+              <li>{{ d | escape_once }}</li>
+            {%- endfor -%}
+          </ul>
         </a>
       {%- endunless -%}
     {%- endfor -%}
