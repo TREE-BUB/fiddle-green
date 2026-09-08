@@ -844,6 +844,38 @@ a.card:hover { border-color: var(--amber); }
    Rate rows (Pricing, Access & Discounts)
    ========================================================================== */
 
+/* Prose on the left with a standing offer alongside it. The aside keeps a
+   readable basis so the pair stacks before the panel gets too narrow. */
+.cost-split { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+
+.cost-split__main { flex: 2 1 400px; }
+
+.cta-panel {
+  flex: 1 1 280px;
+  background: var(--sand);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 30px 28px;
+
+  .eyebrow { margin: 0 0 12px; }
+
+  h3 {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--forest);
+    margin: 0 0 12px;
+  }
+
+  .btn { display: inline-block; }
+}
+
+.cta-panel__body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0 0 22px;
+}
+
 /* Worked examples inside an engagement-model card, between the description and
    the billing basis in the tail. */
 .card__examples {

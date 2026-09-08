@@ -28,6 +28,16 @@ models:
       - Fractional CIO for an organization too small to hire one outright
       - Regular help desk support for your staff
       - A recurring advisory hour with whoever makes the decisions
+billing:
+  - h: Initial scoping on us
+    p: We invest the time up front to work out what you actually need, so that when you are ready to spend money with us, you spend it on the right thing.
+    meta: No charge
+  - h: Clear contracts and invoices
+    p: You know what you are signing and what you are paying for. Transparency is the point, not a courtesy.
+    meta: In writing
+  - h: Compliance is table stakes
+    p: We work with you to make sure what we deliver meets whatever compliance or funder requirements you answer to.
+    meta: Built in
 ---
 
 <section class="band band--cream models-band">
@@ -35,7 +45,6 @@ models:
   <div class="card-grid">
     {%- for m in page.models -%}
       <div class="card card--flat">
-        <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
         <h3 class="card__title-lg">{{ m.h | escape_once }}</h3>
         <p class="card__body card__body--lg">{{ m.p | escape_once }}</p>
         <ul class="card__examples">
@@ -50,34 +59,33 @@ models:
 </section>
 
 <section class="band band--cream rates-band">
-  {% include section-heading.html title="What it costs" class="section-heading--gap" %}
-  <div class="prose-lede">
-    <p>Every engagement is quoted in writing before it starts, whichever shape it takes. Rates are sliding-scale, and public sector work follows the applicable schedule or solicitation.</p>
-    <p>We pride ourselves on working efficiently. The point is to solve the thing in front of you, not to run up hours — so tell us what you are dealing with on the first call, and we will tell you what it would run.</p>
+  <div class="cost-split">
+    <div class="cost-split__main">
+      {% include section-heading.html title="What it costs" class="section-heading--gap" %}
+      <div class="prose-lede">
+        <p>Every engagement is quoted in writing before it starts, whichever shape it takes. Rates are sliding-scale, and public sector work follows the applicable schedule or solicitation.</p>
+        <p>We pride ourselves on working efficiently. The point is to solve the thing in front of you, not to run up hours — so tell us what you are dealing with on the first call, and we will tell you what it would run.</p>
+      </div>
+    </div>
+    <aside class="cta-panel">
+      <p class="eyebrow eyebrow--sm">Access &amp; discounts</p>
+      <h3>Ask and the rate changes.</h3>
+      <p class="cta-panel__body">Nonprofit discounts, a sliding scale for marginalized-owned businesses, pro bono hours, and no-interest payment plans. No application, no paperwork — you say so on the first call.</p>
+      <a class="btn btn--amber" href="{{ '/how-we-work/access-and-discounts/' | relative_url }}">See what applies to you</a>
+    </aside>
   </div>
 </section>
 
 <section class="band band--cream billing-band">
-  {% include section-heading.html title="How billing works" class="section-heading--sm section-heading--gap" %}
+  {% include section-heading.html title="How we handle the paperwork" class="section-heading--sm section-heading--gap" %}
   <div class="card-grid">
-    <div class="card">
-      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-      <h3 class="card__title-lg">The first call is free</h3>
-      <p class="card__body card__body--lg">Twenty or thirty minutes to hear what is going on and tell you whether we are the right people for it.</p>
-      <p class="card__tail">No obligation</p>
-    </div>
-    <div class="card">
-      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-      <h3 class="card__title-lg">An estimate before work</h3>
-      <p class="card__body card__body--lg">For anything past an hour, you get a range in writing. If we are going to exceed it, we stop and ask first.</p>
-      <p class="card__tail">Written up front</p>
-    </div>
-    <div class="card">
-      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-      <h3 class="card__title-lg">Invoices you can read</h3>
-      <p class="card__body card__body--lg">One line per session, in words, with the hours shown. Net 15, and we take cards, checks, and ACH.</p>
-      <p class="card__tail">Net 15</p>
-    </div>
+    {%- for b in page.billing -%}
+      <div class="card">
+        <h3 class="card__title-lg">{{ b.h | escape_once }}</h3>
+        <p class="card__body card__body--lg">{{ b.p | escape_once }}</p>
+        <p class="card__tail">{{ b.meta | escape_once }}</p>
+      </div>
+    {%- endfor -%}
   </div>
 </section>
 
