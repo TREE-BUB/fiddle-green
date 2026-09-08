@@ -27,14 +27,14 @@ startups:
 businesses:
   cards_title: What we take off your plate
   cards:
-    - h: When it breaks
-      p: Registers, printers, phones, wifi, and the machine in the back office that everything depends on.
-    - h: Before it breaks
-      p: Backups you can actually restore from, updates that happen on schedule, and spare-parts planning.
-    - h: Your staff
-      p: Short trainings so your team can handle the small stuff and knows when to escalate.
-    - h: Vendor wrangling
-      p: Dealing with the internet provider, the point-of-sale company, and whoever built your website in 2014.
+    - h: Optimize your current systems and workflows
+      p: We help you get the most out of the investments you've made in Microsoft 365, Google Workspace, and other tools. We also make sure your vendors deliver what they promised.
+    - h: Explore AI and automation
+      p: AI isn't magic, but with the right guidance it definitely can make you more efficient. We'll help you figure out where it actually makes sense for your business.
+    - h: Use your data
+      p: You already have valuable data. We work with you to benefit from the insights and value that's sitting in your systems right now.
+    - h: Make the right investments
+      p: Cut through the smoke and mirrors. We evaluate vendors, help you figure out ROI, and make sure you're spending money on what actually matters.
   steps_note: We start with a walkthrough, not a contract.
   steps:
     - num: "01"
