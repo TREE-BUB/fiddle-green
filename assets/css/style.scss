@@ -749,6 +749,30 @@ a.card:hover { border-color: var(--amber); }
   }
 }
 
+/* Some segments offer ways to work together rather than an ordered sequence, so
+   the list trades its numbers for bullets and sits two across. */
+.steps--grid {
+  flex: 1 1 460px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 32px;
+}
+
+.steps--grid .step { gap: 12px; }
+
+.step__dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  margin-top: 9px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+
+@media (max-width: $bp-sm) {
+  .steps--grid { grid-template-columns: minmax(0, 1fr); }
+}
+
 .bullets {
   flex: 1 1 320px;
   display: flex;

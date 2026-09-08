@@ -15,4 +15,5 @@ layout: page
   </div>
 </section>
 
-{% include steps.html title="How we'd start" note=d.steps_note steps=d.steps %}
+{%- assign steps_title = d.steps_title | default: "How we'd start" -%}
+{% include steps.html title=steps_title note=d.steps_note steps=d.steps grid=d.steps_grid %}

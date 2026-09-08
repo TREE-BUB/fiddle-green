@@ -35,17 +35,18 @@ businesses:
       p: You already have valuable data. We work with you to benefit from the insights and value that's sitting in your systems right now.
     - h: Make the right investments
       p: Cut through the smoke and mirrors. We evaluate vendors, help you figure out ROI, and make sure you're spending money on what actually matters.
-  steps_note: We start with a walkthrough, not a contract.
+  steps_title: How we work with small businesses
+  steps_grid: true
+  steps_note: We work hard to provide the flexibility small businesses need. If you're thinking something else, let us know and we'll work together to find something that works.
   steps:
-    - num: "01"
-      h: A walkthrough.
-      p: We come look at what you actually use during a normal day, and take notes.
-    - num: "02"
-      h: A short list, in priority order.
-      p: The things that would hurt most if they failed, and what each one costs to fix.
-    - num: "03"
-      h: A rhythm that works for you.
-      p: Call-us-when-you-need-us, or a standing block of hours each month. Your choice.
+    - h: Needs Assessment
+      p: Often the first step in our process. We perform a comprehensive evaluation of your current technology ecosystem and deliver an actionable set of recommendations.
+    - h: Targeted Sprints
+      p: Short-term, focused support to solve an immediate business need — such as vendor evaluation, staff training, or system setup.
+    - h: Project Support
+      p: End-to-end execution for specific business initiatives or technical projects, ranging from a few hours of work to a multi-month engagement.
+    - h: Ongoing Partnership
+      p: Following a brief onboarding, we provide continuous technical and strategic support to ensure your technology scales seamlessly with your business.
   cta_title: Want a number you can call on a bad day?
   cta_body: Hourly, short-term, and long-term arrangements are all available, with sliding-scale rates quoted when we talk.
 

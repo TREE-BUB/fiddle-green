@@ -1,20 +1,30 @@
-{%- comment -%} Sand panel: heading + note on the left, numbered steps on the right. {%- endcomment -%}
+{%- comment -%}
+  Sand panel: heading + note on the left, numbered steps on the right.
+
+  include.grid switches the right-hand column to a set of choices rather than a
+  sequence: the numbering goes away, the list stops being ordered, and the items
+  sit two across.
+{%- endcomment -%}
 <section class="band band--cream steps-band">
   <div class="panel panel--split">
     <div class="panel__aside">
       {% include section-heading.html title=include.title class="section-heading--sm" %}
       <p class="panel__note">{{ include.note | escape_once }}</p>
     </div>
-    <ol class="steps">
+    {%- if include.grid -%}<ul class="steps steps--grid">{%- else -%}<ol class="steps">{%- endif -%}
       {%- for step in include.steps -%}
         <li class="step">
-          <span class="step__num">{{ step.num }}</span>
+          {%- if include.grid -%}
+            <span class="step__dot" aria-hidden="true"></span>
+          {%- else -%}
+            <span class="step__num">{{ step.num }}</span>
+          {%- endif -%}
           <span class="step__body">
             <b>{{ step.h | escape_once }}</b>
             <span>{{ step.p | escape_once }}</span>
           </span>
         </li>
       {%- endfor -%}
-    </ol>
+    {%- if include.grid -%}</ul>{%- else -%}</ol>{%- endif -%}
   </div>
 </section>
