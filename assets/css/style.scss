@@ -152,6 +152,14 @@ h1, h2, h3 { text-wrap: pretty; }
   }
 }
 
+/* A sentence-length headline needs a smaller size and a longer line than the
+   short taglines the band was built for, or it fills the viewport. */
+.page-title-band--statement h1 {
+  font-size: 29px;
+  line-height: 1.35;
+  max-width: 780px;
+}
+
 /* Hub heroes sit on the page background rather than the forest block, so the
    colours that assumed a dark ground are restated: the heading, the
    description, and the rail pills.
@@ -295,7 +303,7 @@ h1, h2, h3 { text-wrap: pretty; }
   &:hover { color: #E8C99A; }
 }
 
-.nav__caret { font-size: 9px; opacity: .75; }
+.nav__caret { font-size: 13px; opacity: .8; }
 
 .nav__menu {
   position: absolute;
@@ -1697,6 +1705,9 @@ a.contact-card__value {
 
 .story-band     { padding-top: 72px; padding-bottom: 20px; }
 .believe-band   { padding-top: 48px; padding-bottom: 78px; }
+/* The roster band carries almost no bottom padding of its own, which left the
+   last person sitting right on the colour change into the band below. */
+.team-band      { padding-bottom: 60px; }
 .staffing-band  { padding-top: 60px; padding-bottom: 66px; }
 .blog-band      { padding-top: 56px; padding-bottom: 78px; }
 .timeline-band  { padding-top: 66px; padding-bottom: 78px; }

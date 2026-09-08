@@ -14,7 +14,11 @@ layout: default
 {%- comment -%}
   The tagline sits below the green, at the top of the page background.
 {%- endcomment -%}
-<section class="band band--cream page-title-band">
+{%- comment -%}
+  headline_class lets a page whose headline is a full sentence rather than a
+  short tagline set it at a size that does not swallow the screen.
+{%- endcomment -%}
+<section class="band band--cream page-title-band {{ page.headline_class }}">
   <h1>{{ page.headline | escape_once }}</h1>
 </section>
 
