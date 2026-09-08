@@ -4,8 +4,14 @@ permalink: /about/testimonials/
 title: Testimonials
 parent_title: About
 parent_url: /about/
-headline: What it is like to work with us.
+headline: Don't take our word for it.
 description: What clients say about working with FIDDLE,GREEN, grouped by the kind of organization they run. References available on request.
+# The one quote that leads the page. Kept apart from the groups below so it can
+# be swapped for the strongest thing a client has said without touching them.
+topline:
+  quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam.
+  name: Jane Doe
+  role: Executive Director · Anytown Community Trust
 groups:
   - h: Startups
     quotes:
@@ -56,6 +62,17 @@ groups:
   panels: it opens without JavaScript, and browser find-in-page reaches
   inside a closed one.
 {%- endcomment -%}
+<section class="band band--cream topline-band">
+  <figure class="topline">
+    <img class="mark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+    <blockquote>&ldquo;{{ page.topline.quote | escape_once }}&rdquo;</blockquote>
+    <figcaption>
+      <p class="quote__name">{{ page.topline.name | escape_once }}</p>
+      <p class="quote__role">{{ page.topline.role | escape_once }}</p>
+    </figcaption>
+  </figure>
+</section>
+
 <section class="band band--cream quotes-band">
   <div class="aside-split">
     <div class="aside-split__main">

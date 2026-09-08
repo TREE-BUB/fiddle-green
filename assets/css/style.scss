@@ -1238,6 +1238,30 @@ a.card:hover { border-color: var(--amber); }
   blockquote { font-size: 16px; color: rgba(35, 41, 31, .82); }
 }
 
+/* The one quote that leads the page, set large and centred above the columns
+   so it is read before anything is opened. */
+.topline {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+
+  .mark { height: 30px; margin: 0 auto 24px; }
+
+  blockquote {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.45;
+    color: var(--forest);
+    margin: 0 0 22px;
+  }
+
+  figcaption { margin: 0; }
+}
+
+@media (max-width: $bp-sm) {
+  .topline blockquote { font-size: 21px; }
+}
+
 /* Client quotes grouped by segment. Native <details>, so a closed group still
    opens without JavaScript and find-in-page can reach the text inside it. */
 .disclosures {
@@ -1949,7 +1973,8 @@ a.contact-card__value {
    last person sitting right on the colour change into the band below. */
 .team-band      { padding-bottom: 60px; }
 .blog-band      { padding-top: 56px; padding-bottom: 78px; }
-.quotes-band    { padding-top: 66px; padding-bottom: 78px; }
+.topline-band   { padding-top: 62px; padding-bottom: 0; }
+.quotes-band    { padding-top: 58px; padding-bottom: 78px; }
 .contact-band   { padding-top: 70px; padding-bottom: 78px; }
 
 .believe__lede {
