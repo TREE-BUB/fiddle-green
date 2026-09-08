@@ -3,9 +3,10 @@
 #
 # Per-child switches:
 #   in_footer: false    omit from the footer column
-#   in_menu: false      omit from the header dropdown and the mobile drawer,
-#                       while the hub hero rail and the footer still list it
 #   footer_only: true   footer column only, not the dropdown or drawer
+#   rail_only: true     hub hero rail only — off the dropdown, the drawer, and
+#                       the footer, so the page stays reachable from its hub
+#                       without being advertised sitewide
 #   rail_url:           override the URL used by the hub hero rail button
 
 - title: Home
@@ -17,10 +18,10 @@
   children:
     - title: People and Families
       url: /who-we-help/individuals/
-      in_menu: false
+      rail_only: true
     - title: Startups
       url: /who-we-help/startups/
-      in_menu: false
+      rail_only: true
     - title: Small Businesses
       url: /who-we-help/small-businesses/
     - title: Non-profits
@@ -39,7 +40,7 @@
       url: /expertise/education/
     - title: "Strategy & Operations"
       url: /expertise/advising/
-      in_menu: false
+      rail_only: true
     - title: Artificial Intelligence
       url: /expertise/artificial-intelligence/
     - title: Product and Engineering

@@ -12,7 +12,7 @@
           <a class="site-footer__col-title" href="{{ item.url | relative_url }}">{{ item.footer_title | default: item.title | escape_once }}</a>
           <div class="site-footer__links">
             {%- for child in item.children -%}
-              {%- unless child.in_footer == false -%}
+              {%- unless child.in_footer == false or child.rail_only -%}
                 <a href="{{ child.url | relative_url }}">{{ child.title | escape_once }}</a>
               {%- endunless -%}
             {%- endfor -%}
