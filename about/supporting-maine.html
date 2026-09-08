@@ -1,0 +1,38 @@
+---
+layout: page
+permalink: /about/supporting-maine/
+title: Supporting Maine
+parent_title: About
+parent_url: /about/
+headline: We are a Maine company, and we try to act like one.
+description: Discounted or free travel anywhere in Maine, and an hour donated to a local school or nonprofit for onsite work outside Greater Portland.
+commitments:
+  - h: Travel is discounted, often free
+    p: We do not think a business in Machias should pay more for the same help than a business in Portland. In many cases we do not charge for travel within Maine at all, and when we do, it is at a 70% discount.
+    meta: Statewide
+  - h: An hour given back
+    p: For any onsite work outside the Greater Portland area, we donate an hour of our time to a local school or nonprofit in the community we are visiting. You do not have to arrange it or ask for it.
+    meta: Every visit
+---
+
+<section class="band band--cream maine-band">
+  <div class="prose-lede">
+    <p>FIDDLE,GREEN is proudly a Maine company. We want to do what we can to help our neighbors throughout the state, not only the ones close enough to drive to in twenty minutes.</p>
+  </div>
+</section>
+
+<section class="band band--cream cards-band maine-cards-band">
+  <div class="card-grid">
+    {%- for c in page.commitments -%}
+      <div class="card card--flat">
+        <h3 class="card__title-lg">{{ c.h | escape_once }}</h3>
+        <p class="card__body card__body--lg">{{ c.p | escape_once }}</p>
+        <p class="card__tail">{{ c.meta | escape_once }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% include callout.html
+   eyebrow="Why we do it this way"
+   text="Most of the state is a long way from the nearest person who can help. We would rather drive than be one more company that only serves the coast." %}

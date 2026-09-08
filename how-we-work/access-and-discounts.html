@@ -4,52 +4,58 @@ permalink: /how-we-work/access-and-discounts/
 title: Access & Discounts
 parent_title: How We Work
 parent_url: /how-we-work/
-headline: Good technology help should not be the thing you cannot afford.
-description: Nonprofit discounts, sliding-scale rates for marginalized-owned businesses, pro bono hours, and no-interest payment plans.
+headline: Access is important.
+description: Nonprofit and marginalized-owned business discounts, incentives across Maine, and a limited number of pro bono hours.
 relief:
-  - name: Nonprofits
-    body: Any 501(c)(3) with an annual operating budget under $2M. Larger organizations get 15%.
-    price: 30% off
-    unit: our rate
-  - name: Marginalized-owned businesses
-    body: Businesses majority-owned by BIPOC, women, LGBTQ+, immigrant, veteran, or disabled Mainers. You pick the point on the scale.
-    price: sliding scale
-    unit: $60–$140 / hr
-  - name: Pro bono hours
-    body: Set aside for organizations and one-person shops where any rate would be the reason they went without.
-    price: 20 hours
-    unit: / quarter
-  - name: Payment plans
-    body: Any invoice can be split across up to three months. Ask before or after — it does not change the price.
-    price: no interest
+  - name: Nonprofit packages and services
+    body: The discount is built into the price before we quote you. You do not have to ask for it or qualify for it.
+    price: 10% off
+  - name: Hourly, project, and retainer work
+    body: The same discount for nonprofits and for businesses owned by marginalized people, across all three engagement models.
+    price: 10% off
 ---
 
 <section class="band band--cream relief-band">
-  {% include section-heading.html title="Who this is for" class="section-heading--gap" %}
-  <div class="rates">
-    {%- for r in page.relief -%}
-      {% include rate-row.html name=r.name body=r.body price=r.price unit=r.unit %}
-    {%- endfor -%}
+  <div class="aside-split">
+    <div class="aside-split__main">
+      {% include section-heading.html title="Where the discount applies" class="section-heading--gap" %}
+      <div class="rates">
+        {%- for r in page.relief -%}
+          {% include rate-row.html name=r.name body=r.body price=r.price unit=r.unit %}
+        {%- endfor -%}
+      </div>
+    </div>
+    <aside class="cta-panel">
+      <p class="eyebrow eyebrow--sm">Closer to home</p>
+      <h3>Incentives across Maine.</h3>
+      <p class="cta-panel__body">Travel within the state is discounted and often free, and onsite work outside Greater Portland comes with an hour donated to a local school or nonprofit.</p>
+      <a class="btn btn--amber" href="{{ '/about/supporting-maine/' | relative_url }}">How we support Maine</a>
+    </aside>
   </div>
+</section>
+
+<section class="band band--cream probono-band">
+  {% include section-heading.html title="Pro bono and deep discounts" class="section-heading--sm section-heading--gap" %}
+  <div class="prose-lede">
+    <p>We hold back a limited number of pro bono and deeply discounted hours each quarter. If you have a project that would make a real difference in your community and the cost is what is stopping it, send us a message and we will talk about it.</p>
+  </div>
+  <a class="btn btn--amber" href="{{ '/contact/' | relative_url }}">Tell us about the project</a>
 </section>
 
 <section class="band band--cream ask-band">
   {% include section-heading.html title="How to ask" class="section-heading--sm section-heading--gap" %}
   <div class="card-grid">
     <div class="card card--flat">
-      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
       <h3 class="card__title-lg">Just say so</h3>
       <p class="card__body card__body--lg">On the first call, tell us the reduced rate is what you need. That is the whole process.</p>
       <p class="card__tail">No application</p>
     </div>
     <div class="card card--flat">
-      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
       <h3 class="card__title-lg">No documentation</h3>
       <p class="card__body card__body--lg">We do not ask for tax returns, budgets, or proof of who owns what. We take your word for it.</p>
       <p class="card__tail">No paperwork</p>
     </div>
     <div class="card card--flat">
-      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
       <h3 class="card__title-lg">Same work, same people</h3>
       <p class="card__body card__body--lg">A reduced rate does not buy you a junior version of us. It is the same work, scheduled the same way.</p>
       <p class="card__tail">No difference</p>

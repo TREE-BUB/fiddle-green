@@ -846,9 +846,9 @@ a.card:hover { border-color: var(--amber); }
 
 /* Prose on the left with a standing offer alongside it. The aside keeps a
    readable basis so the pair stacks before the panel gets too narrow. */
-.cost-split { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+.aside-split { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
 
-.cost-split__main { flex: 2 1 400px; }
+.aside-split__main { flex: 2 1 400px; }
 
 .cta-panel {
   flex: 1 1 280px;
@@ -1721,7 +1721,12 @@ a.contact-card__value {
 .billing-band { padding-top: 52px; padding-bottom: 74px; }
 .models-band  { padding-top: 66px; padding-bottom: 20px; }
 .relief-band  { padding-top: 66px; padding-bottom: 20px; }
+.probono-band { padding-top: 52px; padding-bottom: 20px; }
 .ask-band     { padding-top: 52px; padding-bottom: 74px; }
+
+.maine-band       { padding-top: 56px; padding-bottom: 0; }
+.maine-cards-band { padding-top: 44px; padding-bottom: 66px; }
+.maine-band .prose-lede { margin-bottom: 0; }
 
 .mark--card { height: 26px; }
 
