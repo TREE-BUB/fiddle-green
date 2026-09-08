@@ -19,8 +19,6 @@
   url: /who-we-help/
   footer_title: Who we help
   children:
-    - title: People and Families
-      url: /who-we-help/people-and-families/
     - title: Startups
       url: /who-we-help/startups/
       hidden: true

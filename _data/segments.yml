@@ -1,13 +1,6 @@
 # Drives the home "Who we help" icons, which show icon + label only, and the
 # blurbs on the /who-we-help/ hub cards.
 # on_home: false keeps an entry here but off that row.
-- key: individuals
-  icon: /assets/icons/noun_Community_8023599_338A4A.svg
-  num: "01"
-  label: People and Families
-  url: /who-we-help/people-and-families/
-  blurb: A slow laptop, a full inbox, a router nobody understands. Patient one-on-one help at your kitchen table.
-
 - key: startups
   icon: /assets/icons/noun_Rocket_1123009_338A4A.svg
   num: "02"

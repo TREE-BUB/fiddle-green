@@ -1,6 +1,6 @@
 ---
 title: "Five signs that email is not really from your bank"
-categories: ["People and Families"]
+categories: ["Other"]
 summary: "The tells are almost always in the same three places. Here is where to look before you click."
 ---
 
