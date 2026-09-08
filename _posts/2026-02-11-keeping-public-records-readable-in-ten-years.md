@@ -1,6 +1,6 @@
 ---
 title: "Keeping public records readable in ten years"
-categories: ["Government"]
+categories: ["Public Sector"]
 summary: "File formats outlive the software that made them, and not always gracefully. A note on choosing formats you will still be able to open."
 ---
 

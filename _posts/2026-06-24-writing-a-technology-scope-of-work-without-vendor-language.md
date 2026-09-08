@@ -1,6 +1,6 @@
 ---
 title: "Writing a technology scope of work without vendor language"
-categories: ["Government"]
+categories: ["Public Sector"]
 summary: "How to describe what you need so the bids you get are actually comparable."
 ---
 
