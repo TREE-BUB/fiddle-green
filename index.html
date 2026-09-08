@@ -5,7 +5,6 @@ description: >-
   FIDDLE,GREEN is a small technology company in Portland, Maine. Patient,
   plain-language help for individuals, startups, small businesses, nonprofits,
   and public agencies.
-needs_blog_js: true
 ---
 
 <section class="band band--hero band--home-hero">
@@ -50,35 +49,6 @@ needs_blog_js: true
   </div>
 </section>
 
-<section class="band band--cream home-blog" data-carousel>
-  <div class="carousel__head">
-    <div>
-      {% include section-heading.html title="From the blog" %}
-    </div>
-    <div class="carousel__nav">
-      <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous posts">&larr;</button>
-      <button class="carousel__btn" type="button" data-carousel-next aria-label="Next posts">&rarr;</button>
-    </div>
-  </div>
-
-  <div class="filters" data-filters-for="home-posts">
-    {%- assign cats = "All,Individuals,Startups,Small Businesses,Nonprofits,Government,Other" | split: "," -%}
-    {%- for c in cats -%}
-      <button class="filter" type="button" data-filter="{{ c }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ c }}</button>
-    {%- endfor -%}
-  </div>
-
-  <div class="carousel__window">
-    <div class="carousel__track" id="home-posts">
-      {%- for post in site.posts -%}
-        {%- assign cat = post.categories | first -%}
-        <a class="card--carousel" href="{{ post.url | relative_url }}" data-category="{{ cat }}">
-          <span class="tag-chip">{{ cat }}</span>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.summary }}</p>
-          <span class="card--carousel__date">{{ post.date | date: "%b %Y" }}</span>
-        </a>
-      {%- endfor -%}
-    </div>
-  </div>
-</section>
+{% include cta-band.html
+   title="Ready when you are."
+   body="The first conversation costs nothing and commits you to nothing." %}

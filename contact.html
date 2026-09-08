@@ -9,16 +9,8 @@ description: Call or write FIDDLE,GREEN — hello@fiddle.green or 207-819-1358. 
   <div class="hero-hub">
     <div class="hero-hub__text">
       <p class="eyebrow">Contact</p>
-      <h1>Call or write. A person answers.</h1>
-      <p class="hero__desc">Tell us what happened in your own words — you do not need the right terms. The first conversation is free and commits you to nothing.</p>
-    </div>
-    <div class="rail">
-      <a class="rail__btn" href="mailto:{{ site.email }}">
-        {{ site.email }}<span class="rail__arrow" aria-hidden="true">&rarr;</span>
-      </a>
-      <a class="rail__btn" href="tel:{{ site.phone_href }}">
-        {{ site.phone_display }}<span class="rail__arrow" aria-hidden="true">&rarr;</span>
-      </a>
+      <h1>Let's start the conversation</h1>
+      <p class="hero__desc">Call, text, or write with where you need help and we'll reach out for a free, no-cost intro conversation.</p>
     </div>
   </div>
 </section>
@@ -27,25 +19,12 @@ description: Call or write FIDDLE,GREEN — hello@fiddle.green or 207-819-1358. 
   <div class="card-grid">
     <div class="card card--flat contact-card">
       <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-      <h2>Email</h2>
-      <a class="contact-card__value" href="mailto:{{ site.email }}">{{ site.email }}</a>
-      <p>Best for anything you can describe in writing. We answer within one business day.</p>
-    </div>
-    <div class="card card--flat contact-card">
-      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-      <h2>Phone</h2>
-      <a class="contact-card__value" href="tel:{{ site.phone_href }}">{{ site.phone_display }}</a>
-      <p>Call or text. Weekdays 8am&ndash;6pm; leave a message any time and we will call back.</p>
-    </div>
-    <div class="card card--flat contact-card">
-      <img class="mark mark--card" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
-      <h2>Where we work</h2>
-      <p class="contact-card__value">Deering Center<br>Portland, Maine</p>
-      <p>In-home and on-site visits across Greater Portland, remote support statewide.</p>
+      <h2>Get in touch</h2>
+      <div class="contact-card__value">
+        <p><strong>Call</strong> 207-819-1358</p>
+        <p><strong>Email</strong> <a href="mailto:hello@fiddle.green">hello@fiddle.green</a></p>
+        <p><strong>Meet in person</strong> near our headquarters in Deering Center, Portland</p>
+      </div>
     </div>
   </div>
 </section>
-
-{% include callout.html
-   eyebrow="What happens next"
-   text="We talk for twenty minutes, you hear honestly whether we are the right people for it, and if we are, you get a written estimate before anything starts." %}
