@@ -846,9 +846,19 @@ a.card:hover { border-color: var(--amber); }
 
 /* Prose on the left with a standing offer alongside it. The aside keeps a
    readable basis so the pair stacks before the panel gets too narrow. */
-.aside-split { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+/* Held to a measure and centred: across the full band the prose ran too wide
+   and the aside drifted off to the far edge, leaving the pair reading as two
+   unrelated things. */
+.aside-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-.aside-split__main { flex: 2 1 400px; }
+.aside-split__main { flex: 2 1 380px; }
 
 .cta-panel {
   flex: 1 1 280px;
@@ -1745,7 +1755,6 @@ a.contact-card__value {
 /* The roster band carries almost no bottom padding of its own, which left the
    last person sitting right on the colour change into the band below. */
 .team-band      { padding-bottom: 60px; }
-.staffing-band  { padding-top: 60px; padding-bottom: 66px; }
 .blog-band      { padding-top: 56px; padding-bottom: 78px; }
 .timeline-band  { padding-top: 66px; padding-bottom: 78px; }
 .quotes-band    { padding-top: 66px; padding-bottom: 78px; }

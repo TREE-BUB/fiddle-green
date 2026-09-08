@@ -22,7 +22,7 @@ startups:
       h: We do the setup with you.
       p: Not for you — with you, so your team knows how it works once we're gone.
   cta_title: Need someone on call without a full-time hire?
-  cta_body: Short-term and long-term engagements are both on the table. Rates are sliding-scale and quoted before any work starts.
+  cta_body: Short-term and long-term engagements are both on the table, quoted in writing before any work starts.
 
 businesses:
   cards_title: We help small businesses...
@@ -48,7 +48,7 @@ businesses:
     - h: Ongoing Partnership
       p: Following a brief onboarding, we provide continuous technical and strategic support to ensure your technology scales seamlessly with your business.
   cta_title: Want a number you can call on a bad day?
-  cta_body: Hourly, short-term, and long-term arrangements are all available, with sliding-scale rates quoted when we talk.
+  cta_body: Hourly, short-term, and long-term arrangements are all available, quoted when we talk.
 
 nonprofits:
   intro:
@@ -84,4 +84,4 @@ nonprofits:
       h: We work at your pace.
       p: Around grant cycles, seasonal programs, and the weeks when everyone is at an event.
   cta_title: Nonprofit discounts are built in.
-  cta_body: We quote on a sliding scale and discount nonprofit work as a matter of policy. Ask and we will tell you exactly what your project would run.
+  cta_body: We discount nonprofit work as a matter of policy. Ask and we will tell you exactly what your project would run.
