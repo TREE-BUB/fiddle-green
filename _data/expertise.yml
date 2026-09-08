@@ -1,5 +1,5 @@
-# Drives the home "How we help" icons and the hub "What we do" cards.
-# The home row shows icon + label only; blurb is used by the hub cards.
+# Drives the home "How we help" icons, which show icon + label only.
+# on_home: false keeps an entry here but off that row.
 - key: support
   icon: /assets/icons/noun_Headset_8456463_338A4A.svg
   letter: A
@@ -19,6 +19,7 @@
   letter: C
   label: Strategy & Operations
   url: /expertise/advising/
+  on_home: false
   blurb: Second opinions, vendor questions, and plans you can afford.
 
 - key: ai

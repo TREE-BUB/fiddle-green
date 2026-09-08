@@ -1,10 +1,11 @@
-# Drives the home "Who we help" icons and the hub "Choose your path" cards.
-# The home row shows icon + label only; blurb is used by the hub cards.
+# Drives the home "Who we help" icons, which show icon + label only.
+# on_home: false keeps an entry here but off that row.
 - key: individuals
   icon: /assets/icons/noun_User_4737671_338A4A.svg
   num: "01"
   label: People and Families
   url: /who-we-help/individuals/
+  on_home: false
   blurb: A slow laptop, a full inbox, a router nobody understands. Patient one-on-one help at your kitchen table.
 
 - key: startups
@@ -12,6 +13,7 @@
   num: "02"
   label: Startups
   url: /who-we-help/startups/
+  on_home: false
   blurb: Set things up right the first time — accounts, security, and tooling that won't box you in later.
 
 - key: businesses
