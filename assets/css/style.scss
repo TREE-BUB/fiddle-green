@@ -1238,6 +1238,40 @@ a.card:hover { border-color: var(--amber); }
   blockquote { font-size: 16px; color: rgba(35, 41, 31, .82); }
 }
 
+/* The tools we work in, grouped. Columns are sized by their contents rather
+   than by a fixed count, so a group with five names does not leave a hole
+   next to one with seven. */
+.stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 34px 30px;
+  max-width: 1000px;
+}
+
+.stack__note { margin-bottom: 34px; }
+
+.stack__group {
+  h3 {
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(27, 74, 40, .16);
+  }
+
+  ul { list-style: none; margin: 0; padding: 0; }
+
+  li {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(35, 41, 31, .78);
+    padding: 5px 0;
+  }
+}
+
 /* The one quote that leads the page, set large and centred above the columns
    so it is read before anything is opened. */
 .topline {
@@ -1973,6 +2007,7 @@ a.contact-card__value {
    last person sitting right on the colour change into the band below. */
 .team-band      { padding-bottom: 60px; }
 .blog-band      { padding-top: 56px; padding-bottom: 78px; }
+.stack-band     { padding-top: 62px; padding-bottom: 74px; }
 .topline-band   { padding-top: 62px; padding-bottom: 0; }
 .quotes-band    { padding-top: 58px; padding-bottom: 78px; }
 .contact-band   { padding-top: 70px; padding-bottom: 78px; }
