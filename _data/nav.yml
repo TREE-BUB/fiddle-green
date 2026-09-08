@@ -9,7 +9,7 @@
 #                       but nothing on the site links to it
 #   rail_url:           override the URL used by the hub hero rail button
 #   blurb:              the line of copy under the child's name on its hub page.
-#                       Who We Help and Expertise keep theirs in segments.yml
+#                       Who We Help and Services keep theirs in segments.yml
 #                       and expertise.yml instead, beside the home-page icons
 
 - title: Home
@@ -31,10 +31,8 @@
     - title: Public Sector
       url: /who-we-help/government/
 
-- title: Expertise
+- title: Services
   url: /expertise/
-  drawer_title: Areas of Expertise
-  footer_title: Expertise
   children:
     - title: Technical Support
       url: /expertise/technical-support/
