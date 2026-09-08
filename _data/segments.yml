@@ -2,7 +2,7 @@
 # blurbs on the /who-we-help/ hub cards.
 # on_home: false keeps an entry here but off that row.
 - key: individuals
-  icon: /assets/icons/noun_User_4737671_338A4A.svg
+  icon: /assets/icons/noun_Community_8023599_338A4A.svg
   num: "01"
   label: People and Families
   url: /who-we-help/individuals/

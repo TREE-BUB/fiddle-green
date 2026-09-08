@@ -1755,6 +1755,37 @@ a.contact-card__value {
 .probono-band { padding-top: 52px; padding-bottom: 20px; }
 .ask-band     { padding-top: 52px; padding-bottom: 74px; }
 
+/* The home page's closing pitch: a short case, then the four places to go
+   next in a 2x2. The buttons fill their cells rather than sitting at their
+   own widths, so the block reads as a grid and not a ragged pile. */
+.home-why { padding-top: 66px; padding-bottom: 82px; }
+
+.learn-more__title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin: 38px 0 18px;
+}
+
+.learn-more {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 620px;
+
+  .btn { white-space: normal; padding-left: 18px; padding-right: 18px; }
+}
+
+/* The one that asks for the call carries a little more weight than the three
+   that only offer more reading. */
+.learn-more__primary { box-shadow: 0 2px 14px rgba(212, 136, 42, .35); }
+
+@media (max-width: $bp-sm) {
+  .learn-more { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* Hub pages: a run of prose under the hero, then the children as cards. The
    cards band brings its own headroom, so the lede adds none of its own. */
 .hub-lede-band    { padding-top: 60px; padding-bottom: 0; }
