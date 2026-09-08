@@ -43,6 +43,8 @@
       rail_only: true
     - title: Artificial Intelligence
       url: /expertise/artificial-intelligence/
+    - title: Data Science
+      url: /expertise/data-science/
     - title: Product and Engineering
       url: /expertise/product-and-engineering/
 

@@ -29,9 +29,16 @@
   url: /expertise/artificial-intelligence/
   blurb: A grounded read on what AI can do for you — and what it should not touch.
 
+- key: data
+  icon: /assets/icons/noun_Data_8259289_338A4A.svg
+  letter: E
+  label: Data Science
+  url: /expertise/data-science/
+  blurb: Making sense of what you already collect, and answering the question you actually asked.
+
 - key: product
   icon: /assets/icons/noun_build_6913680_338A4A.svg
-  letter: E
+  letter: F
   label: Product and Engineering
   url: /expertise/product-and-engineering/
   blurb: Building the thing, at the size of the problem rather than the size of the vendor.
