@@ -26,11 +26,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/about/history-and-testimonials/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://fiddle.green/how-we-work/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -92,6 +87,11 @@
   </url>
   <url>
     <loc>https://fiddle.green/services/technical-support/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/about/testimonials/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
