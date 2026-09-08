@@ -25,7 +25,7 @@ commitments:
   <div class="card-grid">
     {%- for c in page.commitments -%}
       <div class="card card--flat">
-        <h3 class="card__title-lg">{{ c.h | escape_once }}</h3>
+        <h2 class="card__title-lg">{{ c.h | escape_once }}</h2>
         <p class="card__body card__body--lg">{{ c.p | escape_once }}</p>
         <p class="card__tail">{{ c.meta | escape_once }}</p>
       </div>

@@ -1,9 +1,11 @@
 title: FIDDLE,GREEN
 tagline: We help make technology a good thing.
+# Also the fallback meta description for any page without one, so it is kept
+# under the ~155 characters search results will show.
 description: >-
   FIDDLE,GREEN is a small technology company in Portland, Maine, helping
-  individuals, startups, small businesses, nonprofits, and public agencies
-  get their technology working.
+  people, small businesses, nonprofits, and the public sector put
+  technology to work.
 url: https://fiddle.green
 baseurl: ""
 
@@ -35,3 +37,8 @@ defaults:
   - scope: { path: "", type: posts }
     values:
       layout: post
+      # The blog is not linked from the site while it is on hold, so the posts
+      # stay out of search along with it. Drop this and the noindex on
+      # about/blog.html together when the blog comes back.
+      noindex: true
+      sitemap: false

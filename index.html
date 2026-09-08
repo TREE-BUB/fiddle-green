@@ -2,9 +2,8 @@
 layout: default
 title: Home
 description: >-
-  FIDDLE,GREEN is a small technology company in Portland, Maine. Patient,
-  plain-language help for individuals, startups, small businesses, nonprofits,
-  and public agencies.
+  A small technology company in Portland, Maine. Patient, plain-language help
+  for people and families, small businesses, nonprofits, and the public sector.
 ---
 
 <section class="band band--hero band--home-hero">
@@ -54,17 +53,22 @@ description: >-
 </section>
 
 <section class="band band--cream home-why">
-  {% include section-heading.html title="Why FIDDLE,GREEN?" %}
-  <div class="prose-lede">
-    <p>We do the work properly, explain it in language you can use, and leave everything in your name. We do not upsell — we would rather you buy what you actually need and call us again than buy more and regret it.</p>
-    <p>Whatever the size of the job, you get the same people and the same straight answers. The first conversation is free and commits you to nothing.</p>
-  </div>
-
-  <h3 class="learn-more__title">Learn more</h3>
-  <div class="learn-more">
-    <a class="btn btn--square btn--outline-forest" href="{{ '/expertise/' | relative_url }}">What we do</a>
-    <a class="btn btn--square btn--outline-forest" href="{{ '/how-we-work/engagement-models/' | relative_url }}">How engagements work</a>
-    <a class="btn btn--square btn--outline-forest" href="{{ '/about/team/' | relative_url }}">Meet the team</a>
-    <a class="btn btn--square btn--amber learn-more__primary" href="{{ '/contact/' | relative_url }}">Start the conversation</a>
+  <div class="aside-split">
+    <div class="aside-split__main">
+      {% include section-heading.html title="Why FIDDLE,GREEN?" %}
+      <div class="prose-lede">
+        <p>We do the work properly, explain it in language you can use, and leave everything in your name. We do not upsell — we would rather you buy what you actually need and call us again than buy more and regret it.</p>
+        <p>Whatever the size of the job, you get the same people and the same straight answers. The first conversation is free and commits you to nothing.</p>
+      </div>
+    </div>
+    <div class="learn-more-block">
+      <h3 class="learn-more__title">Learn more</h3>
+      <div class="learn-more">
+        <a class="btn btn--square btn--outline-forest" href="{{ '/services/' | relative_url }}">What we do</a>
+        <a class="btn btn--square btn--outline-forest" href="{{ '/how-we-work/engagement-models/' | relative_url }}">How engagements work</a>
+        <a class="btn btn--square btn--outline-forest" href="{{ '/about/team/' | relative_url }}">Meet the team</a>
+        <a class="btn btn--square btn--amber learn-more__primary" href="{{ '/contact/' | relative_url }}">Start the conversation</a>
+      </div>
+    </div>
   </div>
 </section>

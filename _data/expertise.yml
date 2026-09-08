@@ -1,25 +1,25 @@
 # Drives the home "How we help" icons, which show icon + label only, and the
-# blurbs on the /expertise/ hub cards.
+# blurbs on the /services/ hub cards.
 # on_home: false keeps an entry here but off that row.
 - key: support
   icon: /assets/icons/noun_Headset_8456463_338A4A.svg
   letter: A
   label: Technical Support
-  url: /expertise/technical-support/
+  url: /services/technical-support/
   blurb: Fixing what's broken and hardening what isn't.
 
 - key: education
   icon: /assets/icons/noun_Class_8362686_338A4A.svg
   letter: B
   label: Training & Education
-  url: /expertise/education/
+  url: /services/education/
   blurb: Teaching you and your staff the parts worth knowing.
 
 - key: advising
   icon: /assets/icons/noun_strategy_8273592_338A4A.svg
   letter: C
   label: Strategy & Operations
-  url: /expertise/advising/
+  url: /services/advising/
   on_home: false
   blurb: Second opinions, vendor questions, and plans you can afford.
 
@@ -27,19 +27,19 @@
   icon: /assets/icons/noun_AI_8215905_338A4A.svg
   letter: D
   label: Artificial Intelligence
-  url: /expertise/artificial-intelligence/
+  url: /services/artificial-intelligence/
   blurb: A grounded read on what AI can do for you — and what it should not touch.
 
 - key: data
   icon: /assets/icons/noun_Data_8259289_338A4A.svg
   letter: E
   label: Data Science
-  url: /expertise/data-science/
+  url: /services/data-science/
   blurb: Making sense of what you already collect, and answering the question you actually asked.
 
 - key: product
   icon: /assets/icons/noun_build_6913680_338A4A.svg
   letter: F
   label: Product and Engineering
-  url: /expertise/product-and-engineering/
+  url: /services/product-and-engineering/
   blurb: Building the thing, at the size of the problem rather than the size of the vendor.

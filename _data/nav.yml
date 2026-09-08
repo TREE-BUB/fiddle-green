@@ -20,7 +20,7 @@
   footer_title: Who we help
   children:
     - title: People and Families
-      url: /who-we-help/individuals/
+      url: /who-we-help/people-and-families/
     - title: Startups
       url: /who-we-help/startups/
       hidden: true
@@ -29,23 +29,23 @@
     - title: Non-profits
       url: /who-we-help/nonprofits/
     - title: Public Sector
-      url: /who-we-help/government/
+      url: /who-we-help/public-sector/
 
 - title: Services
-  url: /expertise/
+  url: /services/
   children:
     - title: Technical Support
-      url: /expertise/technical-support/
+      url: /services/technical-support/
     - title: "Training & Education"
-      url: /expertise/education/
+      url: /services/education/
     - title: "Strategy & Operations"
-      url: /expertise/advising/
+      url: /services/advising/
     - title: Artificial Intelligence
-      url: /expertise/artificial-intelligence/
+      url: /services/artificial-intelligence/
     - title: Data Science
-      url: /expertise/data-science/
+      url: /services/data-science/
     - title: Product and Engineering
-      url: /expertise/product-and-engineering/
+      url: /services/product-and-engineering/
 
 - title: How We Work
   url: /how-we-work/
@@ -66,7 +66,7 @@
   footer_title: About
   children:
     - title: About FIDDLE,GREEN
-      url: /about/history-and-approach/
+      url: /about/fiddle-green/
       blurb: Why we started, what we believe about technology help, and what does not change from one job to the next.
     - title: Team
       url: /about/team/

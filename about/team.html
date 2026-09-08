@@ -6,7 +6,7 @@ parent_title: About
 parent_url: /about/
 headline: FIDDLE,GREEN is a collection of talented technology and data professionals who prioritize doing good work for people and organizations they believe in.
 headline_class: page-title-band--statement
-description: The people who take your call and do the work.
+description: The people who take your call and do the work — a small roster of technology and data professionals working out of Portland, Maine.
 people:
   - name: Jimi Michel
     photo: /assets/team/jimi.png
@@ -41,7 +41,7 @@ people:
           <div class="person__portrait" aria-hidden="true">portrait</div>
         {%- endif -%}
         <div class="person__body">
-          <h3>{{ p.name | escape_once }}</h3>
+          <h2>{{ p.name | escape_once }}</h2>
           <p class="person__role">{{ p.role | escape_once }}</p>
           <p class="person__expertise"><span>Areas of expertise:</span> {{ p.expertise | escape_once }}</p>
         </div>

@@ -83,5 +83,5 @@ then be dropped from the branch and re-ignored.
   promise on `/contact/` were invented for the design and need sign-off.
 - The six blog posts carry final titles, summaries, categories, and dates from
   the approved design, but their bodies are placeholders.
-- `/who-we-help/government/` shows `[ pending ]` for UEI and CAGE and
+- `/who-we-help/public-sector/` shows `[ pending ]` for UEI and CAGE and
   placeholder rows under Past performance.
