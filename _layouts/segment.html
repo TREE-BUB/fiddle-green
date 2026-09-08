@@ -3,6 +3,21 @@ layout: page
 ---
 {%- assign d = site.data.seg_pages[page.seg_key] -%}
 
+{%- comment -%}
+  An optional lede above the cards. The paragraphs carry their own markup so
+  the copy can link out, which means they are written trusted in seg_pages.yml
+  rather than escaped here.
+{%- endcomment -%}
+{%- if d.intro -%}
+  <section class="band band--cream seg-intro-band">
+    <div class="prose-lede">
+      {%- for para in d.intro -%}
+        <p>{{ para }}</p>
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endif -%}
+
 <section class="band band--cream cards-band">
   {% include section-heading.html title=d.cards_title %}
   <div class="rule-cards">

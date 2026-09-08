@@ -1188,7 +1188,9 @@ a.card:hover { border-color: var(--amber); }
   gap: 20px;
 }
 
-.gov-approach {
+/* A run of body copy introducing a section — the public sector approach, a
+   segment lede. */
+.prose-lede {
   max-width: 620px;
   margin-bottom: 44px;
 
@@ -1621,6 +1623,10 @@ a.contact-card__value {
 
 .gov-band       { padding-bottom: 60px; }
 .gov-body-band  { padding-top: 56px; padding-bottom: 0; }
+/* The cards band below brings its own 66px of headroom, so the lede does not
+   add its usual bottom margin on top of it. */
+.seg-intro-band { padding-top: 56px; padding-bottom: 0; }
+.seg-intro-band .prose-lede { margin-bottom: 0; }
 .gov-proc-band  { padding-top: 56px; padding-bottom: 78px; }
 
 .procurement__eyebrow { margin-bottom: 12px; }

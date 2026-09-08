@@ -51,16 +51,27 @@ businesses:
   cta_body: Hourly, short-term, and long-term arrangements are all available, with sliding-scale rates quoted when we talk.
 
 nonprofits:
-  cards_title: What we help with most
+  intro:
+    - >-
+      Everything we do for a <a href="/who-we-help/small-businesses/">small
+      business</a> we do for a nonprofit: the same help desk, the same
+      planning, the same people. What changes is what sits around the
+      technology — a board, a funder, a volunteer roster, and a budget that
+      answers to all three.
+    - >-
+      We know what a program officer wants to see in a technology line item,
+      and what a board needs to hear before it approves one. That context is
+      usually the part a vendor skips.
+  cards_title: We know how nonprofits work
   cards:
-    - h: Doing more with donated tools
-      p: Nonprofit licensing, grant-funded hardware, and getting real value out of what you already have.
+    - h: Annual reporting and grant proposals
+      p: Scopes, quotes, and written assessments you can attach to an application, a funder report, or the annual report — in language a program officer will read without translating.
+    - h: Technology that serves the mission
+      p: Before we recommend anything, we ask what it does for the people you serve. If a tool cannot earn its line in the budget, we will say so.
+    - h: Discounts you may not know about
+      p: Tech for Good, TechSoup, and the nonprofit programs at Google and Microsoft. We work out what you qualify for and help you through the paperwork.
     - h: Volunteer-proof setups
       p: Systems that survive turnover, with documentation a new coordinator can follow.
-    - h: Data and privacy
-      p: Handling client and donor information carefully, in plain-language policies your board can approve.
-    - h: Grant and funder support
-      p: Scopes, quotes, and written assessments you can attach to an application or report.
   steps_note: Discounted rates are standard here, not a favor.
   steps:
     - num: "01"
