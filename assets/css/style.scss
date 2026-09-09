@@ -1,0 +1,2081 @@
+---
+# Front matter required so Jekyll processes this file through Sass.
+---
+
+/* ==========================================================================
+   FIDDLE,GREEN — design tokens
+   ========================================================================== */
+
+:root {
+  --forest:        #1B4A28;
+  --deep:          #143A1F;
+  --amber:         #D4882A;
+  --amber-hover:   #E09B41;
+  --amber-ink:     #8A6A2E;
+  --on-amber:      #221604;
+  --cream:         #FFFEFA;
+  --sand:          #F5F2E8;
+
+  --ink:           rgba(35, 41, 31, .86);
+  --ink-muted:     rgba(35, 41, 31, .72);
+  --ink-soft:      rgba(35, 41, 31, .7);
+  --ink-faint:     rgba(35, 41, 31, .55);
+
+  --hairline:      rgba(27, 74, 40, .12);
+  --hairline-2:    rgba(27, 74, 40, .14);
+
+  --on-green:      rgba(255, 255, 255, .86);
+  --on-green-mute: rgba(255, 255, 255, .78);
+  --on-green-soft: rgba(255, 255, 255, .8);
+
+  --pad-x:         5%;
+  --header-h:      78px;
+  --font:          'Raleway', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:          ui-monospace, Menlo, Consolas, monospace;
+}
+
+$bp-nav: 900px;
+$bp-sm: 640px;
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+/* The hub pages are a hero and nothing else, which is shorter than a tall
+   viewport; without this the footer floats with dead space beneath it. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { flex: 1 0 auto; }
+
+/* Content sections carry little bottom padding of their own; the band that
+   followed them used to supply the space above the footer. */
+main > section:last-child:not(.band--hero) { padding-bottom: 78px; }
+
+img { max-width: 100%; }
+
+/* Components below set display, which would otherwise beat the UA rule for
+   [hidden]. Visibility is toggled in JS with el.hidden, so this has to win. */
+[hidden] { display: none !important; }
+
+a { color: var(--forest); text-decoration: none; }
+
+h1, h2, h3 { text-wrap: pretty; }
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--amber);
+  color: var(--on-amber);
+  font: 600 13px var(--font);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+
+  &:focus { left: 8px; top: 8px; }
+}
+
+/* The fern mark: intrinsic ratio is preserved, so callers size by height. */
+.mark {
+  width: auto;
+  display: block;
+  flex: none;
+}
+
+/* ==========================================================================
+   Bands — every full-width horizontal slab
+   ========================================================================== */
+
+.band { padding-left: var(--pad-x); padding-right: var(--pad-x); }
+
+.band--hero {
+  background: var(--forest);
+  padding-top: 128px;
+  padding-bottom: 66px;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    position: relative;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.16;
+    color: #FFF;
+    margin: 0;
+    max-width: 620px;
+  }
+}
+
+.band--hero-hub { padding-top: 132px; }
+
+/* The green carries the breadcrumb and stops under it; the tagline picks up
+   below, on the page background. The band that follows supplies the space
+   under the tagline, so this one has no bottom padding of its own. */
+.band--hero-crumb {
+  padding-bottom: 26px;
+
+  .breadcrumb { margin-bottom: 0; }
+}
+
+.page-title-band {
+  padding-top: 54px;
+  padding-bottom: 0;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.16;
+    color: var(--forest);
+    margin: 0;
+    max-width: 620px;
+  }
+}
+
+/* A sentence-length headline needs a smaller size and a longer line than the
+   short taglines the band was built for, or it fills the viewport. */
+.page-title-band--statement h1 {
+  font-size: 29px;
+  line-height: 1.35;
+  max-width: 780px;
+}
+
+/* Hub heroes sit on the page background rather than the forest block, so the
+   colours that assumed a dark ground are restated: the heading, the
+   description, and the rail pills.
+
+   The header keeps its green everywhere. Elsewhere it gets that for free by
+   being transparent over a forest hero; here the hero is light, so the bar
+   carries the colour itself and its white type needs no changes. */
+.has-light-hero {
+  .site-header-wrap { background: var(--forest); }
+
+  .band--hero-hub {
+    background: var(--cream);
+    padding-top: calc(var(--header-h) + 60px);
+
+    h1 { color: var(--forest); }
+  }
+
+  .hero__desc { color: var(--ink-muted); }
+
+  .rail__btn {
+    color: var(--forest);
+    background: rgba(212, 136, 42, .08);
+
+    &:hover { color: var(--on-amber); }
+  }
+}
+
+.band--cream { background: var(--cream); }
+.band--sand  { background: var(--sand); }
+
+.eyebrow {
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 20px;
+}
+
+.eyebrow--sm {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  margin: 0;
+}
+
+.breadcrumb {
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--on-green-mute);
+  margin: 0 0 20px;
+
+  a { color: var(--on-green-mute); &:hover { color: #FFF; } }
+}
+
+.breadcrumb__current { color: var(--amber); }
+
+.hero__desc {
+  position: relative;
+  font-size: 17.5px;
+  line-height: 1.65;
+  color: var(--on-green);
+  margin: 0;
+  max-width: 580px;
+}
+
+/* ==========================================================================
+   Header — transparent, overlaid on the hero band
+   ========================================================================== */
+
+.site-header-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: var(--header-h);
+  padding: 0 var(--pad-x);
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  flex: none;
+
+  img { height: 26px; width: auto; display: block; }
+}
+
+.site-header__mobile { display: none; align-items: center; gap: 12px; }
+
+/* The mobile CTA is smaller than the footer's, per the design: at 375px and
+   under, a full-size pill plus a full-size wordmark pushed the hamburger off
+   the right edge and left no way to open the menu. */
+.site-header__mobile .btn {
+  font-size: 11.5px;
+  letter-spacing: .06em;
+  padding: 9px 16px;
+  border-radius: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: nowrap;
+  min-width: 0;
+  height: var(--header-h);
+}
+
+.nav__item { flex: none; }
+
+.nav__item--has-menu {
+  position: relative;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #FFF;
+  white-space: nowrap;
+
+  &:hover { color: #E8C99A; }
+}
+
+.nav__caret { font-size: 13px; opacity: .8; }
+
+.nav__menu {
+  position: absolute;
+  top: var(--header-h);
+  left: -18px;
+  z-index: 20;
+  background: var(--cream);
+  border: 1px solid var(--hairline-2);
+  border-top: 3px solid var(--amber);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 16px 32px rgba(20, 58, 31, .22);
+  padding: 10px 0;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The last dropdown hangs off the right edge rather than the left. */
+.nav__item--has-menu:last-of-type .nav__menu { left: auto; right: -18px; }
+
+.nav__menu-link {
+  font-size: 14.5px;
+  color: var(--forest);
+  padding: 10px 22px;
+  white-space: nowrap;
+
+  &:hover { background: var(--sand); color: var(--forest); }
+}
+
+.hamburger {
+  background: none;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  span { display: block; width: 22px; height: 2px; background: #FFF; }
+}
+
+/* Mobile drawer */
+
+.drawer {
+  background: var(--deep);
+  padding: 14px var(--pad-x) 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drawer__top-link {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #FFF;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.drawer__group {
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  padding: 4px 0 12px;
+
+  &:last-child { border-bottom: 0; padding-bottom: 0; }
+}
+
+.drawer__heading {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #FFF;
+  padding: 10px 0 6px;
+}
+
+.drawer__children { display: flex; flex-direction: column; }
+
+.drawer__link {
+  font-size: 14.5px;
+  color: var(--on-green-mute);
+  padding: 8px 0 8px 16px;
+  border-left: 1px solid rgba(212, 136, 42, .5);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border-radius: 26px;
+  white-space: nowrap;
+}
+
+.btn--amber {
+  background: var(--amber);
+  color: var(--on-amber);
+
+  &:hover { background: var(--amber-hover); color: var(--on-amber); }
+}
+
+.btn--ghost {
+  border: 1px solid rgba(255, 255, 255, .45);
+  color: #FFF;
+
+  &:hover { border-color: var(--amber); color: var(--amber); }
+}
+
+.btn--sm {
+  font-size: 12.5px;
+  letter-spacing: .06em;
+  padding: 12px 22px;
+  border-radius: 22px;
+}
+
+.btn--nowrap { flex: none; font-size: 12.5px; letter-spacing: .05em; padding: 14px 26px; border-radius: 24px; }
+
+.nav__cta { font-size: 12.5px; letter-spacing: .05em; padding: 11px 20px; border-radius: 24px; }
+
+.btn--square {
+  font-size: 13px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.btn--forest {
+  background: var(--forest);
+  color: #FFF;
+
+  &:hover { background: var(--deep); color: #FFF; }
+}
+
+.btn--outline-forest {
+  border: 1px solid rgba(27, 74, 40, .3);
+  color: var(--forest);
+
+  &:hover { border-color: var(--amber); color: var(--amber); }
+}
+
+/* ==========================================================================
+   Home hero
+   ========================================================================== */
+
+.band--home-hero {
+  padding-top: 150px;
+  padding-bottom: 96px;
+
+  h1 {
+    font-size: 46px;
+    font-weight: 300;
+    line-height: 1.14;
+    color: #FFF;
+    margin: 0 0 24px;
+  }
+}
+
+/* The fern mark sits whole in the empty right half of the hero, the same
+   column the other hub heroes give to their button rails. Sizing by height
+   keeps it proportional to the band as the copy reflows; the prototype sized
+   by width, which cropped the stem away and left an unreadable coil. */
+.home-hero__watermark {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 74%;
+  width: auto;
+  opacity: .11;
+  pointer-events: none;
+}
+
+.home-hero__inner { position: relative; max-width: 720px; }
+
+.home-hero__lede {
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, .88);
+  margin: 0 0 36px;
+  max-width: 560px;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* ==========================================================================
+   Hub hero — text left, rail of pill buttons right
+   ========================================================================== */
+
+.hero-hub {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hero-hub__text { flex: 1 1 46%; max-width: 620px; }
+
+.hero-hub h1 {
+  position: relative;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.16;
+  color: #FFF;
+  margin: 0 0 20px;
+  max-width: 640px;
+}
+
+.rail {
+  position: relative;
+  flex: 1 1 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.rail__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #FFF;
+  background: rgba(212, 136, 42, .12);
+  border: 1.5px solid var(--amber);
+  border-radius: 28px;
+  padding: 15px 26px;
+  white-space: nowrap;
+  min-width: 270px;
+
+  &:hover {
+    background: var(--amber);
+    color: var(--on-amber);
+
+    .rail__arrow { color: var(--on-amber); }
+  }
+}
+
+.rail__arrow { font-size: 15px; color: var(--amber); }
+
+/* ==========================================================================
+   Section headings
+   ========================================================================== */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+
+  .mark { height: 26px; }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--forest);
+    margin: 0;
+  }
+}
+
+.section-heading--sm {
+  gap: 12px;
+  margin-bottom: 12px;
+
+  .mark { height: 24px; }
+  h2 { font-size: 26px; line-height: 1.25; }
+}
+
+.section-heading--eyebrow {
+  gap: 12px;
+  margin-bottom: 16px;
+
+  .mark { height: 22px; }
+}
+
+.section-lede {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0 0 38px;
+  max-width: 600px;
+}
+
+/* Headings that are followed by a lede paragraph sit tighter to it. */
+.section-heading--lede       { margin-bottom: 14px; }
+.section-heading--lede-tight { margin-bottom: 8px; }
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.card-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+
+.card {
+  flex: 1 1 260px;
+  background: var(--sand);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 30px 28px;
+  display: block;
+
+  .mark { height: 28px; margin-bottom: 18px; }
+
+  h2,
+  h3 {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--forest);
+    margin: 0 0 10px;
+  }
+}
+
+a.card:hover { border-color: var(--amber); }
+
+/* A hub card is a whole link, so the arrow marks it as one and the body copy
+   is pushed apart from it however tall the card ends up. */
+.hub-card {
+  display: flex;
+  flex-direction: column;
+
+  .card__body { flex: 1 0 auto; margin-bottom: 14px; }
+}
+
+.hub-card__arrow {
+  font-size: 15px;
+  color: var(--amber);
+  transition: transform .15s ease;
+}
+
+.hub-card:hover .hub-card__arrow { transform: translateX(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-card__arrow { transition: none; }
+}
+
+.card__body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0 0 18px;
+}
+
+.card__meta {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 14px;
+}
+
+.card__tail {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+  margin: 0;
+}
+
+.link-more {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+/* Rule cards — an amber top rule instead of a filled box. */
+
+.rule-cards { display: flex; flex-wrap: wrap; gap: 20px; }
+.rule-cards--wide { gap: 24px; }
+
+.rule-card {
+  flex: 1 1 250px;
+  border-top: 2px solid var(--amber);
+  padding-top: 18px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--forest);
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.62;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+}
+
+.rule-cards--wide .rule-card { flex: 1 1 240px; padding-top: 16px; }
+
+/* A single column of cards, for the outcomes panel where it sits in a narrow
+   sidebar rather than across the band. */
+.rule-cards--stack { flex-direction: column; gap: 24px; }
+.rule-cards--stack .rule-card { flex: 0 0 auto; }
+
+/* ==========================================================================
+   Panels, splits, steps, bullets
+   ========================================================================== */
+
+.panel {
+  background: var(--sand);
+  border-radius: 14px;
+  padding: 44px 6%;
+}
+
+.panel--split { display: flex; flex-wrap: wrap; gap: 34px; }
+.panel__aside { flex: 1 1 220px; }
+
+.panel__note,
+.split__note {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.split { display: flex; flex-wrap: wrap; gap: 34px; }
+.split__aside { flex: 1 1 240px; }
+
+.steps {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+
+.step { display: flex; gap: 16px; }
+
+.step__num {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--amber);
+  flex: none;
+  width: 26px;
+  padding-top: 3px;
+}
+
+.step__body {
+  b {
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--forest);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  span {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+}
+
+/* Some segments offer ways to work together rather than an ordered sequence, so
+   the list trades its numbers for bullets and sits two across. */
+.steps--grid {
+  flex: 1 1 460px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 32px;
+}
+
+.steps--grid .step { gap: 12px; }
+
+/* Stands in for .step__num, so it takes the same 26px slot and the body text
+   below it lines up with the numbered lists elsewhere on the site. */
+.step__mark {
+  flex: none;
+  width: 26px;
+  height: 19px;
+  object-fit: contain;
+  object-position: left top;
+  padding-top: 2px;
+}
+
+.step__dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  margin-top: 9px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+
+@media (max-width: $bp-sm) {
+  .steps--grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.bullets {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-top: 1px solid var(--hairline);
+    font-size: 16px;
+    line-height: 1.55;
+    color: rgba(35, 41, 31, .8);
+  }
+}
+
+.bullets__dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  margin-top: 8px;
+}
+
+/* Four-across numbered row (How an engagement goes) */
+
+.phases { display: flex; flex-wrap: wrap; gap: 28px; }
+
+.phase {
+  flex: 1 1 200px;
+
+  h3 { font-size: 17px; font-weight: 500; color: var(--forest); margin: 0 0 8px; }
+  p  { font-size: 15px; line-height: 1.65; color: rgba(35, 41, 31, .75); margin: 0; }
+}
+
+.phase__num {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 8px;
+}
+
+/* Three-across plain columns (What every engagement includes) */
+
+.columns { display: flex; flex-wrap: wrap; gap: 28px; }
+
+.column {
+  flex: 1 1 240px;
+
+  h3 { font-size: 17px; font-weight: 500; color: var(--forest); margin: 0 0 8px; }
+  p  { font-size: 15px; line-height: 1.65; color: rgba(35, 41, 31, .75); margin: 0; }
+}
+
+/* ==========================================================================
+   Rate rows (Pricing, Access & Discounts)
+   ========================================================================== */
+
+/* Prose on the left with a standing offer alongside it. The aside keeps a
+   readable basis so the pair stacks before the panel gets too narrow. */
+/* Held to a measure and centred: across the full band the prose ran too wide
+   and the aside drifted off to the far edge, leaving the pair reading as two
+   unrelated things. */
+.aside-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.aside-split__main { flex: 2 1 380px; }
+
+.cta-panel {
+  flex: 1 1 280px;
+  background: var(--sand);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 30px 28px;
+
+  .eyebrow { margin: 0 0 12px; }
+
+  h3 {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--forest);
+    margin: 0 0 12px;
+  }
+
+  .btn { display: inline-block; }
+}
+
+.cta-panel__body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0 0 22px;
+}
+
+/* Worked examples inside an engagement-model card, between the description and
+   the billing basis in the tail. */
+.card__examples {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: rgba(35, 41, 31, .68);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+  }
+}
+
+.rates { max-width: 900px; }
+
+.rate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline-2);
+}
+
+.rate__text {
+  flex: 1 1 320px;
+
+  h3 { font-size: 19px; font-weight: 500; color: var(--forest); margin: 0 0 6px; }
+  p  { font-size: 15px; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 520px; }
+}
+
+.rate__price {
+  font-size: 26px;
+  color: var(--forest);
+  margin: 0;
+  flex: none;
+}
+
+.rate__unit { font-size: 14px; color: rgba(35, 41, 31, .6); }
+
+/* ==========================================================================
+   Callout — sand band with one large line
+   ========================================================================== */
+
+.callout { padding-top: 56px; padding-bottom: 62px; }
+.callout__inner { max-width: 760px; }
+
+.callout__lede {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--forest);
+  margin: 0;
+}
+
+/* ==========================================================================
+   CTA band
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Home — expertise list
+   ========================================================================== */
+
+/* ==========================================================================
+   Blog — filter pills, carousel, grid
+   ========================================================================== */
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 34px; }
+
+.filter {
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid rgba(27, 74, 40, .28);
+  background: transparent;
+  color: var(--forest);
+
+  &:hover { border-color: var(--amber); }
+
+  &[aria-pressed="true"] {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: #FFF;
+  }
+}
+
+.carousel__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.carousel__nav { display: flex; gap: 8px; }
+
+.carousel__btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(27, 74, 40, .25);
+  background: none;
+  color: var(--forest);
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover:not(:disabled) { border-color: var(--amber); color: var(--amber); }
+  &:disabled { opacity: .35; cursor: default; }
+}
+
+.carousel__window { overflow: hidden; }
+
+.carousel__track {
+  display: flex;
+  gap: 20px;
+  transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+}
+
+.card--carousel {
+  flex: 0 0 320px;
+  max-width: 80%;
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 24px;
+
+  h3 {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--forest);
+    margin: 16px 0 10px;
+  }
+
+  p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+}
+
+.tag-chip {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: rgba(212, 136, 42, .22);
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.card--carousel__date {
+  font-size: 12.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(35, 41, 31, .5);
+}
+
+.card--post {
+  flex: 1 1 300px;
+  max-width: 380px;
+  padding: 28px 26px;
+
+  h2,
+  h3 { font-size: 19px; line-height: 1.35; margin: 0 0 10px; }
+}
+
+/* ==========================================================================
+   Prose (About story, blog posts)
+   ========================================================================== */
+
+.prose {
+  max-width: 720px;
+
+  p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(35, 41, 31, .78);
+    margin: 0 0 22px;
+  }
+
+  p.prose__lede {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--forest);
+    margin: 38px 0 14px;
+  }
+
+  ul { padding-left: 20px; }
+  li { font-size: 17px; line-height: 1.7; color: rgba(35, 41, 31, .78); margin-bottom: 10px; }
+
+  a { border-bottom: 1px solid var(--amber); }
+}
+
+.post__meta {
+  font-size: 11.5px !important;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--amber) !important;
+  margin: 0 0 18px !important;
+}
+
+.post__back { margin-top: 40px !important; }
+
+/* ==========================================================================
+   Team
+   ========================================================================== */
+
+.roster { max-width: 760px; display: flex; flex-direction: column; gap: 34px; }
+
+.person { display: flex; gap: 20px; flex-wrap: wrap; }
+
+.person__portrait {
+  flex: none;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(135deg, #E6E1D3 0 6px, var(--sand) 6px 12px);
+  border: 1px solid var(--hairline-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 400 8.5px var(--mono);
+  letter-spacing: .05em;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+/* The photos are square, so cover only trims the frame, never distorts. */
+.person__portrait--photo {
+  object-fit: cover;
+  background: var(--sand);
+}
+
+.person__body {
+  flex: 1 1 220px;
+
+  h2,
+  h3 { font-size: 20px; font-weight: 500; color: var(--forest); margin: 0 0 3px; }
+  p  { font-size: 15px; line-height: 1.62; color: rgba(35, 41, 31, .75); margin: 0; }
+}
+
+.person__role {
+  font-size: 12px !important;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber) !important;
+  margin: 0 0 10px !important;
+}
+
+.person__expertise span {
+  font-weight: 500;
+  color: var(--forest);
+}
+
+/* ==========================================================================
+   Timeline & testimonials
+   ========================================================================== */
+
+.quote {
+  margin: 0;
+  flex: 1 1 320px;
+  max-width: 420px;
+  background: var(--sand);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  .mark { height: 24px; align-self: flex-start; }
+
+  blockquote {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--forest);
+    margin: 0;
+  }
+}
+
+/* Inside a disclosure the quotes are already grouped and bounded, so they drop
+   the card and read as a run of quotations. */
+.quote--stacked {
+  flex: none;
+  max-width: none;
+  background: none;
+  border: 0;
+  border-left: 2px solid var(--amber);
+  border-radius: 0;
+  padding: 2px 0 2px 20px;
+  gap: 12px;
+
+  blockquote { font-size: 16px; color: rgba(35, 41, 31, .82); }
+}
+
+/* The tools we work in, grouped. Columns are sized by their contents rather
+   than by a fixed count, so a group with five names does not leave a hole
+   next to one with seven. */
+.stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 34px 30px;
+  max-width: 1000px;
+}
+
+.stack__note { margin-bottom: 34px; }
+
+.stack__group {
+  h3 {
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(27, 74, 40, .16);
+  }
+
+  ul { list-style: none; margin: 0; padding: 0; }
+
+  li {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(35, 41, 31, .78);
+    padding: 5px 0;
+  }
+}
+
+/* The one quote that leads the page, set large and centred above the columns
+   so it is read before anything is opened. */
+.topline {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+
+  .mark { height: 30px; margin: 0 auto 24px; }
+
+  blockquote {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.45;
+    color: var(--forest);
+    margin: 0 0 22px;
+  }
+
+  figcaption { margin: 0; }
+}
+
+@media (max-width: $bp-sm) {
+  .topline blockquote { font-size: 21px; }
+}
+
+/* Client quotes grouped by segment. Native <details>, so a closed group still
+   opens without JavaScript and find-in-page can reach the text inside it. */
+.disclosures {
+  border-top: 1px solid var(--hairline);
+}
+
+.disclosure {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.disclosure__summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 2px;
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker { display: none; }
+
+  /* The caret is drawn here rather than left to the browser's own marker,
+     which cannot be positioned or turned. */
+  &::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-left: auto;
+    border-right: 2px solid var(--amber);
+    border-bottom: 2px solid var(--amber);
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform .18s ease;
+  }
+
+  &:hover .disclosure__title { color: var(--amber-ink); }
+}
+
+.disclosure[open] > .disclosure__summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+.disclosure__title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.disclosure__count {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: var(--ink-faint);
+}
+
+.disclosure__body {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 4px 2px 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disclosure__summary::after { transition: none; }
+}
+
+.quote__name { font-size: 15px; font-weight: 500; color: var(--forest); margin: 0 0 3px; }
+
+.quote__role {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Public sector
+   ========================================================================== */
+
+.gov-hero { position: relative; display: flex; flex-wrap: wrap; gap: 36px; align-items: flex-start; }
+
+.gov-hero__text {
+  flex: 1 1 380px;
+
+  h1 { font-size: 38px; line-height: 1.18; margin: 0 0 18px; max-width: none; }
+
+  p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--on-green);
+    margin: 0;
+    max-width: 560px;
+  }
+}
+
+/* Prose on the left, reference panels stacked in the right third. Both columns
+   keep a text-length basis, so the pair drops to one column before the panels
+   get too narrow to read. */
+.gov-body { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+
+.gov-body__main { flex: 2 1 400px; }
+
+.gov-body__aside {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* A run of body copy introducing a section — the public sector approach, a
+   segment lede. */
+.prose-lede {
+  max-width: 620px;
+  margin-bottom: 44px;
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(35, 41, 31, .78);
+    margin: 0 0 16px;
+
+    &:last-child { margin-bottom: 0; }
+  }
+}
+
+.gov-panel {
+  background: var(--sand);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 26px;
+
+  h2 {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin: 0;
+  }
+
+  ul { margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 10px; }
+  li { font-size: 15px; line-height: 1.55; color: rgba(35, 41, 31, .8); }
+}
+
+.gov-panel .section-heading { gap: 11px; margin-bottom: 18px; .mark { height: 20px; } }
+
+.codes { display: flex; flex-direction: column; }
+
+.code-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px dashed rgba(27, 74, 40, .2);
+  font-size: 14.5px;
+  color: #23291F;
+
+  &:last-child { border-bottom: 0; }
+
+  dt { opacity: .7; }
+  dd { margin: 0; font-family: var(--mono); font-size: 13px; }
+}
+
+.code-row--pending dd { color: rgba(35, 41, 31, .45); }
+
+.perf { display: flex; flex-direction: column; border-top: 1px solid rgba(27, 74, 40, .16); }
+
+.perf__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.perf__main {
+  flex: 1 1 200px;
+
+  p:first-child { font-size: 17px; font-weight: 500; color: var(--forest); margin: 0 0 4px; }
+  p:last-child  { font-size: 14.5px; color: rgba(35, 41, 31, .65); margin: 0; }
+}
+
+.perf__cell { flex: 0 0 120px; font-size: 13.5px; color: var(--ink-faint); }
+
+.procurement {
+  border: 1px solid rgba(27, 74, 40, .18);
+  border-radius: 12px;
+  padding: 38px 6%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.procurement__text {
+  flex: 1 1 300px;
+
+  h2 { font-size: 25px; font-weight: 400; line-height: 1.3; color: var(--forest); margin: 0 0 12px; }
+  p  { font-size: 15.5px; line-height: 1.7; color: rgba(35, 41, 31, .75); margin: 0; }
+}
+
+.procurement__actions { flex: 0 1 260px; display: flex; flex-direction: column; gap: 10px; }
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+/* The details stand on the page rather than in a card: an enlarged mark over a
+   centred column that alternates label and value. */
+.contact-direct { text-align: center; }
+
+.contact-direct__mark {
+  display: block;
+  height: 64px;
+  width: auto;
+  margin: 0 auto 36px;
+}
+
+.contact-lines {
+  margin: 0;
+
+  dt {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--forest);
+  }
+
+  dd {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    margin: 4px 0 28px;
+  }
+
+  dd:last-child { margin-bottom: 0; }
+
+  a {
+    color: inherit;
+    border-bottom: 1px solid var(--amber);
+    padding-bottom: 2px;
+
+    &:hover { color: var(--amber-ink); }
+  }
+}
+
+.contact-card {
+  h2 {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin: 0 0 12px;
+  }
+
+  p { font-size: 15px; line-height: 1.65; color: var(--ink-muted); margin: 18px 0 0; }
+}
+
+.contact-card__value {
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--forest);
+  margin: 0;
+}
+
+a.contact-card__value {
+  display: inline-block;
+  border-bottom: 1px solid var(--amber);
+  padding-bottom: 2px;
+
+  &:hover { color: var(--amber-ink); }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background: var(--deep);
+  padding: 52px var(--pad-x) 34px;
+}
+
+.site-footer__row { display: flex; flex-wrap: wrap; gap: 34px; justify-content: space-between; }
+
+.site-footer__brand {
+  flex: 1 1 260px;
+
+  img { height: 24px; width: auto; display: block; margin-bottom: 18px; }
+
+  p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, .72);
+    margin: 0 0 20px;
+    max-width: 300px;
+  }
+}
+
+.site-footer__col { flex: 0 1 180px; }
+
+.site-footer__col-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 14px;
+
+  &:hover { color: var(--amber-hover); }
+}
+
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  a {
+    font-size: 14.5px;
+    color: var(--on-green-soft);
+
+    &:hover { color: var(--amber); }
+  }
+}
+
+.site-footer__baseline {
+  margin-top: 38px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+
+  p { font-size: 13px; color: rgba(255, 255, 255, .55); margin: 0; }
+}
+
+.site-footer__heart { color: var(--amber); }
+
+/* ==========================================================================
+   Section rhythm
+   ========================================================================== */
+
+.cards-band     { padding-top: 66px; padding-bottom: 10px; }
+/* Service pages: examples on the left, the outcomes panel beside them. Two
+   thirds to one, and a single column once there is no room for two. */
+.exp-band { padding-top: 66px; padding-bottom: 78px; }
+
+.exp-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.exp-split__note { margin-bottom: 24px; }
+
+/* Narrower inset than a full-width panel, which would leave little room for
+   the cards themselves in a third of the band. */
+.exp-split__aside { padding: 36px 32px; }
+
+@media (max-width: $bp-nav) {
+  .exp-split { grid-template-columns: minmax(0, 1fr); }
+}
+
+.outcomes-band  { padding-top: 56px; padding-bottom: 72px; }
+.steps-band     { padding-top: 60px; padding-bottom: 72px; }
+.grid-band      { padding-top: 66px; padding-bottom: 78px; }
+.post-band      { padding-top: 66px; padding-bottom: 78px; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: $bp-nav) {
+  .nav { display: none; }
+  .site-header__mobile { display: flex; }
+
+  .band--hero h1,
+  .hero-hub h1,
+  .gov-hero__text h1 { font-size: 32px; }
+
+  .band--home-hero h1 { font-size: 36px; }
+
+  .band--hero { padding-top: 112px; }
+  .band--hero-hub { padding-top: 116px; }
+  .band--home-hero { padding-top: 124px; padding-bottom: 72px; }
+
+  .rail { align-items: stretch; }
+  .rail__btn { min-width: 0; }
+
+  .home-hero__watermark {
+    top: auto;
+    bottom: 5%;
+    right: 3%;
+    transform: none;
+    height: 34%;
+    opacity: .13;
+  }
+
+  .panel { padding: 36px 7%; }
+  .procurement { padding: 32px 7%; }
+}
+
+/* Step the wordmark down so the brand, the CTA and the hamburger all fit the
+   header on small phones. */
+@media (max-width: 480px) {
+  .site-header__brand img { height: 22px; }
+  .site-header__mobile { gap: 10px; }
+}
+
+@media (max-width: 380px) {
+  .site-header__brand img { height: 19px; }
+  .site-header__mobile .btn { padding: 8px 13px; }
+}
+
+@media (max-width: $bp-sm) {
+  .band--hero h1,
+  .hero-hub h1,
+  .gov-hero__text h1 { font-size: 28px; }
+
+  .band--home-hero h1 { font-size: 31px; }
+
+  .home-hero__lede { font-size: 16.5px; }
+  .hero__desc { font-size: 16px; }
+
+  .section-heading h2 { font-size: 24px; }
+  .page-title-band { padding-top: 38px; }
+  .page-title-band h1 { font-size: 28px; }
+  .callout__lede { font-size: 21px; }
+
+  .btn { padding: 14px 24px; }
+
+  .card--carousel { flex-basis: 280px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track { transition: none; }
+}
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+.home-segments  { padding-top: 78px; padding-bottom: 20px; }
+.home-expertise { padding-top: 66px; padding-bottom: 78px; }
+.home-blog      { padding-top: 70px; padding-bottom: 78px; }
+
+/* The home page runs its grids without intro sentences, so its section
+   headings sit a size above the site default and carry the space those ledes
+   used to hold. "From the blog" keeps its note, so only its type grows. */
+.home-segments,
+.home-expertise,
+.home-blog {
+  .section-heading {
+    .mark { height: 28px; }
+    h2 { font-size: 31px; line-height: 1.2; }
+  }
+}
+
+.home-segments  .section-heading { margin-bottom: 34px; }
+.home-expertise .section-heading { margin-bottom: 28px; }
+
+/* The blog heading lost its note too, but .carousel__head already spaces the
+   row off the track, so it needs none of its own. */
+.home-blog .section-heading { margin-bottom: 0; }
+
+@media (max-width: $bp-sm) {
+  .home-segments,
+  .home-expertise,
+  .home-blog {
+    .section-heading h2 { font-size: 25px; }
+    .section-heading .mark { height: 25px; }
+  }
+
+  .home-segments  .section-heading { margin-bottom: 26px; }
+  .home-expertise .section-heading { margin-bottom: 22px; }
+}
+
+
+/* "Who we help" and "What we're good at" read as rows of icons rather than
+   cards. The label carries the meaning, so the icon is decorative and the whole
+   tile is one link.
+
+   The icons ship in their own green, so they are painted rather than shown: the
+   file becomes a mask and the colour comes from the stylesheet, which keeps them
+   on the brand green and lets them pick up the amber on hover. Browsers without
+   mask support fall back to the file drawn as-is, in its own colour. */
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.icon-row__item {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 28px 14px 24px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--forest);
+  transition: background-color .18s ease, border-color .18s ease;
+
+  &:hover {
+    background: var(--sand);
+    border-color: var(--hairline);
+
+    .icon-row__icon { background: var(--amber); }
+  }
+}
+
+.icon-row__icon {
+  width: 68px;
+  height: 68px;
+  flex: none;
+  background: var(--icon) no-repeat center / contain;
+}
+
+@supports (mask-image: url("")) or (-webkit-mask-image: url("")) {
+  .icon-row__icon {
+    background: var(--forest);
+    -webkit-mask: var(--icon) no-repeat center / contain;
+    mask: var(--icon) no-repeat center / contain;
+    transition: background-color .18s ease;
+  }
+}
+
+.icon-row__label {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media (max-width: $bp-sm) {
+  .icon-row { gap: 10px; }
+
+  .icon-row__item {
+    flex-basis: 128px;
+    gap: 12px;
+    padding: 20px 8px 18px;
+  }
+
+  .icon-row__icon { width: 54px; height: 54px; }
+
+  .icon-row__label { font-size: 15.5px; }
+}
+
+.grid-band__note {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(35, 41, 31, .66);
+  margin: 30px 0 0;
+
+  a { border-bottom: 1px solid var(--amber); }
+}
+
+.gov-band       { padding-bottom: 60px; }
+.gov-body-band  { padding-top: 56px; padding-bottom: 0; }
+/* The cards band below brings its own 66px of headroom, so the lede does not
+   add its usual bottom margin on top of it. */
+.seg-intro-band { padding-top: 56px; padding-bottom: 0; }
+.seg-intro-band .prose-lede { margin-bottom: 0; }
+.gov-proc-band  { padding-top: 56px; padding-bottom: 78px; }
+
+.procurement__eyebrow { margin-bottom: 12px; }
+
+.section-lede--perf {
+  font-size: 15px;
+  color: rgba(35, 41, 31, .68);
+  margin: 0 0 24px;
+  max-width: 560px;
+}
+
+.measure-900  { max-width: 900px; }
+.measure-760  { max-width: 760px; }
+
+.phases-band  { padding-top: 64px; padding-bottom: 70px; }
+.includes-band{ padding-top: 64px; padding-bottom: 70px; }
+
+/* A section heading that leads a block rather than sitting above a lede. */
+.section-heading--gap { margin-bottom: 26px; }
+
+.rates-band   { padding-top: 66px; padding-bottom: 20px; }
+.billing-band { padding-top: 52px; padding-bottom: 74px; }
+.models-band  { padding-top: 66px; padding-bottom: 20px; }
+.relief-band  { padding-top: 66px; padding-bottom: 20px; }
+/* The last cream band on Access & Discounts, so it carries the closing space
+   down to the sand callout rather than leaning on a band below it. */
+.probono-band { padding-top: 52px; padding-bottom: 74px; }
+/* Recent work closes the About hub, below the hub cards. */
+.work-band    { padding-top: 66px; padding-bottom: 78px; }
+
+/* Services on the home page: six cards, three across, each carrying what the
+   service actually covers. The icon is painted from the stylesheet the same
+   way the icon rows do it, so it picks up the amber on hover. */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 26px;
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  color: var(--forest);
+  transition: border-color .18s ease;
+
+  &:hover {
+    border-color: var(--amber);
+
+    .service-card__icon { background: var(--amber); }
+  }
+}
+
+.service-card__icon { width: 46px; height: 46px; }
+
+.service-card__title {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--forest);
+  margin: 0;
+}
+
+.service-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: rgba(35, 41, 31, .7);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: $bp-sm) {
+  .service-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* The home page's closing pitch: a short case, then the four places to go
+   next in a 2x2. The buttons fill their cells rather than sitting at their
+   own widths, so the block reads as a grid and not a ragged pile. */
+.home-why { padding-top: 66px; padding-bottom: 82px; }
+
+/* The 2x2 sits opposite the copy and balances it, so it needs a basis wide
+   enough for two buttons or the pair wraps to one column too early. */
+.learn-more-block { flex: 1 1 380px; }
+
+.learn-more__title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin: 0 0 18px;
+}
+
+.learn-more {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+
+  .btn { white-space: normal; padding-left: 18px; padding-right: 18px; }
+}
+
+/* The one that asks for the call carries a little more weight than the three
+   that only offer more reading. */
+.learn-more__primary { box-shadow: 0 2px 14px rgba(212, 136, 42, .35); }
+
+@media (max-width: $bp-sm) {
+  .learn-more { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Hub pages: a run of prose under the hero, then the children as cards. The
+   cards band brings its own headroom, so the lede adds none of its own. */
+.hub-lede-band    { padding-top: 60px; padding-bottom: 0; }
+.hub-lede-band .prose-lede { margin-bottom: 0; max-width: 660px; }
+.hub-cards-band   { padding-bottom: 74px; }
+
+.approach-band    { padding-top: 56px; padding-bottom: 0; }
+.approach-band .prose-lede { margin-bottom: 0; }
+
+.maine-band       { padding-top: 56px; padding-bottom: 0; }
+.maine-cards-band { padding-top: 44px; padding-bottom: 66px; }
+.maine-band .prose-lede { margin-bottom: 0; }
+
+.mark--card { height: 26px; }
+
+.card__title-lg { font-size: 20px !important; }
+
+.card__body--lg {
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.card--flat { flex: 1 1 280px; }
+
+/* Four-item grids. The default basis fits three across and leaves the fourth
+   stretched over a full row on its own, so a set of four is laid out two up
+   and collapses to one on small screens. */
+.card-grid--2up  .card      { flex-basis: calc(50% - 10px); }
+.rule-cards--2up .rule-card { flex-basis: calc(50% - 10px); }
+.rule-cards--wide.rule-cards--2up .rule-card { flex-basis: calc(50% - 12px); }
+
+@media (max-width: $bp-sm) {
+  .card-grid--2up  .card,
+  .rule-cards--2up .rule-card,
+  .rule-cards--wide.rule-cards--2up .rule-card { flex-basis: 100%; }
+}
+
+.story-band     { padding-top: 72px; padding-bottom: 20px; }
+.believe-band   { padding-top: 48px; padding-bottom: 78px; }
+/* The roster band carries almost no bottom padding of its own, which left the
+   last person sitting right on the colour change into the band below. */
+.team-band      { padding-bottom: 60px; }
+.blog-band      { padding-top: 56px; padding-bottom: 78px; }
+.stack-band     { padding-top: 62px; padding-bottom: 74px; }
+.topline-band   { padding-top: 62px; padding-bottom: 0; }
+.quotes-band    { padding-top: 58px; padding-bottom: 78px; }
+.contact-band   { padding-top: 70px; padding-bottom: 78px; }
+
+.believe__lede {
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--forest);
+  margin: 0;
+  max-width: 760px;
+}
+
+.believe-band .panel { padding: 40px 6%; }
+
+.section-heading--tight { margin-bottom: 20px; }
+
+.quote figcaption { margin: 0; }
+.quote blockquote { quotes: none; }

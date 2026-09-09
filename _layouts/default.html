@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% include head.html %}</head>
+{%- comment -%}
+  Hub pages run a light hero, so the transparent header over it needs dark
+  type and the dark wordmark. Everything else keeps the green hero.
+{%- endcomment -%}
+<body{% if page.layout == "hub" %} class="has-light-hero"{% endif %}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/nav.js' | relative_url }}" defer></script>
+  {% if page.needs_blog_js %}<script src="{{ '/assets/js/blog.js' | relative_url }}" defer></script>{% endif %}
+</body>
+</html>

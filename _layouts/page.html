@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<section class="band band--hero band--hero-crumb">
+  {%- if page.parent_url -%}
+    <p class="breadcrumb">
+      <a href="{{ page.parent_url | relative_url }}">{{ page.parent_title | escape_once }}</a>
+      &nbsp;/&nbsp;
+      <span class="breadcrumb__current">{{ page.headline_crumb | default: page.title | escape_once }}</span>
+    </p>
+  {%- endif -%}
+</section>
+
+{%- comment -%}
+  The tagline sits below the green, at the top of the page background.
+{%- endcomment -%}
+{%- comment -%}
+  headline_class lets a page whose headline is a full sentence rather than a
+  short tagline set it at a size that does not swallow the screen.
+{%- endcomment -%}
+<section class="band band--cream page-title-band {{ page.headline_class }}">
+  <h1>{{ page.headline | escape_once }}</h1>
+</section>
+
+{{ content }}

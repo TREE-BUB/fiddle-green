@@ -1,0 +1,73 @@
+# Drives the home "Services" cards and the blurbs on the /services/ hub cards.
+# The home cards show the icon, the label and the details; the hub cards show
+# the blurb. on_home: false keeps an entry here but off the home page.
+- key: support
+  icon: /assets/icons/noun_Headset_8456463_338A4A.svg
+  letter: A
+  label: Technical Support
+  url: /services/technical-support/
+  blurb: Fixing what's broken and hardening what isn't.
+  details:
+    - Technology implementation
+    - System configuration and optimization
+    - Purchasing, procurement, and vendor advocacy
+
+- key: training
+  icon: /assets/icons/noun_Class_8362686_338A4A.svg
+  letter: B
+  label: Training & Education
+  url: /services/training-and-education/
+  blurb: Teaching you and your staff the parts worth knowing.
+  details:
+    - Training material development
+    - Workforce development and capacity building
+    - Training-of-trainers programs
+
+- key: strategy
+  icon: /assets/icons/noun_strategy_8273592_338A4A.svg
+  letter: C
+  label: Strategy & Operations
+  url: /services/strategy-and-operations/
+  blurb: "Helping you figure out how technology should fit into the way your organization runs: policies, governance, and planning."
+  details:
+    - Policies, governance, and technology planning
+    - Technology-enabled operational support
+    - Vendor evaluation and independent second opinions
+
+- key: ai
+  icon: /assets/icons/noun_AI_8215905_338A4A.svg
+  letter: D
+  label: Artificial Intelligence
+  url: /services/artificial-intelligence/
+  blurb: >-
+    From board-level conversations about where AI does and doesn't belong in
+    your mission, to hands-on work finding the specific tools and automations
+    that give your staff their time back.
+  details:
+    - AI risk mitigation
+    - AI policy and mission statement development
+    - Procurement, implementation, and automation
+
+- key: data
+  icon: /assets/icons/noun_Data_8259289_338A4A.svg
+  letter: E
+  label: Data and Analytics
+  url: /services/data-and-analytics/
+  blurb: >-
+    Survey design and data collection first — getting the question right before
+    anyone answers it — then the analysis and reporting that sit on top.
+  details:
+    - Survey design and data collection
+    - Data governance and strategy
+    - Analysis, dashboards, and reporting
+
+- key: product
+  icon: /assets/icons/noun_build_6913680_338A4A.svg
+  letter: F
+  label: Product and Engineering
+  url: /services/product-and-engineering/
+  blurb: Building the thing, at the size of the problem rather than the size of the vendor.
+  details:
+    - Product design and prototype development
+    - User testing and validation
+    - Full stack software development

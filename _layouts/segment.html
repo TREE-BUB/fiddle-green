@@ -1,0 +1,55 @@
+---
+layout: page
+---
+{%- assign d = site.data.seg_pages[page.seg_key] -%}
+
+{%- comment -%}
+  An optional lede above the cards. The paragraphs carry their own markup so
+  the copy can link out, which means they are written trusted in seg_pages.yml
+  rather than escaped here.
+{%- endcomment -%}
+{%- if d.intro -%}
+  <section class="band band--cream seg-intro-band">
+    <div class="prose-lede">
+      {%- for para in d.intro -%}
+        <p>{{ para }}</p>
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endif -%}
+
+<section class="band band--cream cards-band">
+  {% include section-heading.html title=d.cards_title %}
+  <div class="rule-cards">
+    {%- for card in d.cards -%}
+      <div class="rule-card">
+        <h3>{{ card.h | escape_once }}</h3>
+        <p>{{ card.p | escape_once }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{%- comment -%}
+  An optional roster of representative work, in the same shape as the one on
+  /about/: a plain list rather than cards, so it stays quick to edit as the
+  work changes. Segments without a `work` block skip the band entirely.
+{%- endcomment -%}
+{%- if d.work -%}
+  <section class="band band--cream work-band">
+    <div class="split">
+      <div class="split__aside">
+        {% include section-heading.html title=d.work_title class="section-heading--sm" %}
+        <p class="split__note">{{ d.work_note | escape_once }}</p>
+      </div>
+      <ul class="bullets">
+        {%- for item in d.work -%}
+          <li><span class="bullets__dot" aria-hidden="true"></span><span>{{ item | escape_once }}</span></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+{%- endif -%}
+
+{%- assign steps_title = d.steps_title | default: "How we'd start" -%}
+{% include steps.html title=steps_title note=d.steps_note steps=d.steps grid=d.steps_grid %}

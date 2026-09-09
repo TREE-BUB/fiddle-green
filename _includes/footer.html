@@ -1,0 +1,29 @@
+<footer class="site-footer">
+  <div class="site-footer__row">
+    <div class="site-footer__brand">
+      <img src="{{ '/assets/wordmark-light.png' | relative_url }}" alt="FIDDLE,GREEN" width="987" height="133">
+      <p>Maine technology consulting for small businesses, nonprofits, startups, and public agencies.</p>
+      <a class="btn btn--amber btn--sm" href="{{ '/contact/' | relative_url }}">Contact us</a>
+    </div>
+
+    {%- for item in site.data.nav -%}
+      {%- if item.children -%}
+        <nav class="site-footer__col" aria-label="{{ item.title | escape_once }}">
+          <a class="site-footer__col-title" href="{{ item.url | relative_url }}">{{ item.footer_title | default: item.title | escape_once }}</a>
+          <div class="site-footer__links">
+            {%- for child in item.children -%}
+              {%- unless child.in_footer == false or child.hidden -%}
+                <a href="{{ child.url | relative_url }}">{{ child.title | escape_once }}</a>
+              {%- endunless -%}
+            {%- endfor -%}
+          </div>
+        </nav>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <div class="site-footer__baseline">
+    <p>Made with <span class="site-footer__heart" aria-hidden="true">&hearts;</span> in {{ site.locality }}</p>
+    <p>&copy; {{ 'now' | date: "%Y" }} {{ site.legal_entity }}</p>
+  </div>
+</footer>

@@ -1,0 +1,44 @@
+title: FIDDLE,GREEN
+tagline: Maine technology consulting
+# Also the fallback meta description for any page without one, so it is kept
+# under the ~155 characters search results will show.
+description: >-
+  FIDDLE,GREEN is a Maine technology consultancy built for small
+  organizations — small businesses, nonprofits, startups, and public
+  agencies.
+url: https://fiddle.green
+baseurl: ""
+
+email: hello@fiddle.green
+phone_display: 207-819-1358
+phone_href: "+12078191358"
+legal_entity: MIXHEL SERVICES, LLC
+locality: Deering Center, Portland
+
+permalink: /about/blog/:title/
+
+sass:
+  style: compressed
+  sourcemap: never
+
+# Kept to GitHub Pages' whitelisted plugin set so the site builds either on
+# github-pages or through .github/workflows/jekyll.yml.
+plugins: []
+
+exclude:
+  - wrangler.jsonc
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .github
+
+defaults:
+  - scope: { path: "", type: posts }
+    values:
+      layout: post
+      # The blog is not linked from the site while it is on hold, so the posts
+      # stay out of search along with it. Drop this and the noindex on
+      # about/blog.html together when the blog comes back.
+      noindex: true
+      sitemap: false
