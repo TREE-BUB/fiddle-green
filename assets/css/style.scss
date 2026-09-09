@@ -790,6 +790,17 @@ a.card:hover { border-color: var(--amber); }
 
 .steps--grid .step { gap: 12px; }
 
+/* Stands in for .step__num, so it takes the same 26px slot and the body text
+   below it lines up with the numbered lists elsewhere on the site. */
+.step__mark {
+  flex: none;
+  width: 26px;
+  height: 19px;
+  object-fit: contain;
+  object-position: left top;
+  padding-top: 2px;
+}
+
 .step__dot {
   flex: none;
   width: 7px;
