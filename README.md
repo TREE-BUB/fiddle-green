@@ -1,7 +1,7 @@
 # FIDDLE,GREEN
 
-Marketing site for FIDDLE,GREEN — a Maine technology consulting company built
-for small organizations (legal entity: MIXHEL SERVICES, LLC). Jekyll, deployed
+Marketing site for FIDDLE,GREEN — a Maine technology consultancy built for
+small organizations (legal entity: MIXHEL SERVICES, LLC). Jekyll, deployed
 to GitHub Pages at [fiddle.green](https://fiddle.green).
 
 The name is written "FIDDLE,GREEN" everywhere, in body copy and headings as
