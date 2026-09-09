@@ -16,7 +16,7 @@
   icon: /assets/icons/noun_Class_8362686_338A4A.svg
   letter: B
   label: Training & Education
-  url: /services/education/
+  url: /services/training-and-education/
   blurb: Teaching you and your staff the parts worth knowing.
   details:
     - Training material development
@@ -27,7 +27,7 @@
   icon: /assets/icons/noun_strategy_8273592_338A4A.svg
   letter: C
   label: Strategy & Operations
-  url: /services/advising/
+  url: /services/strategy-and-operations/
   blurb: Second opinions, vendor questions, and plans you can afford.
   details:
     - Technology-enabled operational support

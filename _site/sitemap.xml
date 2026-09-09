@@ -6,11 +6,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/services/advising/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://fiddle.green/services/artificial-intelligence/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -26,11 +21,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/services/education/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://fiddle.green/how-we-work/engagement-models/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -41,7 +31,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/how-we-work/</loc>
+    <loc>https://fiddle.green/who-we-help/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -51,12 +41,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/about/</loc>
+    <loc>https://fiddle.green/how-we-work/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/who-we-help/</loc>
+    <loc>https://fiddle.green/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -96,6 +86,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fiddle.green/services/strategy-and-operations/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fiddle.green/about/supporting-maine/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,6 +107,11 @@
   </url>
   <url>
     <loc>https://fiddle.green/about/testimonials/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/services/training-and-education/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
