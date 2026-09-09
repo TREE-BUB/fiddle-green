@@ -53,16 +53,16 @@
       blurb: The values behind the work, and what you get on every engagement regardless of its size.
     - title: Engagement Models
       url: /how-we-work/engagement-models/
-      blurb: Ad hoc, short term, or long term — three shapes, quoted in writing before anything starts.
+      blurb: Ad hoc advising, packages, project work, or a retainer — four shapes, quoted in writing before anything starts.
     - title: "Access & Discounts"
       url: /how-we-work/access-and-discounts/
-      blurb: Discounts for nonprofits and marginalized-owned businesses, incentives across Maine, and pro bono hours.
+      blurb: Discounts for nonprofits and underrepresented-led businesses, incentives across Maine, and pro bono hours.
 
 - title: About
   url: /about/
   footer_title: About
   children:
-    - title: About FIDDLE,GREEN
+    - title: About Fiddle Green
       url: /about/fiddle-green/
       blurb: Why we started, what we believe about technology help, and what does not change from one job to the next.
     - title: Team
@@ -70,7 +70,7 @@
       blurb: The people who take your call and do the work.
     - title: Supporting Maine
       url: /about/supporting-maine/
-      blurb: Discounted or free travel statewide, and an hour donated in every community we visit.
+      blurb: No billed travel time statewide, and time set aside for pro bono work in every community we visit.
     - title: Testimonials
       url: /about/testimonials/
       blurb: What clients say about working with us, grouped by the kind of organization they run.

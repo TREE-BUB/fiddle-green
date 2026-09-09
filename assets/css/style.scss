@@ -3,7 +3,7 @@
 ---
 
 /* ==========================================================================
-   FIDDLE,GREEN — design tokens
+   Fiddle Green — design tokens
    ========================================================================== */
 
 :root {
@@ -940,6 +940,16 @@ a.card:hover { border-color: var(--amber); }
 
 .rates { max-width: 900px; }
 
+/* Sits under the last rate row, so it carries the qualifier that applies
+   across all of them rather than to any one line. */
+.rates__note {
+  max-width: 900px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(35, 41, 31, .66);
+  margin: 22px 0 0;
+}
+
 .rate {
   display: flex;
   flex-wrap: wrap;
@@ -1869,6 +1879,11 @@ a.contact-card__value {
 .relief-band  { padding-top: 66px; padding-bottom: 20px; }
 .probono-band { padding-top: 52px; padding-bottom: 20px; }
 .ask-band     { padding-top: 52px; padding-bottom: 74px; }
+/* The associate bench closes /about/team/, so it carries the bottom padding the
+   roster band above it deliberately does not. */
+.bench-band   { padding-top: 52px; padding-bottom: 74px; }
+/* Recent work closes the About hub, below the hub cards. */
+.work-band    { padding-top: 66px; padding-bottom: 78px; }
 
 /* Services on the home page: six cards, three across, each carrying what the
    service actually covers. The icon is painted from the stylesheet the same
@@ -2000,6 +2015,19 @@ a.contact-card__value {
 }
 
 .card--flat { flex: 1 1 280px; }
+
+/* Four-item grids. The default basis fits three across and leaves the fourth
+   stretched over a full row on its own, so a set of four is laid out two up
+   and collapses to one on small screens. */
+.card-grid--2up  .card      { flex-basis: calc(50% - 10px); }
+.rule-cards--2up .rule-card { flex-basis: calc(50% - 10px); }
+.rule-cards--wide.rule-cards--2up .rule-card { flex-basis: calc(50% - 12px); }
+
+@media (max-width: $bp-sm) {
+  .card-grid--2up  .card,
+  .rule-cards--2up .rule-card,
+  .rule-cards--wide.rule-cards--2up .rule-card { flex-basis: 100%; }
+}
 
 .story-band     { padding-top: 72px; padding-bottom: 20px; }
 .believe-band   { padding-top: 48px; padding-bottom: 78px; }

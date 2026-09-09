@@ -10,7 +10,7 @@
   details:
     - Technology implementation
     - System configuration and optimization
-    - Help desk and end user troubleshooting
+    - Purchasing, procurement, and vendor advocacy
 
 - key: education
   icon: /assets/icons/noun_Class_8362686_338A4A.svg
@@ -53,8 +53,8 @@
   blurb: Making sense of what you already collect, and answering the question you actually asked.
   details:
     - Data governance and strategy
-    - Interoperability and workflow optimization
-    - Data pipeline automation
+    - Survey design and data collection
+    - Analysis, dashboards, and reporting
 
 - key: product
   icon: /assets/icons/noun_build_6913680_338A4A.svg

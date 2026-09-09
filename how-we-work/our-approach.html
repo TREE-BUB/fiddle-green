@@ -20,6 +20,15 @@ steps:
   - num: "04"
     h: Service, all the way through.
     p: We fit how you already operate — your mission and values, your compliance and funder requirements, your approval process. Being easy to work with is part of the job, not a courtesy on top of it.
+reasons:
+  - h: You're the destination, not a stepping stone
+    p: We are not building a portfolio on small clients so we can go chase bigger ones. This is the work we want.
+  - h: We know how to make a dollar scream
+    p: Our team has worked in some of the lowest-resource settings in the world and with bootstrapped nonprofits running on fumes. Doing more with less is not a slogan here, it is where we learned the job.
+  - h: We fight for you with vendors who ignore you
+    p: Small organizations get pushed around by their software companies. We know how to make a forceful, well-documented case on your behalf. That is leverage you do not have alone.
+  - h: We hand you the keys
+    p: We document what we do and build your team's ability to run it without us. That means you could take our documentation and hire someone cheaper next time. Most consultants have every reason not to work that way. We think it is the only honest way to work.
 ---
 
 <section class="band band--cream approach-band">
@@ -47,6 +56,20 @@ steps:
         <h3>No lock-in</h3>
         <p>Everything is in your name and under your control. If you leave, nothing has to be untangled.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--cream outcomes-band">
+  <div class="panel">
+    {% include section-heading.html title="Why us" class="section-heading--sm" %}
+    <div class="rule-cards rule-cards--wide rule-cards--2up">
+      {%- for r in page.reasons -%}
+        <div class="rule-card">
+          <h3>{{ r.h | escape_once }}</h3>
+          <p>{{ r.p | escape_once }}</p>
+        </div>
+      {%- endfor -%}
     </div>
   </div>
 </section>

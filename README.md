@@ -1,8 +1,12 @@
-# FIDDLE,GREEN
+# Fiddle Green
 
-Marketing site for FIDDLE,GREEN — a small technology consulting company in
-Portland, Maine (legal entity: MIXHEL SERVICES, LLC). Jekyll, deployed to
-GitHub Pages at [fiddle.green](https://fiddle.green).
+Marketing site for Fiddle Green — a Maine technology consulting company for
+organizations too small to be anyone else's priority (legal entity: MIXHEL
+SERVICES, LLC). Jekyll, deployed to GitHub Pages at
+[fiddle.green](https://fiddle.green).
+
+In prose, always write "Fiddle Green." The comma in the wordmark is a logo
+device only and does not appear in body copy, headings, or alt text.
 
 ## Running locally
 
@@ -79,9 +83,10 @@ then be dropped from the branch and re-ignored.
 
 ## Still to confirm
 
-- Phone hours ("Weekdays 8am–6pm") and the "within one business day" email
-  promise on `/contact/` were invented for the design and need sign-off.
-- The six blog posts carry final titles, summaries, categories, and dates from
+- The blog posts carry final titles, summaries, categories, and dates from
   the approved design, but their bodies are placeholders.
-- `/who-we-help/public-sector/` shows `[ pending ]` for UEI and CAGE and
-  placeholder rows under Past performance.
+- `/who-we-help/public-sector/` has not been revised against the positioning
+  document, still writes "FIDDLE,GREEN" in prose, and shows `[ pending ]` for
+  UEI and CAGE with placeholder rows under Past performance.
+- `/about/testimonials/` carries invented client quotes from the design comp.
+  Only the wordmark was normalized there; the quotes still need real ones.

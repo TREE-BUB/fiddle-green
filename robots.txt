@@ -3,7 +3,7 @@ permalink: /robots.txt
 layout: null
 sitemap: false
 ---
-# FIDDLE,GREEN — {{ '/' | absolute_url }}
+# Fiddle Green — {{ '/' | absolute_url }}
 #
 # Everything here is public and meant to be found, by search engines and by
 # the assistants people increasingly ask instead. Pages that are not ready say
