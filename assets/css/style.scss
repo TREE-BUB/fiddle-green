@@ -1644,6 +1644,10 @@ a.contact-card__value {
   p { font-size: 13px; color: rgba(255, 255, 255, .55); margin: 0; }
 }
 
+/* Takes the whole first line of the baseline row, above the two short lines
+   that split it, rather than competing with them for the same one. */
+.site-footer__travel { flex: 1 1 100%; }
+
 .site-footer__heart { color: var(--amber); }
 
 /* ==========================================================================

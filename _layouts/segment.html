@@ -30,5 +30,26 @@ layout: page
   </div>
 </section>
 
+{%- comment -%}
+  An optional roster of representative work, in the same shape as the one on
+  /about/: a plain list rather than cards, so it stays quick to edit as the
+  work changes. Segments without a `work` block skip the band entirely.
+{%- endcomment -%}
+{%- if d.work -%}
+  <section class="band band--cream work-band">
+    <div class="split">
+      <div class="split__aside">
+        {% include section-heading.html title=d.work_title class="section-heading--sm" %}
+        <p class="split__note">{{ d.work_note | escape_once }}</p>
+      </div>
+      <ul class="bullets">
+        {%- for item in d.work -%}
+          <li><span class="bullets__dot" aria-hidden="true"></span><span>{{ item | escape_once }}</span></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+{%- endif -%}
+
 {%- assign steps_title = d.steps_title | default: "How we'd start" -%}
 {% include steps.html title=steps_title note=d.steps_note steps=d.steps grid=d.steps_grid %}

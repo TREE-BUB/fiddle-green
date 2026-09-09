@@ -23,6 +23,12 @@
   </div>
 
   <div class="site-footer__baseline">
+    {%- comment -%}
+      Full-width above the two baseline lines: it is a standing term of every
+      engagement, so it belongs on every page rather than only on the pages
+      about cost.
+    {%- endcomment -%}
+    <p class="site-footer__travel">We don't bill travel time to clients elsewhere in Maine. Actual travel expenses are passed through at cost for longer trips.</p>
     <p>Made with <span class="site-footer__heart" aria-hidden="true">&hearts;</span> in {{ site.locality }}</p>
     <p>&copy; {{ 'now' | date: "%Y" }} {{ site.legal_entity }}</p>
   </div>

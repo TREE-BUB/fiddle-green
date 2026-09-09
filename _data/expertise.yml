@@ -28,10 +28,10 @@
   letter: C
   label: Strategy & Operations
   url: /services/strategy-and-operations/
-  blurb: Second opinions, vendor questions, and plans you can afford.
+  blurb: "Helping you figure out how technology should fit into the way your organization runs: policies, governance, and planning."
   details:
+    - Policies, governance, and technology planning
     - Technology-enabled operational support
-    - Workflow automation
     - Vendor evaluation and independent second opinions
 
 - key: ai
@@ -39,21 +39,26 @@
   letter: D
   label: Artificial Intelligence
   url: /services/artificial-intelligence/
-  blurb: A grounded read on what AI can do for you — and what it should not touch.
+  blurb: >-
+    From board-level conversations about where AI does and doesn't belong in
+    your mission, to hands-on work finding the specific tools and automations
+    that give your staff their time back.
   details:
     - AI risk mitigation
     - AI policy and mission statement development
-    - Procurement and implementation
+    - Procurement, implementation, and automation
 
 - key: data
   icon: /assets/icons/noun_Data_8259289_338A4A.svg
   letter: E
-  label: Data Science
-  url: /services/data-science/
-  blurb: Making sense of what you already collect, and answering the question you actually asked.
+  label: Data and Analytics
+  url: /services/data-and-analytics/
+  blurb: >-
+    Survey design and data collection first — getting the question right before
+    anyone answers it — then the analysis and reporting that sit on top.
   details:
-    - Data governance and strategy
     - Survey design and data collection
+    - Data governance and strategy
     - Analysis, dashboards, and reporting
 
 - key: product
