@@ -1,8 +1,8 @@
 <footer class="site-footer">
   <div class="site-footer__row">
     <div class="site-footer__brand">
-      <img src="{{ '/assets/wordmark-light.png' | relative_url }}" alt="Fiddle Green" width="987" height="133">
-      <p>Maine technology consulting for small businesses, nonprofits, startups, and public agencies.</p>
+      <img src="{{ '/assets/wordmark-light.png' | relative_url }}" alt="FIDDLE,GREEN" width="987" height="133">
+      <p>Technology help for people, and their businesses, organizations, and communities.</p>
       <a class="btn btn--amber btn--sm" href="{{ '/contact/' | relative_url }}">Contact us</a>
     </div>
 
@@ -12,7 +12,7 @@
           <a class="site-footer__col-title" href="{{ item.url | relative_url }}">{{ item.footer_title | default: item.title | escape_once }}</a>
           <div class="site-footer__links">
             {%- for child in item.children -%}
-              {%- unless child.in_footer == false or child.rail_only -%}
+              {%- unless child.in_footer == false or child.hidden -%}
                 <a href="{{ child.url | relative_url }}">{{ child.title | escape_once }}</a>
               {%- endunless -%}
             {%- endfor -%}

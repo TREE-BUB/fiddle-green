@@ -1,71 +1,54 @@
-# Copy for the data-driven Who We Help sub-pages.
+# Copy for the three data-driven Who We Help sub-pages.
 startups:
-  intro:
-    - >-
-      We know how hard, and how exciting, it is to build something from
-      nothing, and we are comfortable with the uncertainty that comes with it.
-      Think of us as a technical team you can hire instead of recruit: senior
-      engineering, product design, and the judgment to know which corners are
-      safe to cut.
-    - >-
-      That means we can take an idea to a working prototype, pick up a codebase
-      someone else started, or sit beside a non-technical founder and make the
-      calls that would otherwise wait on a first engineering hire.
   cards_title: Where we usually come in
   cards:
-    - h: A technical team, on demand
-      p: Senior engineering and product design without a headcount, a recruiter, or an equity conversation. Scale up for a build, scale down after it.
-    - h: Idea to working prototype
-      p: Product design, research and testing, and the build itself — small enough to put in front of real users and learn from.
     - h: Accounts and ownership
       p: Domains, email, and shared logins registered to the company — not to whoever set them up on a Tuesday.
+    - h: Security that fits stage
+      p: Two-factor, device basics, and access control at a level that won't slow a team of four down.
+    - h: Tooling choices
+      p: An honest read on what to buy, what to skip, and what you'll regret at twenty people.
     - h: AI, used carefully
-      p: Where a model genuinely helps, where it leaks your data, and how to write a short internal policy your team will actually follow.
-  steps_note: Usually a scoping conversation, then a first phase you can stop after.
+      p: Where a model genuinely helps, where it leaks your data, and how to write a short internal policy.
+  steps_note: Usually a couple of sessions, then we stay reachable.
   steps:
     - num: "01"
       h: A working session.
-      p: Ninety minutes on what you have, what you plan, and where the sharp edges are. Free, and it commits you to nothing.
+      p: Ninety minutes on what you have, what you plan, and where the sharp edges are.
     - num: "02"
       h: A short written plan.
       p: Prioritized, costed roughly, and readable by a non-technical cofounder or board member.
     - num: "03"
-      h: We build it with you.
-      p: Not for you — with you, so your team knows how it works once we are gone, and owns the code and the accounts outright.
-  cta_title: Need a technical team without recruiting one?
-  cta_body: Packages, project work, and retainers are all on the table, quoted in writing before any work starts.
+      h: We do the setup with you.
+      p: Not for you — with you, so your team knows how it works once we're gone.
+  cta_title: Need someone on call without a full-time hire?
+  cta_body: Short-term and long-term engagements are both on the table, quoted in writing before any work starts.
 
 businesses:
-  intro:
-    - >-
-      We specialize in the technology side of growing pains. Growth is good.
-      What usually goes wrong is that the systems set up three years ago were
-      configured before anyone asked how the staff actually work — and nobody
-      has had the time to revisit them since.
   cards_title: We help small businesses...
   cards:
-    - h: Get more out of what you own
-      p: You have already paid for Microsoft 365, Google Workspace, and half a dozen other tools. We make them work the way your staff actually work, and we make your vendors deliver what they promised.
-    - h: Bring in AI where it earns its keep
-      p: AI is not magic, but in the right places it genuinely gives people their time back. We help you find those places, and tell you plainly where it is not worth the trouble.
-    - h: Get real value from your data
-      p: The insight you need is usually already sitting in your systems. We do the unglamorous work of cleaning it up first, then the analysis, dashboards, and reporting on top.
+    - h: Optimize existing technology
+      p: We help you get the most out of the investments you've made in Microsoft 365, Google Workspace, and other tools. We also make sure your vendors deliver what they promised.
+    - h: Explore AI and automation
+      p: AI isn't magic, but with the right guidance it definitely can make you more efficient. We'll help you figure out where it actually makes sense for your business.
+    - h: Get more value from data
+      p: You already have valuable data. We work with you to benefit from the insights and value that's sitting in your systems right now.
     - h: Make the right investments
-      p: Cut through the smoke and mirrors. We evaluate vendors, work out what a thing will actually return, and negotiate on your behalf when a vendor stops returning your calls.
+      p: Cut through the smoke and mirrors. We evaluate vendors, help you figure out ROI, and make sure you're spending money on what actually matters.
   steps_title: How we work with small businesses
   steps_grid: true
-  steps_note: We work hard to provide the flexibility small businesses need. If you are thinking of something else, tell us and we will find an arrangement that works.
+  steps_note: We work hard to provide the flexibility small businesses need. If you're thinking something else, let us know and we'll work together to find something that works.
   steps:
-    - h: Needs assessment
-      p: Often the first step. A comprehensive look at your current technology, and an actionable set of recommendations you can act on with or without us.
-    - h: Packages
-      p: Fixed scope and fixed price for a defined piece of work — a one-day AI bootcamp, a website rebuild, a system setup.
-    - h: Project work
-      p: End-to-end execution for a specific initiative, ranging from a few hours of work to a multi-month engagement.
-    - h: Ongoing partnership
-      p: Continuous technical and strategic support on a retainer, so your technology scales with the business instead of behind it.
+    - h: Needs Assessment
+      p: Often the first step in our process. We perform a comprehensive evaluation of your current technology ecosystem and deliver an actionable set of recommendations.
+    - h: Targeted Sprints
+      p: Short-term, focused support to solve an immediate business need — such as vendor evaluation, staff training, or system setup.
+    - h: Project Work
+      p: End-to-end execution for specific business initiatives or technical projects, ranging from a few hours of work to a multi-month engagement.
+    - h: Ongoing Partnership
+      p: Following a brief onboarding, we provide continuous technical and strategic support to ensure your technology scales seamlessly with your business.
   cta_title: Want a number you can call on a bad day?
-  cta_body: Hourly, package, project, and retainer arrangements are all available, quoted when we talk.
+  cta_body: Hourly, short-term, and long-term arrangements are all available, quoted when we talk.
 
 nonprofits:
   intro:
@@ -76,20 +59,19 @@ nonprofits:
       technology — a board, a funder, a volunteer roster, and a budget that
       answers to all three.
     - >-
-      We understand mission-driven work firsthand. Funder compliance,
-      fundraising, and grant reporting are not background noise to us. They are
-      things that should shape how your technology gets built in the first
-      place, rather than requirements you discover after it is finished.
+      We know what a program officer wants to see in a technology line item,
+      and what a board needs to hear before it approves one. That context is
+      usually the part a vendor skips.
   cards_title: We know how nonprofits work
   cards:
-    - h: We help write grants
-      p: Scopes, quotes, budget narratives, and written assessments you can attach to an application or a funder report — in language a program officer will read without translating.
-    - h: Discounts you may not know exist
-      p: TechSoup, Tech for Good, and the nonprofit programs at Google and Microsoft. We work out what you qualify for, chase the donated licenses, and handle the paperwork.
+    - h: Annual reporting and grant proposals
+      p: Scopes, quotes, and written assessments you can attach to an application, a funder report, or the annual report — in language a program officer will read without translating.
     - h: Technology that serves the mission
       p: Before we recommend anything, we ask what it does for the people you serve. If a tool cannot earn its line in the budget, we will say so.
+    - h: Discounts you may not know about
+      p: Tech for Good, TechSoup, and the nonprofit programs at Google and Microsoft. We work out what you qualify for and help you through the paperwork.
     - h: Volunteer-proof setups
-      p: Systems that survive turnover, with documentation a new coordinator can follow on their first week.
+      p: Systems that survive turnover, with documentation a new coordinator can follow.
   steps_note: Discounted rates are standard here, not a favor.
   steps:
     - num: "01"

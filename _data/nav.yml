@@ -4,10 +4,13 @@
 # Per-child switches:
 #   in_footer: false    omit from the footer column
 #   footer_only: true   footer column only, not the dropdown or drawer
-#   rail_only: true     hub hero rail only — off the dropdown, the drawer, and
-#                       the footer, so the page stays reachable from its hub
-#                       without being advertised sitewide
+#   hidden: true        off every surface — the dropdown, the drawer, the hub
+#                       rail, and the footer. The page stays live at its URL,
+#                       but nothing on the site links to it
 #   rail_url:           override the URL used by the hub hero rail button
+#   blurb:              the line of copy under the child's name on its hub page.
+#                       Who We Help and Services keep theirs in segments.yml
+#                       and expertise.yml instead, beside the home-page icons
 
 - title: Home
   url: /
@@ -16,54 +19,61 @@
   url: /who-we-help/
   footer_title: Who we help
   children:
+    - title: Startups
+      url: /who-we-help/startups/
     - title: Small Businesses
       url: /who-we-help/small-businesses/
     - title: Non-profits
       url: /who-we-help/nonprofits/
-    - title: Startups
-      url: /who-we-help/startups/
     - title: Public Sector
-      url: /who-we-help/government/
+      url: /who-we-help/public-sector/
 
-- title: Expertise
-  url: /expertise/
-  drawer_title: Areas of Expertise
-  footer_title: Expertise
+- title: Services
+  url: /services/
   children:
     - title: Technical Support
-      url: /expertise/technical-support/
+      url: /services/technical-support/
     - title: "Training & Education"
-      url: /expertise/education/
+      url: /services/education/
     - title: "Strategy & Operations"
-      url: /expertise/advising/
+      url: /services/advising/
     - title: Artificial Intelligence
-      url: /expertise/artificial-intelligence/
-    - title: "Data & Analytics"
-      url: /expertise/data-science/
+      url: /services/artificial-intelligence/
+    - title: Data Science
+      url: /services/data-science/
     - title: Product and Engineering
-      url: /expertise/product-and-engineering/
+      url: /services/product-and-engineering/
 
 - title: How We Work
   url: /how-we-work/
   footer_title: How we work
   children:
-    - title: "Pricing & Engagement"
-      url: /how-we-work/pricing/
+    - title: Our Approach
+      url: /how-we-work/our-approach/
+      blurb: The values behind the work, and what you get on every engagement regardless of its size.
+    - title: Engagement Models
+      url: /how-we-work/engagement-models/
+      blurb: Ad hoc, short term, or long term — three shapes, quoted in writing before anything starts.
     - title: "Access & Discounts"
       url: /how-we-work/access-and-discounts/
+      blurb: Discounts for nonprofits and marginalized-owned businesses, incentives across Maine, and pro bono hours.
 
 - title: About
   url: /about/
   footer_title: About
   children:
-    - title: History and Approach
-      url: /about/history-and-approach/
+    - title: About FIDDLE,GREEN
+      url: /about/fiddle-green/
+      blurb: Why we started, what we believe about technology help, and what does not change from one job to the next.
     - title: Team
       url: /about/team/
+      blurb: The people who take your call and do the work.
     - title: Supporting Maine
       url: /about/supporting-maine/
-    - title: "History & Testimonials"
-      url: /about/history-and-testimonials/
+      blurb: Discounted or free travel statewide, and an hour donated in every community we visit.
+    - title: Testimonials
+      url: /about/testimonials/
+      blurb: What clients say about working with us, grouped by the kind of organization they run.
     - title: Contact
       url: /contact/
       footer_only: true

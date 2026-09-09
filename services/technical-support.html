@@ -1,0 +1,75 @@
+---
+layout: expertise
+permalink: /services/technical-support/
+title: Technical Support
+parent_title: Services
+parent_url: /services/
+headline: When something's wrong, start here.
+description: Hands-on help with the machines, networks, and accounts you depend on — in person around Greater Portland, or remotely anywhere in Maine.
+exp_key: support
+stack:
+  - h: General business productivity
+    tools:
+      - Microsoft 365 and other Microsoft apps
+      - Google Workspace
+      - Atlassian products
+      - Airtable
+      - QuickBooks Online
+      - Monday.com
+  - h: Communications and marketing
+    tools:
+      - Zoom
+      - Squarespace
+      - Slack
+      - Canva
+      - WordPress
+      - Mailchimp
+      - Hootsuite
+      - HubSpot
+      - Salesforce
+  - h: Data science
+    tools:
+      - Power BI
+      - Tableau
+      - R
+      - Qualtrics
+      - Excel and Power Query
+  - h: Artificial intelligence
+    tools:
+      - OpenAI (enterprise and API platforms)
+      - Anthropic (enterprise and API platforms)
+      - Microsoft Copilot
+      - Ollama
+      - Cursor
+      - GitHub Copilot
+      - Hugging Face
+  - h: Infrastructure
+    tools:
+      - AWS
+      - Azure
+      - Google Cloud
+      - Docker
+      - Cloudflare
+---
+
+{%- comment -%}
+  A plain list of what we already know, so a visitor can find their own tool
+  rather than read a claim about breadth. Not exhaustive, and the note under
+  the heading says so.
+{%- endcomment -%}
+<section class="band band--sand stack-band">
+  {% include section-heading.html title="Popular technology we support" class="section-heading--sm section-heading--lede-tight" %}
+  <p class="section-lede stack__note">A sample of what we work in most often. If yours is not here, ask — it is usually the same problem wearing a different logo.</p>
+  <div class="stack">
+    {%- for group in page.stack -%}
+      <div class="stack__group">
+        <h3>{{ group.h | escape_once }}</h3>
+        <ul>
+          {%- for t in group.tools -%}
+            <li>{{ t | escape_once }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>

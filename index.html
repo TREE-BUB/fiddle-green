@@ -2,17 +2,16 @@
 layout: default
 title: Home
 description: >-
-  Fiddle Green is a Maine technology consulting company for organizations too
-  small to be anyone else's priority — small businesses, nonprofits, startups,
-  and public agencies.
+  A small technology company in Portland, Maine. Patient, plain-language help
+  for small businesses, nonprofits, and the public sector.
 ---
 
 <section class="band band--hero band--home-hero">
   <img class="home-hero__watermark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
   <div class="home-hero__inner">
-    <p class="eyebrow">Maine technology consulting</p>
-    <h1>For organizations too small to be anyone else&rsquo;s priority.</h1>
-    <p class="home-hero__lede">Fiddle Green works with small businesses, nonprofits, startups, and public agencies, and takes on the problems that quietly hold an organization back. That focus is deliberate. By not chasing big accounts, we can give smaller organizations the kind of attention they usually can&rsquo;t get anywhere else.</p>
+    <p class="eyebrow">We’re here to help</p>
+    <h1>Make technology a good thing.</h1>
+    <p class="home-hero__lede">FIDDLE,GREEN is a small technology business based in Portland, Maine, that helps people, organizations, and communities put technology to work for them. We sit down with you, sort out what's actually going on, and leave you more confident than we found you. No jargon, no upselling, we're just here to help.</p>
     <div class="actions">
       <a class="btn btn--amber" href="{{ '/contact/' | relative_url }}">Start a conversation</a>
       <a class="btn btn--ghost" href="{{ '/how-we-work/' | relative_url }}">See how we work</a>
@@ -20,34 +19,8 @@ description: >-
   </div>
 </section>
 
-{%- comment -%}
-  The situations are deliberately specific. They do the work a list of service
-  categories cannot: showing a reader their own problem before they have to
-  decide which of our six practice areas it belongs to. Same split as the
-  expertise pages, so the rhythm carries across.
-{%- endcomment -%}
-<section class="band band--cream bullets-band">
-  <div class="split">
-    <div class="split__aside">
-      {% include section-heading.html title="Who we're for" class="section-heading--sm" %}
-      <p class="split__note">Most of our clients have no one whose job is technology. The owner does it. Or the executive director, or the office manager, or a board member who&rsquo;s good with computers. It gets handled in the margins of somebody&rsquo;s real job, and it works until it doesn&rsquo;t.</p>
-    </div>
-    <ul class="bullets">
-      <li><span class="bullets__dot" aria-hidden="true"></span><span>A restaurant whose website is costing it business, and no one on staff can fix it.</span></li>
-      <li><span class="bullets__dot" aria-hidden="true"></span><span>A nonprofit that keeps hearing it should be using AI, but has no idea where to start or whether it&rsquo;s safe.</span></li>
-      <li><span class="bullets__dot" aria-hidden="true"></span><span>A community orchestra with an audio problem and a concert in ten days.</span></li>
-      <li><span class="bullets__dot" aria-hidden="true"></span><span>A founder with a good idea and no technical team.</span></li>
-      <li><span class="bullets__dot" aria-hidden="true"></span><span>A growing business that&rsquo;s outgrown the software it set up three years ago, because nobody asked how the staff actually work before configuring it.</span></li>
-    </ul>
-  </div>
-</section>
-
-{% include callout.html
-   eyebrow="Why we work this way"
-   text="None of these are small problems to the organization living with them. They're just small enough that the big consultancies won't return the call." %}
-
 <section class="band band--cream home-segments">
-  {% include section-heading.html title="Who we work with" %}
+  {% include section-heading.html title="Who we help" %}
   {%- comment -%}
     Icon and label sit inside one link: two links to the same page would make a
     screen reader announce every destination twice. The icon is painted from the
@@ -65,16 +38,47 @@ description: >-
   </div>
 </section>
 
+{%- comment -%}
+  Each service gets its own card so the three things it actually covers are on
+  the page, rather than a label the reader has to click to understand. The
+  whole card is the link, so the icon and the list are not separate stops.
+{%- endcomment -%}
 <section class="band band--sand home-expertise">
-  {% include section-heading.html title="What we do" %}
-  <div class="icon-row">
+  {% include section-heading.html title="Services" %}
+  <div class="service-grid">
     {%- for exp in site.data.expertise -%}
       {%- unless exp.on_home == false -%}
-        <a class="icon-row__item" href="{{ exp.url | relative_url }}">
-          <span class="icon-row__icon" style="--icon: url('{{ exp.icon | relative_url }}')"></span>
-          <span class="icon-row__label">{{ exp.label | escape_once }}</span>
+        <a class="service-card" href="{{ exp.url | relative_url }}">
+          <span class="icon-row__icon service-card__icon" style="--icon: url('{{ exp.icon | relative_url }}')"></span>
+          <h3 class="service-card__title">{{ exp.label | escape_once }}</h3>
+          <ul class="service-card__list">
+            {%- for d in exp.details -%}
+              <li>{{ d | escape_once }}</li>
+            {%- endfor -%}
+          </ul>
         </a>
       {%- endunless -%}
     {%- endfor -%}
+  </div>
+</section>
+
+<section class="band band--cream home-why">
+  <div class="aside-split">
+    <div class="aside-split__main">
+      {% include section-heading.html title="Why FIDDLE,GREEN?" %}
+      <div class="prose-lede">
+        <p>We do the work properly, explain it in language you can use, and leave everything in your name. We do not upsell — we would rather you buy what you actually need and call us again than buy more and regret it.</p>
+        <p>Whatever the size of the job, you get the same people and the same straight answers. The first conversation is free and commits you to nothing.</p>
+      </div>
+    </div>
+    <div class="learn-more-block">
+      <h3 class="learn-more__title">Learn more</h3>
+      <div class="learn-more">
+        <a class="btn btn--square btn--outline-forest" href="{{ '/services/' | relative_url }}">What we do</a>
+        <a class="btn btn--square btn--outline-forest" href="{{ '/how-we-work/engagement-models/' | relative_url }}">How engagements work</a>
+        <a class="btn btn--square btn--outline-forest" href="{{ '/about/team/' | relative_url }}">Meet the team</a>
+        <a class="btn btn--square btn--amber learn-more__primary" href="{{ '/contact/' | relative_url }}">Start the conversation</a>
+      </div>
+    </div>
   </div>
 </section>

@@ -5,7 +5,7 @@ watermark reads behind it. Nav tree comes from _data/nav.yml.
 <div class="site-header-wrap">
   <header class="site-header">
     <a class="site-header__brand" href="{{ '/' | relative_url }}">
-      <img src="{{ '/assets/wordmark-light.png' | relative_url }}" alt="Fiddle Green" width="987" height="133">
+      <img src="{{ '/assets/wordmark-light.png' | relative_url }}" alt="FIDDLE,GREEN" width="987" height="133">
     </a>
 
     <nav class="nav" aria-label="Primary">
@@ -19,7 +19,7 @@ watermark reads behind it. Nav tree comes from _data/nav.yml.
             </a>
             <div class="nav__menu" id="menu-{{ menu_id }}" data-dropdown-menu hidden>
               {%- for child in item.children -%}
-                {%- unless child.footer_only or child.rail_only -%}
+                {%- unless child.footer_only or child.hidden -%}
                   <a class="nav__menu-link" href="{{ child.url | relative_url }}">{{ child.title | escape_once }}</a>
                 {%- endunless -%}
               {%- endfor -%}
@@ -48,7 +48,7 @@ watermark reads behind it. Nav tree comes from _data/nav.yml.
           <a class="drawer__heading" href="{{ item.url | relative_url }}">{{ item.drawer_title | default: item.title | escape_once }}</a>
           <div class="drawer__children">
             {%- for child in item.children -%}
-              {%- unless child.footer_only or child.rail_only -%}
+              {%- unless child.footer_only or child.hidden -%}
                 <a class="drawer__link" href="{{ child.url | relative_url }}">{{ child.title | escape_once }}</a>
               {%- endunless -%}
             {%- endfor -%}

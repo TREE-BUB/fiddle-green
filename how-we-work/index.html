@@ -3,59 +3,18 @@ layout: hub
 permalink: /how-we-work/
 title: How We Work
 eyebrow: How We Work
-headline: Straightforward, start to finish.
-description: A free first conversation, a written estimate, a deliverable at the end, and an honest answer about whether we're the right people at all.
-principles:
-  - h: Human-first
-    p: Technology magnifies what people are already doing. It is not the point. We put real effort into understanding how your organization actually works before we propose anything.
-    meta: Before we propose
-  - h: Something concrete, every time
-    p: Every engagement ends with a deliverable, so when it is over you know exactly what you got.
-    meta: Every engagement
-  - h: Shaped to fit
-    p: We start with a free, no-pressure conversation, as formal or informal as you like. Some engagements need a proper scoping exercise and others just need a scope of work. We do not run every client through the same machine.
-    meta: No standard process
-  - h: Honest about fit
-    p: If we are not the right people for the job, we will say so, and we will try to point you toward someone who is.
-    meta: Including no
-reasons:
-  - h: You're the destination, not a stepping stone
-    p: We are not building a portfolio on small clients so we can go chase bigger ones. This is the work we want.
-  - h: We know how to make a dollar scream
-    p: Our team has worked in some of the lowest-resource settings in the world and with bootstrapped nonprofits running on fumes. Doing more with less is not a slogan here, it is where we learned the job.
-  - h: We fight for you with vendors who ignore you
-    p: Small organizations get pushed around by their software companies. We know how to make a forceful, well-documented case on your behalf. That is leverage you do not have alone.
-  - h: We hand you the keys
-    p: We document what we do and build your team's ability to run it without us. That means you could take our documentation and hire someone cheaper next time. Most consultants have every reason not to work that way. We think it is the only honest way to work.
+headline: Being easy to work with is not a by-product. It is the point.
+description: A free first conversation, a written scope, one person on your account, and documentation you keep — built in deliberately, not left to chance.
 ---
 
-<section class="band band--cream cards-band">
-  {% include section-heading.html title="What stays the same on every engagement" %}
-  <div class="card-grid card-grid--2up">
-    {%- for p in page.principles -%}
-      <div class="card card--flat">
-        <h3 class="card__title-lg">{{ p.h | escape_once }}</h3>
-        <p class="card__body card__body--lg">{{ p.p | escape_once }}</p>
-        <p class="card__tail">{{ p.meta | escape_once }}</p>
-      </div>
-    {%- endfor -%}
+<section class="band band--cream hub-lede-band">
+  <div class="prose-lede">
+    <p>Most firms treat the working relationship as whatever is left over once the technical work is done. We build it on purpose, because it is usually the part that decides whether the technical work was worth paying for.</p>
+    <p>That means a free first conversation before anyone commits, a written scope before anyone starts, one person who stays with your account instead of a queue, and notes you keep in language you can use. None of that is us being generous. It is what makes the work land, and it is why people call us back.</p>
   </div>
 </section>
 
-<section class="band band--cream outcomes-band">
-  <div class="panel">
-    {% include section-heading.html title="Why us" class="section-heading--sm" %}
-    <div class="rule-cards rule-cards--wide rule-cards--2up">
-      {%- for r in page.reasons -%}
-        <div class="rule-card">
-          <h3>{{ r.h | escape_once }}</h3>
-          <p>{{ r.p | escape_once }}</p>
-        </div>
-      {%- endfor -%}
-    </div>
-  </div>
+<section class="band band--cream cards-band hub-cards-band">
+  {% include section-heading.html title="The details" class="section-heading--gap" %}
+  {% include hub-cards.html url=page.url %}
 </section>
-
-{% include callout.html
-   eyebrow="The first conversation"
-   text="It's free, it commits you to nothing, and it's as formal or informal as you want it to be. Tell us what you're dealing with and we'll tell you what it would take." %}

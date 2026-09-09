@@ -1,29 +1,30 @@
-# Drives the home "Who we work with" icons, which show icon + label only.
+# Drives the home "Who we help" icons, which show icon + label only, and the
+# blurbs on the /who-we-help/ hub cards.
 # on_home: false keeps an entry here but off that row.
+- key: startups
+  icon: /assets/icons/noun_Rocket_1123009_338A4A.svg
+  num: "02"
+  label: Startups
+  url: /who-we-help/startups/
+  blurb: Set things up right the first time — accounts, security, and tooling that won't box you in later.
+
 - key: businesses
   icon: /assets/icons/noun_storefront_8468127_338A4A.svg
-  num: "01"
+  num: "03"
   label: Small Businesses
   url: /who-we-help/small-businesses/
-  blurb: The technology side of growing pains — getting more out of what you already own, and real value from the data you already have.
+  blurb: Someone to call when the register goes down, and someone to plan with when it doesn't.
 
 - key: nonprofits
   icon: /assets/icons/noun_Charity_2334816_338A4A.svg
-  num: "02"
+  num: "04"
   label: Non-profits
   url: /who-we-help/nonprofits/
-  blurb: Grant writing, funder compliance, and the discounts and donated licenses most organizations do not know exist.
-
-- key: startups
-  icon: /assets/icons/noun_Rocket_1123009_338A4A.svg
-  num: "03"
-  label: Startups
-  url: /who-we-help/startups/
-  blurb: A technical team you can hire instead of recruit — senior engineering, product design, and the judgment to know which corners are safe to cut.
+  blurb: Mission-sized budgets, grant-friendly documentation, and rates that reflect it.
 
 - key: government
   icon: /assets/icons/noun_Government_8352364_338A4A.svg
-  num: "04"
+  num: "05"
   label: Public Sector
-  url: /who-we-help/government/
+  url: /who-we-help/public-sector/
   blurb: Capability statement, procurement paperwork, and a partner who answers the phone.

@@ -1,43 +1,68 @@
-# Drives the home "What we do" icons, which show icon + label only.
-# on_home: false keeps an entry here but off that row.
+# Drives the home "Services" cards and the blurbs on the /services/ hub cards.
+# The home cards show the icon, the label and the details; the hub cards show
+# the blurb. on_home: false keeps an entry here but off the home page.
 - key: support
   icon: /assets/icons/noun_Headset_8456463_338A4A.svg
   letter: A
   label: Technical Support
-  url: /expertise/technical-support/
-  blurb: Getting the systems you already have to work the way they should — plus purchasing, procurement, and dealing with vendors on your behalf.
+  url: /services/technical-support/
+  blurb: Fixing what's broken and hardening what isn't.
+  details:
+    - Technology implementation
+    - System configuration and optimization
+    - Help desk and end user troubleshooting
 
 - key: education
   icon: /assets/icons/noun_Class_8362686_338A4A.svg
   letter: B
   label: Training & Education
-  url: /expertise/education/
-  blurb: Documentation, training materials, and the actual teaching — explaining technical things to people who do not work in technology.
+  url: /services/education/
+  blurb: Teaching you and your staff the parts worth knowing.
+  details:
+    - Training material development
+    - Workforce development and capacity building
+    - Training-of-trainers programs
 
 - key: advising
   icon: /assets/icons/noun_strategy_8273592_338A4A.svg
   letter: C
   label: Strategy & Operations
-  url: /expertise/advising/
-  blurb: How technology should fit into the way your organization runs — policies, governance, and planning.
+  url: /services/advising/
+  blurb: Second opinions, vendor questions, and plans you can afford.
+  details:
+    - Technology-enabled operational support
+    - Workflow automation
+    - Vendor evaluation and independent second opinions
 
 - key: ai
   icon: /assets/icons/noun_AI_8215905_338A4A.svg
   letter: D
   label: Artificial Intelligence
-  url: /expertise/artificial-intelligence/
-  blurb: From a board-level conversation about where AI belongs in your mission to the specific tools that give your staff their time back.
+  url: /services/artificial-intelligence/
+  blurb: A grounded read on what AI can do for you — and what it should not touch.
+  details:
+    - Safety and security strengthening
+    - Policy and mission statement development
+    - Procurement and implementation
 
 - key: data
   icon: /assets/icons/noun_Data_8259289_338A4A.svg
   letter: E
-  label: Data & Analytics
-  url: /expertise/data-science/
-  blurb: Governance, source of truth, cleaning and transformation, analysis and dashboards — with a particular strength in survey design.
+  label: Data Science
+  url: /services/data-science/
+  blurb: Making sense of what you already collect, and answering the question you actually asked.
+  details:
+    - Data governance and strategy
+    - Interoperability and workflow optimization
+    - Data pipeline automation
 
 - key: product
   icon: /assets/icons/noun_build_6913680_338A4A.svg
   letter: F
   label: Product and Engineering
-  url: /expertise/product-and-engineering/
-  blurb: Soup to nuts — turning an idea into a working prototype or a real product, including design, research, and testing.
+  url: /services/product-and-engineering/
+  blurb: Building the thing, at the size of the problem rather than the size of the vendor.
+  details:
+    - Product design and prototype development
+    - User testing and validation
+    - Full stack software development

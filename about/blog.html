@@ -5,13 +5,14 @@ title: Blog
 parent_title: About
 parent_url: /about/
 headline: Notes from the work.
-description: Plain-language notes on technology, sorted by who they're for.
+description: Plain-language notes on technology from the FIDDLE,GREEN team, sorted by who they are for — people, small businesses, nonprofits, and the public sector.
 needs_blog_js: true
+noindex: true
 ---
 
 <section class="band band--cream blog-band">
   <div class="filters" data-filters-for="blog-grid">
-    {%- assign cats = "All,Small Businesses,Nonprofits,Startups,Public Sector,Other" | split: "," -%}
+    {%- assign cats = "All,Startups,Small Businesses,Nonprofits,Public Sector,Other" | split: "," -%}
     {%- for c in cats -%}
       <button class="filter" type="button" data-filter="{{ c }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ c }}</button>
     {%- endfor -%}

@@ -624,6 +624,7 @@ h1, h2, h3 { text-wrap: pretty; }
 
   .mark { height: 28px; margin-bottom: 18px; }
 
+  h2,
   h3 {
     font-size: 21px;
     font-weight: 500;
@@ -633,6 +634,27 @@ h1, h2, h3 { text-wrap: pretty; }
 }
 
 a.card:hover { border-color: var(--amber); }
+
+/* A hub card is a whole link, so the arrow marks it as one and the body copy
+   is pushed apart from it however tall the card ends up. */
+.hub-card {
+  display: flex;
+  flex-direction: column;
+
+  .card__body { flex: 1 0 auto; margin-bottom: 14px; }
+}
+
+.hub-card__arrow {
+  font-size: 15px;
+  color: var(--amber);
+  transition: transform .15s ease;
+}
+
+.hub-card:hover .hub-card__arrow { transform: translateX(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-card__arrow { transition: none; }
+}
 
 .card__body {
   font-size: 15px;
@@ -918,16 +940,6 @@ a.card:hover { border-color: var(--amber); }
 
 .rates { max-width: 900px; }
 
-/* Sits under the last rate row, so it carries the qualifier that applies
-   across all of them rather than to any one line. */
-.rates__note {
-  max-width: 900px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(35, 41, 31, .66);
-  margin: 22px 0 0;
-}
-
 .rate {
   display: flex;
   flex-wrap: wrap;
@@ -1085,6 +1097,7 @@ a.card:hover { border-color: var(--amber); }
   max-width: 380px;
   padding: 28px 26px;
 
+  h2,
   h3 { font-size: 19px; line-height: 1.35; margin: 0 0 10px; }
 }
 
@@ -1165,6 +1178,7 @@ a.card:hover { border-color: var(--amber); }
 .person__body {
   flex: 1 1 220px;
 
+  h2,
   h3 { font-size: 20px; font-weight: 500; color: var(--forest); margin: 0 0 3px; }
   p  { font-size: 15px; line-height: 1.62; color: rgba(35, 41, 31, .75); margin: 0; }
 }
@@ -1187,30 +1201,6 @@ a.card:hover { border-color: var(--amber); }
    Timeline & testimonials
    ========================================================================== */
 
-.timeline { max-width: 820px; }
-
-.milestone {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 26px;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--hairline-2);
-}
-
-.milestone__year {
-  flex: 0 0 120px;
-  font-size: 26px;
-  color: var(--amber);
-  margin: 0;
-}
-
-.milestone__body {
-  flex: 1 1 380px;
-
-  h3 { font-size: 19px; font-weight: 500; color: var(--forest); margin: 0 0 8px; }
-  p  { font-size: 16px; line-height: 1.7; color: rgba(35, 41, 31, .78); margin: 0; max-width: 560px; }
-}
-
 .quote {
   margin: 0;
   flex: 1 1 320px;
@@ -1231,6 +1221,143 @@ a.card:hover { border-color: var(--amber); }
     color: var(--forest);
     margin: 0;
   }
+}
+
+/* Inside a disclosure the quotes are already grouped and bounded, so they drop
+   the card and read as a run of quotations. */
+.quote--stacked {
+  flex: none;
+  max-width: none;
+  background: none;
+  border: 0;
+  border-left: 2px solid var(--amber);
+  border-radius: 0;
+  padding: 2px 0 2px 20px;
+  gap: 12px;
+
+  blockquote { font-size: 16px; color: rgba(35, 41, 31, .82); }
+}
+
+/* The tools we work in, grouped. Columns are sized by their contents rather
+   than by a fixed count, so a group with five names does not leave a hole
+   next to one with seven. */
+.stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 34px 30px;
+  max-width: 1000px;
+}
+
+.stack__note { margin-bottom: 34px; }
+
+.stack__group {
+  h3 {
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(27, 74, 40, .16);
+  }
+
+  ul { list-style: none; margin: 0; padding: 0; }
+
+  li {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(35, 41, 31, .78);
+    padding: 5px 0;
+  }
+}
+
+/* The one quote that leads the page, set large and centred above the columns
+   so it is read before anything is opened. */
+.topline {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+
+  .mark { height: 30px; margin: 0 auto 24px; }
+
+  blockquote {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.45;
+    color: var(--forest);
+    margin: 0 0 22px;
+  }
+
+  figcaption { margin: 0; }
+}
+
+@media (max-width: $bp-sm) {
+  .topline blockquote { font-size: 21px; }
+}
+
+/* Client quotes grouped by segment. Native <details>, so a closed group still
+   opens without JavaScript and find-in-page can reach the text inside it. */
+.disclosures {
+  border-top: 1px solid var(--hairline);
+}
+
+.disclosure {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.disclosure__summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 2px;
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker { display: none; }
+
+  /* The caret is drawn here rather than left to the browser's own marker,
+     which cannot be positioned or turned. */
+  &::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-left: auto;
+    border-right: 2px solid var(--amber);
+    border-bottom: 2px solid var(--amber);
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform .18s ease;
+  }
+
+  &:hover .disclosure__title { color: var(--amber-ink); }
+}
+
+.disclosure[open] > .disclosure__summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+.disclosure__title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.disclosure__count {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: var(--ink-faint);
+}
+
+.disclosure__body {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 4px 2px 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disclosure__summary::after { transition: none; }
 }
 
 .quote__name { font-size: 15px; font-weight: 500; color: var(--forest); margin: 0 0 3px; }
@@ -1583,7 +1710,6 @@ a.contact-card__value {
 
   .btn { padding: 14px 24px; }
 
-  .milestone__year { flex: 0 0 auto; }
   .card--carousel { flex-basis: 280px; }
 }
 
@@ -1743,11 +1869,121 @@ a.contact-card__value {
 .relief-band  { padding-top: 66px; padding-bottom: 20px; }
 .probono-band { padding-top: 52px; padding-bottom: 20px; }
 .ask-band     { padding-top: 52px; padding-bottom: 74px; }
-/* The associate bench closes /about/team/, so it carries the bottom padding the
-   roster band above it deliberately does not. */
-.bench-band   { padding-top: 52px; padding-bottom: 74px; }
-/* Recent work is the only body band on the About hub, so it closes the page. */
-.work-band    { padding-top: 66px; padding-bottom: 78px; }
+
+/* Services on the home page: six cards, three across, each carrying what the
+   service actually covers. The icon is painted from the stylesheet the same
+   way the icon rows do it, so it picks up the amber on hover. */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 26px;
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  color: var(--forest);
+  transition: border-color .18s ease;
+
+  &:hover {
+    border-color: var(--amber);
+
+    .service-card__icon { background: var(--amber); }
+  }
+}
+
+.service-card__icon { width: 46px; height: 46px; }
+
+.service-card__title {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--forest);
+  margin: 0;
+}
+
+.service-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: rgba(35, 41, 31, .7);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: $bp-sm) {
+  .service-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* The home page's closing pitch: a short case, then the four places to go
+   next in a 2x2. The buttons fill their cells rather than sitting at their
+   own widths, so the block reads as a grid and not a ragged pile. */
+.home-why { padding-top: 66px; padding-bottom: 82px; }
+
+/* The 2x2 sits opposite the copy and balances it, so it needs a basis wide
+   enough for two buttons or the pair wraps to one column too early. */
+.learn-more-block { flex: 1 1 380px; }
+
+.learn-more__title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin: 0 0 18px;
+}
+
+.learn-more {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+
+  .btn { white-space: normal; padding-left: 18px; padding-right: 18px; }
+}
+
+/* The one that asks for the call carries a little more weight than the three
+   that only offer more reading. */
+.learn-more__primary { box-shadow: 0 2px 14px rgba(212, 136, 42, .35); }
+
+@media (max-width: $bp-sm) {
+  .learn-more { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Hub pages: a run of prose under the hero, then the children as cards. The
+   cards band brings its own headroom, so the lede adds none of its own. */
+.hub-lede-band    { padding-top: 60px; padding-bottom: 0; }
+.hub-lede-band .prose-lede { margin-bottom: 0; max-width: 660px; }
+.hub-cards-band   { padding-bottom: 74px; }
+
+.approach-band    { padding-top: 56px; padding-bottom: 0; }
+.approach-band .prose-lede { margin-bottom: 0; }
 
 .maine-band       { padding-top: 56px; padding-bottom: 0; }
 .maine-cards-band { padding-top: 44px; padding-bottom: 66px; }
@@ -1765,27 +2001,15 @@ a.contact-card__value {
 
 .card--flat { flex: 1 1 280px; }
 
-/* Four-item grids. The default basis fits three across and leaves the fourth
-   stretched over a full row on its own, so a set of four is laid out two up
-   and collapses to one on small screens. */
-.card-grid--2up   .card      { flex-basis: calc(50% - 10px); }
-.rule-cards--2up  .rule-card { flex-basis: calc(50% - 10px); }
-.rule-cards--wide.rule-cards--2up .rule-card { flex-basis: calc(50% - 12px); }
-
-@media (max-width: $bp-sm) {
-  .card-grid--2up  .card,
-  .rule-cards--2up .rule-card,
-  .rule-cards--wide.rule-cards--2up .rule-card { flex-basis: 100%; }
-}
-
 .story-band     { padding-top: 72px; padding-bottom: 20px; }
 .believe-band   { padding-top: 48px; padding-bottom: 78px; }
 /* The roster band carries almost no bottom padding of its own, which left the
    last person sitting right on the colour change into the band below. */
 .team-band      { padding-bottom: 60px; }
 .blog-band      { padding-top: 56px; padding-bottom: 78px; }
-.timeline-band  { padding-top: 66px; padding-bottom: 78px; }
-.quotes-band    { padding-top: 66px; padding-bottom: 78px; }
+.stack-band     { padding-top: 62px; padding-bottom: 74px; }
+.topline-band   { padding-top: 62px; padding-bottom: 0; }
+.quotes-band    { padding-top: 58px; padding-bottom: 78px; }
 .contact-band   { padding-top: 70px; padding-bottom: 78px; }
 
 .believe__lede {

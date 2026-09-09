@@ -1,12 +1,13 @@
 {%- comment -%}
 The amber-outlined pill stack in a hub hero. Reads the nav child list for the
-hub whose URL matches include.url.
+hub whose URL matches include.url, minus the children marked footer_only or
+hidden.
 {%- endcomment -%}
 <div class="rail">
   {%- for item in site.data.nav -%}
     {%- if item.url == include.url -%}
       {%- for child in item.children -%}
-        {%- unless child.footer_only -%}
+        {%- unless child.footer_only or child.hidden -%}
           {%- if child.rail_url -%}
             {%- assign href = child.rail_url -%}
           {%- else -%}

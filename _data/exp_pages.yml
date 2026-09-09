@@ -1,17 +1,17 @@
-# Copy for the six data-driven Areas of Expertise sub-pages.
+# Copy for the five data-driven Services sub-pages.
 support:
   note: Most support work is same-week, and urgent things get triaged the day you call.
   bullets:
-    - "Fixing what is broken: slowdowns, crashes, outages, and honest replace-or-repair advice"
-    - "Sorting out what is misconfigured, and setting up what was never there in the first place"
-    - "Networks, accounts, and email: wifi coverage, recovery, migration, two-factor, and shared-access cleanup"
+    - "Computers and phones: slowdowns, crashes, upgrades, and honest replace-or-repair advice"
+    - "Networks: wifi coverage, routers, wiring, and internet-provider problems"
+    - "Accounts and email: recovery, migration, two-factor setup, and shared-access cleanup"
     - "Backups: setting them up, testing them, and restoring when you need it"
-    - "Purchasing and procurement — including dealing with your vendors on your behalf"
+    - "Security response: suspected scams, compromised accounts, and what to do next"
   outcomes:
     - h: The thing works again
       p: Plus a plain explanation of what went wrong, in language you can repeat to someone else.
-    - h: Leverage with your vendors
-      p: Small organizations get pushed around by their software companies. We make a forceful, well-documented case for you.
+    - h: Notes you keep
+      p: What we changed, what to watch for, and what you can safely ignore.
     - h: A smaller next problem
       p: We fix the cause where we can, not just the symptom that got your attention.
   cta_title: Need a hand with something specific?
@@ -19,44 +19,44 @@ support:
 education:
   note: Sessions run 60–90 minutes and can be repeated for different shifts or skill levels.
   bullets:
-    - "Documentation, training materials, and reference guides written in your organization's own words"
-    - "Teaching your staff directly, or train-the-trainer so the knowledge stays after we leave"
     - "Staff onboarding: the tools your team uses, taught in the order they will use them"
     - "Security awareness: spotting scams, handling passwords, and what to do after a mistake"
+    - "Digital literacy for older adults and first-time users, at a genuinely unhurried pace"
     - "Practical AI workshops: useful prompts, real limits, and what not to paste into a chatbot"
+    - "Written guides and short recordings your team can revisit later"
   outcomes:
     - h: Fewer support calls
       p: People handle the small things themselves and escalate the right ones sooner.
     - h: Materials you own
-      p: Slides, handouts, and quick-reference sheets in your words, yours to reuse without us.
+      p: Slides, handouts, and quick-reference sheets in your words, yours to reuse.
     - h: A calmer team
-      p: We are good at explaining technical things to people who do not work in technology. It shows up as fewer avoidable mistakes.
+      p: The measurable part is confidence. It shows up as fewer avoidable mistakes.
   cta_title: Want a session for your team?
 
 advising:
   note: Advising engagements are often a single session plus a written summary.
   bullets:
-    - "Working out how technology should fit into the way your organization actually runs"
-    - "Policies and governance: acceptable use, data handling, access, and who decides what"
-    - "Technology planning and roadmaps, sized to a budget you actually have"
+    - "Buy-or-wait decisions on hardware, software, and subscriptions"
     - "Reviewing a quote or proposal from another vendor before you sign it"
-    - "Technology assessments for boards, funders, and lenders, and requirements for public bids"
+    - "Scoping and writing technology requirements, including for public bids"
+    - "Technology assessments for boards, funders, and lenders"
+    - "Planning a migration, a move, or a growth step before it becomes urgent"
   outcomes:
     - h: A recommendation, in writing
-      p: With the reasoning shown, so you can defend it to a board or a funder.
+      p: With the reasoning shown, so you can defend it to a board or a partner.
     - h: Options, honestly priced
       p: Including the option of doing nothing yet, when that is the right answer.
     - h: No lock-in
-      p: You can take our plan and have anyone execute it. That is a feature, not an oversight.
+      p: You can take our plan and have anyone execute it. That is a feature.
   cta_title: Have a decision to make?
 
 ai:
   note: We are not here to sell you an AI strategy. Often the honest answer is "not yet, and here is why."
   bullets:
-    - "Board-level conversations about where AI does and does not belong in your mission"
-    - "Finding the specific tools and automations that give your staff their time back"
+    - "Where AI tools save your team real time — and where they quietly create rework"
     - "Privacy first: what data must never be pasted into a public tool, and why"
     - "Short, readable internal AI policies for staff, volunteers, and contractors"
+    - "Hands-on training on the tools you already pay for, before buying new ones"
     - "Evaluating an AI vendor claim, including the questions their sales team hopes you skip"
   outcomes:
     - h: A shortlist, not a shopping spree
@@ -67,31 +67,16 @@ ai:
       p: Including the confidence to say no when a tool is not ready for your data.
   cta_title: Curious whether AI is worth it for you?
 
-data:
-  note: We have a particular strength in survey design and data collection — getting the question right before anyone answers it.
-  bullets:
-    - "Data governance, and sorting out which system is the source of truth when three of them disagree"
-    - "Cleaning and transforming the data you already have, which is usually the unglamorous half of the job"
-    - "Survey design and data collection, built so the answers can actually be analyzed afterward"
-    - "Analysis, dashboards, and reporting that answer the question you asked rather than the one that was easy"
-    - "Reporting built for the audience that reads it — a board, a funder, or a regulator"
-  outcomes:
-    - h: One number, one source
-      p: An agreed source of truth, so two people pulling the same figure get the same answer.
-    - h: Data you can trust
-      p: Cleaned, documented, and structured, with the assumptions written down beside it.
-    - h: A report someone reads
-      p: Built around the decision it is meant to inform, not around what the tool made easy to chart.
-  cta_title: Not sure what your data is telling you?
-
+# DRAFT: written to the house voice as a starting point, not from a briefing.
+# Every line here is up for rewriting.
 product:
   note: Product work usually starts with a scoping conversation and a fixed-price first phase, so you can stop after it if the answer changes.
   bullets:
-    - "Soup to nuts: turning an idea into a working prototype, or into a real product"
-    - "Product design, user research, and testing, so version one is shaped by people who will use it"
+    - "Turning a rough idea into something buildable: scope, constraints, and what to leave out of version one"
+    - "Building the first working version, small enough to put in front of real people and learn from"
     - "Websites, forms, dashboards, and the integrations that connect the systems you already run"
-    - "User acceptance testing, so you can tell whether what we built is what you asked for"
     - "Picking up work someone else started, including code you inherited without documentation"
+    - "Handover notes and documentation, so the next developer is not starting from scratch"
   outcomes:
     - h: Something that actually runs
       p: Working software in front of real users, not a demo that needs someone standing next to it.
