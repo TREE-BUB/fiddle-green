@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fiddle.green/how-we-work/access-and-discounts/</loc>
+    <loc>https://fiddle.green/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/about/fiddle-green/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/services/artificial-intelligence/</loc>
+    <loc>https://fiddle.green/about/supporting-maine/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/about/team/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/about/testimonials/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -16,7 +36,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/services/data-and-analytics/</loc>
+    <loc>https://fiddle.green/how-we-work/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/how-we-work/access-and-discounts/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -26,14 +51,9 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/about/fiddle-green/</loc>
+    <loc>https://fiddle.green/how-we-work/our-approach/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/how-we-work/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fiddle.green/services/</loc>
@@ -41,9 +61,34 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/about/</loc>
+    <loc>https://fiddle.green/services/artificial-intelligence/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/services/data-and-analytics/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/services/product-and-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/services/strategy-and-operations/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/services/technical-support/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fiddle.green/services/training-and-education/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fiddle.green/who-we-help/</loc>
@@ -51,22 +96,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://fiddle.green/who-we-help/nonprofits/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/how-we-work/our-approach/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/services/product-and-engineering/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -82,36 +112,6 @@
   </url>
   <url>
     <loc>https://fiddle.green/who-we-help/startups/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/services/strategy-and-operations/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/about/supporting-maine/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/about/team/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/services/technical-support/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/about/testimonials/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/services/training-and-education/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
