@@ -14,7 +14,13 @@ sitemap: false
 {%- endcomment -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- assign listed = site.pages | where_exp: "p", "p.sitemap != false" -%}
+{%- comment -%}
+  Sorted by URL. Jekyll hands back site.pages in whatever order the filesystem
+  walked them, which differs between machines, so without this the same source
+  builds a differently ordered sitemap here and in CI — and two builds racing
+  each other conflict over lines that carry no actual change.
+{%- endcomment -%}
+{%- assign listed = site.pages | where_exp: "p", "p.sitemap != false" | sort: "url" -%}
 {%- for p in listed -%}
 {%- comment -%}
   Only real pages: a trailing slash means a permalink Jekyll turned into a
