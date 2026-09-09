@@ -2,17 +2,17 @@
 layout: default
 title: Home
 description: >-
-  FIDDLE,GREEN is a small technology company in Portland, Maine. Patient,
-  plain-language help for individuals, startups, small businesses, nonprofits,
+  Fiddle Green is a Maine technology consulting company for organizations too
+  small to be anyone else's priority — small businesses, nonprofits, startups,
   and public agencies.
 ---
 
 <section class="band band--hero band--home-hero">
   <img class="home-hero__watermark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
   <div class="home-hero__inner">
-    <p class="eyebrow">We’re here to help</p>
-    <h1>Make technology a good thing.</h1>
-    <p class="home-hero__lede">FIDDLE,GREEN is a small technology business based in Portland, Maine, that helps people, organizations, and communities put technology to work for them. We sit down with you, sort out what's actually going on, and leave you more confident than we found you. No jargon, no upselling, we're just here to help.</p>
+    <p class="eyebrow">Maine technology consulting</p>
+    <h1>For organizations too small to be anyone else&rsquo;s priority.</h1>
+    <p class="home-hero__lede">Fiddle Green works with small businesses, nonprofits, startups, and public agencies, and takes on the problems that quietly hold an organization back. That focus is deliberate. By not chasing big accounts, we can give smaller organizations the kind of attention they usually can&rsquo;t get anywhere else.</p>
     <div class="actions">
       <a class="btn btn--amber" href="{{ '/contact/' | relative_url }}">Start a conversation</a>
       <a class="btn btn--ghost" href="{{ '/how-we-work/' | relative_url }}">See how we work</a>
@@ -20,8 +20,34 @@ description: >-
   </div>
 </section>
 
+{%- comment -%}
+  The situations are deliberately specific. They do the work a list of service
+  categories cannot: showing a reader their own problem before they have to
+  decide which of our six practice areas it belongs to. Same split as the
+  expertise pages, so the rhythm carries across.
+{%- endcomment -%}
+<section class="band band--cream bullets-band">
+  <div class="split">
+    <div class="split__aside">
+      {% include section-heading.html title="Who we're for" class="section-heading--sm" %}
+      <p class="split__note">Most of our clients have no one whose job is technology. The owner does it. Or the executive director, or the office manager, or a board member who&rsquo;s good with computers. It gets handled in the margins of somebody&rsquo;s real job, and it works until it doesn&rsquo;t.</p>
+    </div>
+    <ul class="bullets">
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>A restaurant whose website is costing it business, and no one on staff can fix it.</span></li>
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>A nonprofit that keeps hearing it should be using AI, but has no idea where to start or whether it&rsquo;s safe.</span></li>
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>A community orchestra with an audio problem and a concert in ten days.</span></li>
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>A founder with a good idea and no technical team.</span></li>
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>A growing business that&rsquo;s outgrown the software it set up three years ago, because nobody asked how the staff actually work before configuring it.</span></li>
+    </ul>
+  </div>
+</section>
+
+{% include callout.html
+   eyebrow="Why we work this way"
+   text="None of these are small problems to the organization living with them. They're just small enough that the big consultancies won't return the call." %}
+
 <section class="band band--cream home-segments">
-  {% include section-heading.html title="Who we help" %}
+  {% include section-heading.html title="Who we work with" %}
   {%- comment -%}
     Icon and label sit inside one link: two links to the same page would make a
     screen reader announce every destination twice. The icon is painted from the
@@ -40,7 +66,7 @@ description: >-
 </section>
 
 <section class="band band--sand home-expertise">
-  {% include section-heading.html title="How we help" %}
+  {% include section-heading.html title="What we do" %}
   <div class="icon-row">
     {%- for exp in site.data.expertise -%}
       {%- unless exp.on_home == false -%}

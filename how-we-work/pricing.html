@@ -4,29 +4,36 @@ permalink: /how-we-work/pricing/
 title: Pricing & Engagement
 parent_title: How We Work
 parent_url: /how-we-work/
-headline: Three ways to work with us.
-description: Ad hoc hourly work, fixed-price projects, or a monthly retainer — quoted in writing before anything starts.
+headline: Four ways to work with us.
+description: Ad hoc advising, fixed-price packages, scoped project work, or a monthly retainer — quoted in writing before anything starts.
 models:
-  - h: Ad hoc
-    meta: Hourly
+  - h: Ad hoc advising
+    meta: Hourly · no commitment
     p: An hour or a day of our attention, for when you need a second opinion more than you need a project.
     examples:
       - Sitting in on a vendor pitch and telling you afterward what you actually heard
       - Briefing a board on what AI will and will not do for a nonprofit
+      - A review of a quote from another vendor before you sign it
+  - h: Packages
+    meta: Fixed scope · fixed price
+    p: A known piece of work at a known price, so you can say yes without a scoping exercise first.
+    examples:
       - A one-day AI bootcamp for your staff
-  - h: Short term
-    meta: Project · flat fee
-    p: A defined start, a defined finish, and a fixed price agreed before anyone starts working.
+      - A six-week prototype sprint
+      - A technology assessment written up for a board or a funder
+  - h: Project work
+    meta: Scoped · flat fee
+    p: A scoped engagement to solve a specific problem or chase a specific opportunity, with a defined start, a defined finish, and a price agreed before anyone starts working.
     examples:
       - Reviewing your data ecosystem and writing up what to fix first
       - Automating a client intake workflow end to end
-      - A migration or buildout, scoped and quoted up front
-  - h: Long term
-    meta: Retainer · monthly
-    p: A standing arrangement with someone who already knows your setup and answers when you call.
+      - A migration, a website rebuild, or a buildout, scoped and quoted up front
+  - h: Retainer
+    meta: Ongoing · monthly
+    p: Ongoing support on a recurring basis, with agreed response times, from someone who already knows your setup.
     examples:
       - Fractional CIO for an organization too small to hire one outright
-      - Regular help desk support for your staff
+      - Continuing technical support for your staff
       - A recurring advisory hour with whoever makes the decisions
 billing:
   - h: Initial scoping on us
@@ -42,7 +49,7 @@ billing:
 
 <section class="band band--cream models-band">
   {% include section-heading.html title="How engagements are shaped" class="section-heading--gap" %}
-  <div class="card-grid">
+  <div class="card-grid card-grid--2up">
     {%- for m in page.models -%}
       <div class="card card--flat">
         <h3 class="card__title-lg">{{ m.h | escape_once }}</h3>
@@ -63,14 +70,15 @@ billing:
     <div class="aside-split__main">
       {% include section-heading.html title="What it costs" class="section-heading--gap" %}
       <div class="prose-lede">
-        <p>Every engagement is quoted in writing before it starts, whichever shape it takes. Discounts for nonprofits and marginalized-owned businesses are built into that number, and public sector work follows the applicable schedule or solicitation.</p>
+        <p>Every engagement is quoted in writing before it starts, whichever shape it takes. Discounts for nonprofits and for underrepresented-led businesses are built into that number, and public sector work follows the applicable schedule or solicitation.</p>
+        <p>Many clients start with a package or a single project and move to a retainer once they know what they need. That is usually the cheapest arrangement for them, and the most useful one for us.</p>
         <p>We pride ourselves on working efficiently. The point is to solve the thing in front of you, not to run up hours — so tell us what you are dealing with on the first call, and we will tell you what it would run.</p>
       </div>
     </div>
     <aside class="cta-panel">
       <p class="eyebrow eyebrow--sm">Access &amp; discounts</p>
       <h3>We care what this costs you.</h3>
-      <p class="cta-panel__body">A discount for nonprofits and for businesses owned by marginalized people, incentives across Maine, and a limited number of pro bono hours. No application, no paperwork — you say so on the first call.</p>
+      <p class="cta-panel__body">A discount for nonprofits and for underrepresented-led businesses, incentives across Maine, and a limited number of pro bono hours. Discounts do not stack — if more than one applies, you get the better of the two.</p>
       <a class="btn btn--amber" href="{{ '/how-we-work/access-and-discounts/' | relative_url }}">See what applies to you</a>
     </aside>
   </div>

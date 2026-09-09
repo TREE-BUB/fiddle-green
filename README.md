@@ -1,8 +1,12 @@
-# FIDDLE,GREEN
+# Fiddle Green
 
-Marketing site for FIDDLE,GREEN — a small technology consulting company in
-Portland, Maine (legal entity: MIXHEL SERVICES, LLC). Jekyll, deployed to
-GitHub Pages at [fiddle.green](https://fiddle.green).
+Marketing site for Fiddle Green — a Maine technology consulting company for
+organizations too small to be anyone else's priority (legal entity: MIXHEL
+SERVICES, LLC). Jekyll, deployed to GitHub Pages at
+[fiddle.green](https://fiddle.green).
+
+In prose, always write "Fiddle Green." The comma in the wordmark is a logo
+device only and does not appear in body copy, headings, or alt text.
 
 ## Running locally
 
@@ -31,9 +35,8 @@ bundle exec jekyll serve
 ## Blog
 
 Posts live in `_posts/` and publish at `/about/blog/:title/`. The category in
-front matter (`categories: ["Nonprofits"]`) drives the filter pills on both the
-blog index and the home carousel; it must match one of the labels in the pill
-lists on `index.html` and `about/blog.html`.
+front matter (`categories: ["Nonprofits"]`) drives the filter pills on the blog
+index; it must match one of the labels in the pill list on `about/blog.html`.
 
 ## Assets
 
@@ -49,8 +52,8 @@ The three above were derived from the brand source files also in `assets/`
 green background. If transparent originals become available, drop them in at the
 same filenames — no code change is needed.
 
-Team portraits are not yet supplied; the roster on `/about/team/` uses striped
-circular placeholders.
+Team portraits live in `assets/team/`. The `person` partial falls back to a
+striped circular placeholder for anyone without a `photo`.
 
 ## Deploying
 
@@ -79,9 +82,11 @@ then be dropped from the branch and re-ignored.
 
 ## Still to confirm
 
-- Phone hours ("Weekdays 8am–6pm") and the "within one business day" email
-  promise on `/contact/` were invented for the design and need sign-off.
-- The six blog posts carry final titles, summaries, categories, and dates from
-  the approved design, but their bodies are placeholders.
-- `/who-we-help/government/` shows `[ pending ]` for UEI and CAGE and
-  placeholder rows under Past performance.
+- The blog posts carry final titles, summaries, categories, and dates from the
+  approved design, but their bodies are placeholders.
+- `/about/history-and-testimonials/` still carries the invented milestone
+  timeline and named testimonials from the design comp, and is the one page
+  still writing the wordmark as "FIDDLE,GREEN" in prose.
+- `/who-we-help/government/` has not been revised against the positioning
+  document, still writes "FIDDLE,GREEN" in prose, and shows `[ pending ]` for
+  UEI and CAGE with placeholder rows under Past performance.

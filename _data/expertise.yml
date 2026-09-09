@@ -1,44 +1,43 @@
-# Drives the home "How we help" icons, which show icon + label only.
+# Drives the home "What we do" icons, which show icon + label only.
 # on_home: false keeps an entry here but off that row.
 - key: support
   icon: /assets/icons/noun_Headset_8456463_338A4A.svg
   letter: A
   label: Technical Support
   url: /expertise/technical-support/
-  blurb: Fixing what's broken and hardening what isn't.
+  blurb: Getting the systems you already have to work the way they should — plus purchasing, procurement, and dealing with vendors on your behalf.
 
 - key: education
   icon: /assets/icons/noun_Class_8362686_338A4A.svg
   letter: B
   label: Training & Education
   url: /expertise/education/
-  blurb: Teaching you and your staff the parts worth knowing.
+  blurb: Documentation, training materials, and the actual teaching — explaining technical things to people who do not work in technology.
 
 - key: advising
   icon: /assets/icons/noun_strategy_8273592_338A4A.svg
   letter: C
   label: Strategy & Operations
   url: /expertise/advising/
-  on_home: false
-  blurb: Second opinions, vendor questions, and plans you can afford.
+  blurb: How technology should fit into the way your organization runs — policies, governance, and planning.
 
 - key: ai
   icon: /assets/icons/noun_AI_8215905_338A4A.svg
   letter: D
   label: Artificial Intelligence
   url: /expertise/artificial-intelligence/
-  blurb: A grounded read on what AI can do for you — and what it should not touch.
+  blurb: From a board-level conversation about where AI belongs in your mission to the specific tools that give your staff their time back.
 
 - key: data
   icon: /assets/icons/noun_Data_8259289_338A4A.svg
   letter: E
-  label: Data Science
+  label: Data & Analytics
   url: /expertise/data-science/
-  blurb: Making sense of what you already collect, and answering the question you actually asked.
+  blurb: Governance, source of truth, cleaning and transformation, analysis and dashboards — with a particular strength in survey design.
 
 - key: product
   icon: /assets/icons/noun_build_6913680_338A4A.svg
   letter: F
   label: Product and Engineering
   url: /expertise/product-and-engineering/
-  blurb: Building the thing, at the size of the problem rather than the size of the vendor.
+  blurb: Soup to nuts — turning an idea into a working prototype or a real product, including design, research, and testing.

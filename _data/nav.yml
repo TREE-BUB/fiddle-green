@@ -16,16 +16,12 @@
   url: /who-we-help/
   footer_title: Who we help
   children:
-    - title: People and Families
-      url: /who-we-help/individuals/
-      rail_only: true
-    - title: Startups
-      url: /who-we-help/startups/
-      rail_only: true
     - title: Small Businesses
       url: /who-we-help/small-businesses/
     - title: Non-profits
       url: /who-we-help/nonprofits/
+    - title: Startups
+      url: /who-we-help/startups/
     - title: Public Sector
       url: /who-we-help/government/
 
@@ -40,10 +36,9 @@
       url: /expertise/education/
     - title: "Strategy & Operations"
       url: /expertise/advising/
-      rail_only: true
     - title: Artificial Intelligence
       url: /expertise/artificial-intelligence/
-    - title: Data Science
+    - title: "Data & Analytics"
       url: /expertise/data-science/
     - title: Product and Engineering
       url: /expertise/product-and-engineering/

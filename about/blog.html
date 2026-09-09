@@ -11,7 +11,7 @@ needs_blog_js: true
 
 <section class="band band--cream blog-band">
   <div class="filters" data-filters-for="blog-grid">
-    {%- assign cats = "All,People and Families,Startups,Small Businesses,Nonprofits,Public Sector,Other" | split: "," -%}
+    {%- assign cats = "All,Small Businesses,Nonprofits,Startups,Public Sector,Other" | split: "," -%}
     {%- for c in cats -%}
       <button class="filter" type="button" data-filter="{{ c }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ c }}</button>
     {%- endfor -%}
