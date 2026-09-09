@@ -717,6 +717,11 @@ a.card:hover { border-color: var(--amber); }
 
 .rule-cards--wide .rule-card { flex: 1 1 240px; padding-top: 16px; }
 
+/* A single column of cards, for the outcomes panel where it sits in a narrow
+   sidebar rather than across the band. */
+.rule-cards--stack { flex-direction: column; gap: 24px; }
+.rule-cards--stack .rule-card { flex: 0 0 auto; }
+
 /* ==========================================================================
    Panels, splits, steps, bullets
    ========================================================================== */
@@ -950,16 +955,6 @@ a.card:hover { border-color: var(--amber); }
 }
 
 .rates { max-width: 900px; }
-
-/* Sits under the last rate row, so it carries the qualifier that applies
-   across all of them rather than to any one line. */
-.rates__note {
-  max-width: 900px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(35, 41, 31, .66);
-  margin: 22px 0 0;
-}
 
 .rate {
   display: flex;
@@ -1666,7 +1661,27 @@ a.contact-card__value {
    ========================================================================== */
 
 .cards-band     { padding-top: 66px; padding-bottom: 10px; }
-.bullets-band   { padding-top: 66px; padding-bottom: 20px; }
+/* Service pages: examples on the left, the outcomes panel beside them. Two
+   thirds to one, and a single column once there is no room for two. */
+.exp-band { padding-top: 66px; padding-bottom: 78px; }
+
+.exp-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.exp-split__note { margin-bottom: 24px; }
+
+/* Narrower inset than a full-width panel, which would leave little room for
+   the cards themselves in a third of the band. */
+.exp-split__aside { padding: 36px 32px; }
+
+@media (max-width: $bp-nav) {
+  .exp-split { grid-template-columns: minmax(0, 1fr); }
+}
+
 .outcomes-band  { padding-top: 56px; padding-bottom: 72px; }
 .steps-band     { padding-top: 60px; padding-bottom: 72px; }
 .grid-band      { padding-top: 66px; padding-bottom: 78px; }
@@ -1892,8 +1907,9 @@ a.contact-card__value {
 .billing-band { padding-top: 52px; padding-bottom: 74px; }
 .models-band  { padding-top: 66px; padding-bottom: 20px; }
 .relief-band  { padding-top: 66px; padding-bottom: 20px; }
-.probono-band { padding-top: 52px; padding-bottom: 20px; }
-.ask-band     { padding-top: 52px; padding-bottom: 74px; }
+/* The last cream band on Access & Discounts, so it carries the closing space
+   down to the sand callout rather than leaning on a band below it. */
+.probono-band { padding-top: 52px; padding-bottom: 74px; }
 /* Recent work closes the About hub, below the hub cards. */
 .work-band    { padding-top: 66px; padding-bottom: 78px; }
 

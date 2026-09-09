@@ -3,35 +3,38 @@ layout: page
 ---
 {%- assign d = site.data.exp_pages[page.exp_key] -%}
 
-<section class="band band--cream bullets-band">
-  <div class="split">
-    <div class="split__aside">
-      {% include section-heading.html title="What this looks like" class="section-heading--sm" %}
-      <p class="split__note">{{ d.note | escape_once }}</p>
+{%- comment -%}
+  The examples take the left two thirds of the band and the outcomes sit
+  beside them in a narrow panel, cards stacked, so the two read as one
+  section rather than as two stacked slabs.
+{%- endcomment -%}
+<section class="band band--cream exp-band">
+  <div class="exp-split">
+    <div class="exp-split__main">
+      {% include section-heading.html title="What this might look like" class="section-heading--sm" %}
+      <p class="split__note exp-split__note">{{ d.note | escape_once }}</p>
+      <ul class="bullets">
+        {%- for b in d.bullets -%}
+          <li><span class="bullets__dot" aria-hidden="true"></span><span>{{ b | escape_once }}</span></li>
+        {%- endfor -%}
+      </ul>
     </div>
-    <ul class="bullets">
-      {%- for b in d.bullets -%}
-        <li><span class="bullets__dot" aria-hidden="true"></span><span>{{ b | escape_once }}</span></li>
-      {%- endfor -%}
-    </ul>
-  </div>
-</section>
 
-<section class="band band--cream outcomes-band">
-  <div class="panel">
-    {% include section-heading.html title="What you walk away with" class="section-heading--sm" %}
-    <div class="rule-cards rule-cards--wide">
-      {%- for o in d.outcomes -%}
-        <div class="rule-card">
-          <h3>{{ o.h | escape_once }}</h3>
-          <p>{{ o.p | escape_once }}</p>
-        </div>
-      {%- endfor -%}
-    </div>
+    <aside class="panel exp-split__aside">
+      {% include section-heading.html title="What you walk away with" class="section-heading--sm" %}
+      <div class="rule-cards rule-cards--stack">
+        {%- for o in d.outcomes -%}
+          <div class="rule-card">
+            <h3>{{ o.h | escape_once }}</h3>
+            <p>{{ o.p | escape_once }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    </aside>
   </div>
 </section>
 
 {%- comment -%}
-  Anything a single service page wants to add after the shared two sections.
+  Anything a single service page wants to add after the shared section.
 {%- endcomment -%}
 {{ content }}
