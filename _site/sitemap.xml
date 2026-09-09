@@ -16,7 +16,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/services/data-science/</loc>
+    <loc>https://fiddle.green/services/data-and-analytics/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -31,7 +31,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/how-we-work/</loc>
+    <loc>https://fiddle.green/who-we-help/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -41,12 +41,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/about/</loc>
+    <loc>https://fiddle.green/how-we-work/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fiddle.green/who-we-help/</loc>
+    <loc>https://fiddle.green/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
