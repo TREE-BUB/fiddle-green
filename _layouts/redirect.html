@@ -1,0 +1,26 @@
+---
+layout: null
+---
+{%- comment -%}
+  A retired URL. Set `redirect_to` and `permalink` in the page's front matter
+  and it forwards to the new address.
+
+  The site pins itself to no Jekyll plugins so it builds the same way on
+  GitHub Pages and in the workflow, so there is no jekyll-redirect-from to
+  lean on. The canonical tag is what actually consolidates the two URLs for
+  search engines; the refresh is what moves a visitor.
+{%- endcomment -%}
+{%- assign target = page.redirect_to | relative_url -%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <link rel="canonical" href="{{ page.redirect_to | absolute_url }}">
+    <meta http-equiv="refresh" content="0; url={{ target }}">
+    <meta name="robots" content="noindex, follow">
+  </head>
+  <body>
+    <p>This page has moved to <a href="{{ target }}">{{ page.redirect_to | absolute_url }}</a>.</p>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+---
+layout: hub
+permalink: /about/
+title: About
+eyebrow: About
+headline: We named ourselves after the first green thing in a Maine spring.
+description: A small technology company in Portland, Maine — who we are, why we started, and what we do with the work when it goes well.
+---
+
+<section class="band band--cream hub-lede-band">
+  <div class="prose-lede">
+    <p>A fiddlehead is a fern before it unfurls. It is early, it is local, and it is growing on purpose — which felt like the right thing to be named after.</p>
+    <p>FIDDLE,GREEN is a Maine technology consultancy built for small organizations. We would rather help something get started well than be the people called in to fix it two years later, and we would rather leave you understanding your own systems than dependent on us for them.</p>
+  </div>
+</section>
+
+<section class="band band--cream cards-band hub-cards-band">
+  {% include section-heading.html title="More about us" class="section-heading--gap" %}
+  {% include hub-cards.html url=page.url %}
+</section>
+
+{%- comment -%}
+  Kept as a plain list rather than cards: it is a short, current roster of
+  engagements, and it should be quick to edit as the work changes.
+{%- endcomment -%}
+<section class="band band--cream work-band">
+  <div class="split">
+    <div class="split__aside">
+      {% include section-heading.html title="Recent and current work" class="section-heading--sm" %}
+      <p class="split__note">A sample of what we are working on now. Happy to connect you with a client whose situation looks like yours.</p>
+    </div>
+    <ul class="bullets">
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>Redesigning the website for a Portland restaurant.</span></li>
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>Helping a nonprofit yoga studio adopt AI and automate its class scheduling.</span></li>
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>Solving time-sensitive AV problems for a local community orchestra.</span></li>
+      <li><span class="bullets__dot" aria-hidden="true"></span><span>Building out the technical side of an early-stage pet technology startup.</span></li>
+    </ul>
+  </div>
+</section>

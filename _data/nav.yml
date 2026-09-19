@@ -1,0 +1,79 @@
+# Single source of truth for the header dropdowns, the mobile drawer, the hub
+# hero rails, and the footer sitemap.
+#
+# Per-child switches:
+#   in_footer: false    omit from the footer column
+#   footer_only: true   footer column only, not the dropdown or drawer
+#   hidden: true        off every surface — the dropdown, the drawer, the hub
+#                       rail, and the footer. The page stays live at its URL,
+#                       but nothing on the site links to it
+#   rail_url:           override the URL used by the hub hero rail button
+#   blurb:              the line of copy under the child's name on its hub page.
+#                       Who We Help and Services keep theirs in segments.yml
+#                       and expertise.yml instead, beside the home-page icons
+
+- title: Home
+  url: /
+
+- title: Who We Help
+  url: /who-we-help/
+  footer_title: Who we help
+  children:
+    - title: Startups
+      url: /who-we-help/startups/
+    - title: Small Businesses
+      url: /who-we-help/small-businesses/
+    - title: Non-profits
+      url: /who-we-help/nonprofits/
+    - title: Public Sector
+      url: /who-we-help/public-sector/
+
+- title: Services
+  url: /services/
+  children:
+    - title: Technical Support
+      url: /services/technical-support/
+    - title: "Training & Education"
+      url: /services/training-and-education/
+    - title: "Strategy & Operations"
+      url: /services/strategy-and-operations/
+    - title: Artificial Intelligence
+      url: /services/artificial-intelligence/
+    - title: Data and Analytics
+      url: /services/data-and-analytics/
+    - title: Product and Engineering
+      url: /services/product-and-engineering/
+
+- title: How We Work
+  url: /how-we-work/
+  footer_title: How we work
+  children:
+    - title: Our Approach
+      url: /how-we-work/our-approach/
+      blurb: The values behind the work, and what you get on every engagement regardless of its size.
+    - title: Engagement Models
+      url: /how-we-work/engagement-models/
+      blurb: Ad hoc advising, packages, project work, or a retainer — four shapes, quoted in writing before anything starts.
+    - title: "Access & Discounts"
+      url: /how-we-work/access-and-discounts/
+      blurb: Discounts for nonprofits and underrepresented-led businesses, incentives across Maine, and pro bono hours.
+
+- title: About
+  url: /about/
+  footer_title: About
+  children:
+    - title: About FIDDLE,GREEN
+      url: /about/fiddle-green/
+      blurb: Why we started, what we believe about technology help, and what does not change from one job to the next.
+    - title: Team
+      url: /about/team/
+      blurb: The people who take your call and do the work.
+    - title: Supporting Maine
+      url: /about/supporting-maine/
+      blurb: No billed travel time statewide, and time set aside for pro bono work in every community we visit.
+    - title: Testimonials
+      url: /about/testimonials/
+      blurb: What clients say about working with us, grouped by the kind of organization they run.
+    - title: Contact
+      url: /contact/
+      footer_only: true

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="band band--hero band--hero-hub">
+  <div class="hero-hub">
+    <div class="hero-hub__text">
+      <p class="eyebrow">{{ page.eyebrow | escape_once }}</p>
+      <h1>{{ page.headline | escape_once }}</h1>
+      <p class="hero__desc">{{ page.description | escape_once }}</p>
+    </div>
+    {% include rail.html url=page.url %}
+  </div>
+</section>
+
+{{ content }}

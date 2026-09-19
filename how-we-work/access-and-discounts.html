@@ -1,0 +1,50 @@
+---
+layout: page
+permalink: /how-we-work/access-and-discounts/
+title: Access & Discounts
+parent_title: How We Work
+parent_url: /how-we-work/
+headline: Cost shouldn't be the reason you can't get good technical help.
+description: Nonprofit and underrepresented-led business discounts, incentives across Maine, and a limited number of pro bono hours each quarter.
+relief:
+  - name: Nonprofit packages
+    body: The discount is built into the price before we even quote you — no need to ask for it.
+    price: Built in
+  - name: Nonprofit hourly, project, and retainer work
+    body: Nonprofit organizations with 501(c)(3) status receive a 10% discount on hourly, project, and retainer rates.
+    price: 10% off
+  - name: Underrepresented-led startups and small businesses
+    body: The same discount for businesses led by underrepresented founders, including women, people of color, and people with disabilities. Honor system.
+    price: 10% off
+---
+
+<section class="band band--cream relief-band">
+  <div class="aside-split">
+    <div class="aside-split__main">
+      {% include section-heading.html title="Where the discount applies" class="section-heading--gap" %}
+      <div class="rates">
+        {%- for r in page.relief -%}
+          {% include rate-row.html name=r.name body=r.body price=r.price unit=r.unit %}
+        {%- endfor -%}
+      </div>
+    </div>
+    <aside class="cta-panel">
+      <p class="eyebrow eyebrow--sm">Closer to home</p>
+      <h3>Incentives across Maine.</h3>
+      <p class="cta-panel__body">We do not bill travel time to clients elsewhere in Maine, and wherever we are working we set aside time for pro bono work in that community.</p>
+      <a class="btn btn--amber" href="{{ '/about/supporting-maine/' | relative_url }}">How we support Maine</a>
+    </aside>
+  </div>
+</section>
+
+<section class="band band--cream probono-band">
+  {% include section-heading.html title="Pro bono and deep discounts" class="section-heading--sm section-heading--gap" %}
+  <div class="prose-lede">
+    <p>We hold back a limited number of pro bono and deeply discounted hours each quarter for work where we think we can make a real difference. If you have a project that would matter in your community and the cost is what is stopping it, send us a message and we will talk about it.</p>
+  </div>
+  <a class="btn btn--amber" href="{{ '/contact/' | relative_url }}">Tell us about the project</a>
+</section>
+
+{% include callout.html
+   eyebrow="Why we do it this way"
+   text="Every hour of technology help we give away comes back as a food pantry that can take appointments, or a shop that gets paid on time. We would rather be busy and useful than fully billable." %}

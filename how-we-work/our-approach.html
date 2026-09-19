@@ -1,0 +1,71 @@
+---
+layout: page
+permalink: /how-we-work/our-approach/
+title: Our Approach
+parent_title: How We Work
+parent_url: /how-we-work/
+headline: The technology keeps changing. What guides the work does not.
+description: Four values behind every engagement — technical excellence, integrity, letting the work speak for itself, and being genuinely easy to work with.
+steps_note: The same on a home visit and on a county contract.
+steps:
+  - h: Technical excellence.
+    p: The work has to be right. We would rather take an extra day and hand you something that holds up than hit a date with something that will need doing again next year.
+  - h: Integrity.
+    p: We are transparent about what we are doing, what it will cost, and what we do not know. If we get something wrong, you hear it from us first.
+  - h: We let the work speak.
+    p: We do not upsell. We would rather you buy less, get what you needed, and call us again than buy more and quietly regret it.
+  - h: Service, all the way through.
+    p: We fit how you already operate — your mission and values, your compliance and funder requirements, your approval process. Being easy to work with is part of the job, not a courtesy on top of it.
+reasons:
+  - h: You're the destination, not a stepping stone
+    p: We are not building a portfolio on small clients so we can go chase bigger ones. This is the work we want.
+  - h: We know the value of a dollar, and how to stretch it
+    p: Our team has worked in some of the lowest-resource settings in the world and with bootstrapped nonprofits running on fumes. Doing more with less is not a slogan here, it is where we learned the job.
+  - h: We advocate for you with vendors
+    p: Small organizations get pushed around by their software companies. We make a forceful, well-documented case on your behalf, so vendors treat you like their biggest customer. That is leverage you do not have alone.
+  - h: We hand you the keys
+    p: We document what we do and build your team's ability to run it without us. That means you could take our documentation and hire someone cheaper next time. Most consultants have every reason not to work that way. We think it is the only honest way to work.
+---
+
+<section class="band band--cream approach-band">
+  <div class="prose-lede">
+    <p>Most technology help fails for the same reason: the work gets done, but nobody is left who understands it. The account is in a consultant's name, the password is in a consultant's head, and the next problem starts from zero.</p>
+    <p>We work the other way around, and four values decide how. They are the same on a laptop repair and on a multi-year public contract.</p>
+  </div>
+</section>
+
+{% include steps.html title="What guides us" note=page.steps_note steps=page.steps mark=true %}
+
+<section class="band band--sand includes-band">
+  <div class="measure-900">
+    {% include section-heading.html title="What every engagement includes" class="section-heading--sm section-heading--gap" %}
+    <div class="columns">
+      <div class="column">
+        <h3>Notes you keep</h3>
+        <p>Passwords, accounts, and what we changed — documented in plain language and handed to you.</p>
+      </div>
+      <div class="column">
+        <h3>One person</h3>
+        <p>You talk to the person doing the work. No tiers, no tickets, no repeating your story.</p>
+      </div>
+      <div class="column">
+        <h3>No lock-in</h3>
+        <p>Everything is in your name and under your control. If you leave, nothing has to be untangled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--cream outcomes-band">
+  <div class="panel">
+    {% include section-heading.html title="Why us" class="section-heading--sm" %}
+    <div class="rule-cards rule-cards--wide rule-cards--2up">
+      {%- for r in page.reasons -%}
+        <div class="rule-card">
+          <h3>{{ r.h | escape_once }}</h3>
+          <p>{{ r.p | escape_once }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

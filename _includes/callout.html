@@ -1,0 +1,7 @@
+{%- comment -%} Sand band with an amber eyebrow and one large pull-quote line. {%- endcomment -%}
+<section class="band band--sand callout">
+  <div class="callout__inner">
+    {% include section-heading.html eyebrow=include.eyebrow class="section-heading--eyebrow" %}
+    <p class="callout__lede">{{ include.text | escape_once }}</p>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+---
+layout: default
+permalink: /who-we-help/public-sector/
+title: Public Sector
+description: A Maine technology partner for the public sector — municipal, county, state, and tribal. Responsive support, staff training, and independent advising.
+---
+
+<section class="band band--hero gov-band">
+  <p class="breadcrumb">
+    <a href="{{ '/who-we-help/' | relative_url }}">Who We Help</a>
+    &nbsp;/&nbsp;
+    <span class="breadcrumb__current">Public Sector</span>
+  </p>
+  <div class="gov-hero">
+    <div class="gov-hero__text">
+      <h1>A Maine technology partner for public sector work.</h1>
+      <p>FIDDLE,GREEN supports municipal, county, state, and tribal entities with responsive technical support, staff training, and independent technology advising. Small enough to answer the phone; documented enough to satisfy procurement.</p>
+    </div>
+  </div>
+</section>
+
+{%- comment -%}
+  The prose runs down the left two thirds; the reference panels sit stacked in
+  the right third, where a procurement reader can find them without them
+  interrupting the reading.
+{%- endcomment -%}
+<section class="band band--cream gov-body-band">
+  <div class="gov-body">
+    <div class="gov-body__main">
+      {% include section-heading.html title="Our approach" class="section-heading--sm section-heading--lede-tight" %}
+      <div class="prose-lede">
+        <p>We have deep experience on local, state, and federal contracts, and we know what that work asks of a vendor: documentation that survives an audit, timelines we can actually hold, and advice that stands up when someone else has to defend it.</p>
+        <p>Public sector technology is paid for by taxpayers and used by everyone, and we take that responsibility seriously. We also live here. The work we do for Maine towns, agencies, and tribal governments makes the places we call home a little better, and we are proud of that.</p>
+      </div>
+
+      {% include section-heading.html title="Past performance" class="section-heading--sm section-heading--lede-tight" %}
+      <p class="section-lede section-lede--perf">Contract references available on request. Placeholders below show the format each entry will follow.</p>
+      <div class="perf">
+        {%- for i in (1..3) -%}
+          <div class="perf__row">
+            <div class="perf__main">
+              <p>[ Client / agency name ]</p>
+              <p>Scope of work summary in one line.</p>
+            </div>
+            <div class="perf__cell">[ Period ]</div>
+            <div class="perf__cell">[ Value ]</div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <aside class="gov-body__aside">
+      <div class="gov-panel">
+        {% include section-heading.html eyebrow="Codes &amp; registrations" class="gov-panel__heading" %}
+        <dl class="codes">
+          <div class="code-row"><dt>NAICS</dt><dd>541512 &middot; 541519 &middot; 611420</dd></div>
+          <div class="code-row code-row--pending"><dt>UEI</dt><dd>[ pending ]</dd></div>
+          <div class="code-row code-row--pending"><dt>CAGE</dt><dd>[ pending ]</dd></div>
+          <div class="code-row code-row--pending"><dt>SAM.gov</dt><dd>[ registration status ]</dd></div>
+        </dl>
+      </div>
+      <div class="gov-panel">
+        {% include section-heading.html eyebrow="Core capabilities" class="gov-panel__heading" %}
+        <ul>
+          <li>Needs assessments</li>
+          <li>Capacity building</li>
+          <li>Data collection and analysis</li>
+          <li>Sourcing and procurement</li>
+          <li>Infrastructure design and implementation</li>
+          <li>Training and workforce development</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="band band--cream gov-proc-band">
+  <div class="procurement">
+    <div class="procurement__text">
+      <p class="eyebrow eyebrow--sm procurement__eyebrow">Procurement contact</p>
+      <h2>Jimi Michel &middot; Principal</h2>
+      <p>Direct line for solicitations, quotes, sole-source justification, and W-9 or insurance documentation. Responses within one business day.</p>
+    </div>
+    <div class="procurement__actions">
+      <a class="btn btn--square btn--forest" href="mailto:{{ site.email }}?subject=Capability%20statement%20request">Request capability statement</a>
+      <a class="btn btn--square btn--outline-forest" href="mailto:{{ site.email }}?subject=RFQ%20%2F%20RFP%20submission">Submit an RFQ / RFP</a>
+    </div>
+  </div>
+</section>

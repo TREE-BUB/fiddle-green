@@ -1,0 +1,30 @@
+# Drives the home "Who we help" icons, which show icon + label only, and the
+# blurbs on the /who-we-help/ hub cards.
+# on_home: false keeps an entry here but off that row.
+- key: startups
+  icon: /assets/icons/noun_Rocket_1123009_338A4A.svg
+  num: "02"
+  label: Startups
+  url: /who-we-help/startups/
+  blurb: A fixed-price MVP build to start, then senior engineering and product design for whatever comes after.
+
+- key: businesses
+  icon: /assets/icons/noun_storefront_8468127_338A4A.svg
+  num: "03"
+  label: Small Businesses
+  url: /who-we-help/small-businesses/
+  blurb: Someone to call when the register goes down, and someone to plan with when it doesn't.
+
+- key: nonprofits
+  icon: /assets/icons/noun_Charity_2334816_338A4A.svg
+  num: "04"
+  label: Non-profits
+  url: /who-we-help/nonprofits/
+  blurb: Mission-sized budgets, grant-friendly documentation, and rates that reflect it.
+
+- key: public-sector
+  icon: /assets/icons/noun_Government_8352364_338A4A.svg
+  num: "05"
+  label: Public Sector
+  url: /who-we-help/public-sector/
+  blurb: Capability statement, procurement paperwork, and a partner who answers the phone.

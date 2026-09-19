@@ -1,0 +1,40 @@
+---
+permalink: /sitemap.xml
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Written out here rather than left to jekyll-sitemap, because _config.yml
+  pins the site to no plugins at all so it builds identically on GitHub Pages
+  and in the workflow.
+
+  Listed: every real page that search engines are allowed to index. Left out:
+  anything carrying noindex, the redirect stubs, 404, and any page that opts
+  out with `sitemap: false`.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- comment -%}
+  Sorted by URL. Jekyll hands back site.pages in whatever order the filesystem
+  walked them, which differs between machines, so without this the same source
+  builds a differently ordered sitemap here and in CI — and two builds racing
+  each other conflict over lines that carry no actual change.
+{%- endcomment -%}
+{%- assign listed = site.pages | where_exp: "p", "p.sitemap != false" | sort: "url" -%}
+{%- for p in listed -%}
+{%- comment -%}
+  Only real pages: a trailing slash means a permalink Jekyll turned into a
+  directory, which rules out 404.html, this file, robots.txt, and the
+  stylesheet, all of which are site.pages entries too.
+{%- endcomment -%}
+{%- unless p.noindex or p.layout == "redirect" -%}
+{%- assign last = p.url | slice: -1, 1 -%}
+{%- if last != "/" -%}{%- continue -%}{%- endif %}
+  <url>
+    <loc>{{ p.url | absolute_url }}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>{% if p.url == "/" %}1.0{% elsif p.parent_url %}0.6{% else %}0.8{% endif %}</priority>
+  </url>
+{%- endunless -%}
+{%- endfor %}
+</urlset>

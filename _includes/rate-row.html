@@ -1,0 +1,7 @@
+<div class="rate">
+  <div class="rate__text">
+    <h3>{{ include.name | escape_once }}</h3>
+    <p>{{ include.body | escape_once }}</p>
+  </div>
+  <p class="rate__price">{{ include.price | escape_once }}{% if include.unit %}<span class="rate__unit"> {{ include.unit | escape_once }}</span>{% endif %}</p>
+</div>

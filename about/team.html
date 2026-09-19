@@ -1,0 +1,50 @@
+---
+layout: page
+permalink: /about/team/
+title: Team
+parent_title: About
+parent_url: /about/
+headline: The people who take your call and do the work.
+description: The technology and data professionals behind FIDDLE,GREEN, working out of Portland, Maine.
+people:
+  - name: Jimi Michel
+    photo: /assets/team/jimi.png
+    role: Founder and Principal
+    expertise: Strategy, AI, training, product
+  - name: Meryn Robinson
+    photo: /assets/team/meryn.jpeg
+    role: Senior Associate, Implementation and Training
+    expertise: Technology evaluation, implementation, training
+  - name: Elvis Agah
+    photo: /assets/team/elvis.png
+    role: Senior Engineer
+    expertise: Software design and development
+  - name: Sherri Lysy
+    photo: /assets/team/sherri_1.jpeg
+    role: Operations and Non-Profit Lead
+    expertise: Data analysis, business workflow optimization, project management
+---
+
+<section class="band band--cream cards-band team-band">
+  <div class="roster">
+    {%- for p in page.people -%}
+      <div class="person">
+        {%- comment -%}
+          The name sits right beside the portrait, so alt text would only
+          repeat it.
+        {%- endcomment -%}
+        {%- if p.photo -%}
+          <img class="person__portrait person__portrait--photo" src="{{ p.photo | relative_url }}"
+               alt="" width="176" height="176" loading="lazy">
+        {%- else -%}
+          <div class="person__portrait" aria-hidden="true">portrait</div>
+        {%- endif -%}
+        <div class="person__body">
+          <h2>{{ p.name | escape_once }}</h2>
+          <p class="person__role">{{ p.role | escape_once }}</p>
+          <p class="person__expertise"><span>Areas of expertise:</span> {{ p.expertise | escape_once }}</p>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>

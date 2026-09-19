@@ -1,0 +1,12 @@
+{
+  "name": "fiddle-green",
+  "compatibility_date": "2026-09-03",
+  "assets": {
+    // Jekyll's build output. The repo root is source, not servable: it holds
+    // _config.yml, the Gemfile, and templates whose front matter would be
+    // served verbatim. _site/ is committed so this deploys with or without a
+    // build step configured in Cloudflare; if you set one, use
+    // `bundle exec jekyll build`, which writes to this same directory.
+    "directory": "./_site"
+  }
+}
