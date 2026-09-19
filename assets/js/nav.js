@@ -1,6 +1,33 @@
-/* Header dropdowns and the mobile drawer. No framework, no dependencies. */
+/* Header dropdowns, the condensing header, and the mobile drawer. No
+   framework, no dependencies. */
 (function () {
   'use strict';
+
+  /* The bar is fixed at the top. While it is still over the hero it stays
+     transparent and full height; once the page has moved past that first bit
+     it takes a background and gives back some height. The threshold is short
+     enough that the change reads as a response to scrolling rather than a
+     state you have to hunt for. */
+  var wrap = document.querySelector('.site-header-wrap');
+  var CONDENSE_AT = 24;
+  var queued = false;
+
+  function syncHeader() {
+    queued = false;
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    wrap.classList.toggle('is-condensed', y > CONDENSE_AT);
+  }
+
+  if (wrap) {
+    window.addEventListener('scroll', function () {
+      if (queued) return;
+      queued = true;
+      window.requestAnimationFrame(syncHeader);
+    }, { passive: true });
+
+    // A reload part-way down the page, or a link to an anchor, starts scrolled.
+    syncHeader();
+  }
 
   var dropdowns = Array.prototype.slice.call(document.querySelectorAll('[data-dropdown]'));
 

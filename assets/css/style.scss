@@ -30,6 +30,11 @@
 
   --pad-x:         5%;
   --header-h:      78px;
+  --wordmark-h:    26px;
+  /* 1 at the top of the page, dialled down by .is-condensed on scroll. The
+     header's own pieces size off it; the hero paddings read --header-h from
+     :root, so they keep the full height and the page never shifts. */
+  --header-scale:  1;
   --font:          'Raleway', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono:          ui-monospace, Menlo, Consolas, monospace;
 }
@@ -43,7 +48,11 @@ $bp-sm: 640px;
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+/* The header is fixed, so an anchor landing would otherwise sit under it. */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
 
 /* The hub pages are a hero and nothing else, which is shorter than a tall
    viewport; without this the footer floats with dead space beneath it. */
@@ -231,15 +240,35 @@ h1, h2, h3 { text-wrap: pretty; }
 }
 
 /* ==========================================================================
-   Header — transparent, overlaid on the hero band
+   Header — fixed, transparent over the hero, condensed once the page moves
    ========================================================================== */
 
+/* The bar is only transparent because JS is there to opaque it on scroll;
+   without that it would sit see-through over the page and lose its white
+   type against the cream. head.html marks the document when scripts run. */
+html:not(.js) .site-header-wrap { background: var(--forest); }
+
 .site-header-wrap {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 40;
+  transition: background-color .25s ease, box-shadow .25s ease;
+}
+
+/* Past the first stretch of scroll the bar is no longer over the hero, so it
+   carries the forest ground itself and gives up some height to the page.
+   nav.js toggles the class; everything sized off --header-h and
+   --header-scale — the bar, the nav, the dropdown offset, the wordmark —
+   follows from these two declarations, and redefining them here keeps the
+   change inside the header's own subtree. */
+.site-header-wrap.is-condensed {
+  --header-h: 56px;
+  --header-scale: .8;
+
+  background: var(--forest);
+  box-shadow: 0 6px 20px rgba(20, 58, 31, .22);
 }
 
 .site-header {
@@ -250,6 +279,7 @@ h1, h2, h3 { text-wrap: pretty; }
   gap: 20px;
   height: var(--header-h);
   padding: 0 var(--pad-x);
+  transition: height .25s ease;
 }
 
 /* The bar is transparent over the hero, so nothing separated the menu from
@@ -271,7 +301,12 @@ h1, h2, h3 { text-wrap: pretty; }
   align-items: center;
   flex: none;
 
-  img { height: 26px; width: auto; display: block; }
+  img {
+    height: calc(var(--wordmark-h) * var(--header-scale));
+    width: auto;
+    display: block;
+    transition: height .25s ease;
+  }
 }
 
 .site-header__mobile { display: none; align-items: center; gap: 12px; }
@@ -293,6 +328,7 @@ h1, h2, h3 { text-wrap: pretty; }
   flex-wrap: nowrap;
   min-width: 0;
   height: var(--header-h);
+  transition: height .25s ease;
 }
 
 .nav__item { flex: none; }
@@ -302,6 +338,7 @@ h1, h2, h3 { text-wrap: pretty; }
   height: var(--header-h);
   display: flex;
   align-items: center;
+  transition: height .25s ease;
 }
 
 .nav__link {
@@ -368,6 +405,13 @@ h1, h2, h3 { text-wrap: pretty; }
   display: flex;
   flex-direction: column;
   gap: 2px;
+
+  /* The header no longer scrolls away with the page, so the drawer has to
+     fit the viewport under it and scroll on its own when it does not. */
+  max-height: calc(100vh - var(--header-h));
+  max-height: calc(100dvh - var(--header-h)); /* phone toolbars */
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .drawer__top-link {
@@ -1735,12 +1779,12 @@ a.contact-card__value {
 /* Step the wordmark down so the brand, the CTA and the hamburger all fit the
    header on small phones. */
 @media (max-width: 480px) {
-  .site-header__brand img { height: 22px; }
+  :root { --wordmark-h: 22px; }
   .site-header__mobile { gap: 10px; }
 }
 
 @media (max-width: 380px) {
-  .site-header__brand img { height: 19px; }
+  :root { --wordmark-h: 19px; }
   .site-header__mobile .btn { padding: 8px 13px; }
 }
 
@@ -1766,6 +1810,12 @@ a.contact-card__value {
 
 @media (prefers-reduced-motion: reduce) {
   .carousel__track { transition: none; }
+
+  .site-header-wrap,
+  .site-header,
+  .site-header__brand img,
+  .nav,
+  .nav__item--has-menu { transition: none; }
 }
 
 /* ==========================================================================
