@@ -243,12 +243,27 @@ h1, h2, h3 { text-wrap: pretty; }
 }
 
 .site-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   height: var(--header-h);
   padding: 0 var(--pad-x);
+}
+
+/* The bar is transparent over the hero, so nothing separated the menu from
+   the section beneath it. A pseudo-element rather than a border keeps the
+   rule out of the box model: the nav and its dropdowns are positioned off
+   the full header height. */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--amber);
 }
 
 .site-header__brand {
