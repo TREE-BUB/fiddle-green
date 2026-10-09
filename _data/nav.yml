@@ -36,6 +36,7 @@
       url: /services/technical-support/
     - title: "Training & Education"
       url: /services/training-and-education/
+      hidden: true   # parked for launch; see README
     - title: "Strategy & Operations"
       url: /services/strategy-and-operations/
     - title: Artificial Intelligence

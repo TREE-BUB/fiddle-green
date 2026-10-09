@@ -1,6 +1,7 @@
 # Drives the home "Services" cards and the blurbs on the /services/ hub cards.
 # The home cards show the icon, the label and the details; the hub cards show
-# the blurb. on_home: false keeps an entry here but off the home page.
+# the blurb. on_home: false keeps an entry here but off the home page and out
+# of the home page structured data (_includes/schema.html).
 - key: support
   icon: /assets/icons/noun_Headset_8456463_338A4A.svg
   letter: A
@@ -17,6 +18,7 @@
   letter: B
   label: Training & Education
   url: /services/training-and-education/
+  on_home: false   # parked for launch; see README
   blurb: Teaching you and your staff the parts worth knowing.
   details:
     - Training material development

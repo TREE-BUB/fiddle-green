@@ -101,6 +101,19 @@ Before relaunching it, `/who-we-help/public-sector/` still needs revising
 against the positioning document; it shows `[ pending ]` for UEI and CAGE
 with placeholder rows under Past performance.
 
+## Parked: training and education
+
+Training & Education is not offered at launch either, and is switched off the
+same way:
+
+- `services/training-and-education.html` and its two old-URL redirects,
+  `retired/services/education.html` and `retired/expertise/education.html`:
+  delete `published: false`.
+- `_data/nav.yml`: delete `hidden: true` on the Training & Education child.
+- `_data/expertise.yml`: delete `on_home: false` on `training`.
+
+Its body copy stays in `_data/exp_pages.yml` under `training`, untouched.
+
 ## Still to confirm
 
 - The blog posts carry final titles, summaries, categories, and dates from

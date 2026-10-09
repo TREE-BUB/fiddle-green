@@ -8,6 +8,11 @@
   locality rather than inventing one.
 {%- endcomment -%}
 {%- if page.url == "/" -%}
+{%- comment -%}
+  Services follow the home cards: one parked with on_home: false is not
+  offered, and its page is not built, so it is left out here too.
+{%- endcomment -%}
+{%- assign offered = site.data.expertise | where_exp: "e", "e.on_home != false" -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,7 +40,7 @@
         { "@type": "City", "name": "Portland" }
       ],
       "knowsAbout": [
-        {%- for exp in site.data.expertise -%}
+        {%- for exp in offered -%}
           {{ exp.label | jsonify }}{% unless forloop.last %}, {% endunless %}
         {%- endfor -%}
       ],
@@ -43,7 +48,7 @@
         "@type": "OfferCatalog",
         "name": "Services",
         "itemListElement": [
-          {%- for exp in site.data.expertise -%}
+          {%- for exp in offered -%}
             {
               "@type": "Offer",
               "itemOffered": {
