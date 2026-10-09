@@ -94,7 +94,7 @@ flags (each is marked "parked for launch"):
 - `about/blog.html`: add "Public Sector" back to the filter pills.
 
 Site-wide copy that named public agencies was rewritten to name startups,
-small businesses, and nonprofits only; the tag `pre-launch-public-sector`
+small businesses, and nonprofits only; commit `55f38ad`
 marks the last commit with the original wording.
 
 Before relaunching it, `/who-we-help/public-sector/` still needs revising
