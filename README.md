@@ -80,12 +80,30 @@ To have Cloudflare build instead, set the build command to
 `bundle exec jekyll build` and the output directory to `_site`; `_site/` can
 then be dropped from the branch and re-ignored.
 
+## Parked: public sector
+
+The public sector is not offered at launch. Its page and copy are kept in the
+source but switched off, so bringing it back is a matter of undoing these
+flags (each is marked "parked for launch"):
+
+- `who-we-help/public-sector.html`, `retired/who-we-help/government.html`, and
+  the two "Public Sector" posts in `_posts/`: delete `published: false`.
+- `_data/nav.yml`: delete `hidden: true` on the Public Sector child.
+- `_data/segments.yml`: delete `on_home: false` on `public-sector`.
+- `about/testimonials.html`: uncomment the Public Sector quote group.
+- `about/blog.html`: add "Public Sector" back to the filter pills.
+
+Site-wide copy that named public agencies was rewritten to name startups,
+small businesses, and nonprofits only; the tag `pre-launch-public-sector`
+marks the last commit with the original wording.
+
+Before relaunching it, `/who-we-help/public-sector/` still needs revising
+against the positioning document; it shows `[ pending ]` for UEI and CAGE
+with placeholder rows under Past performance.
+
 ## Still to confirm
 
 - The blog posts carry final titles, summaries, categories, and dates from
   the approved design, but their bodies are placeholders.
-- `/who-we-help/public-sector/` has not been revised against the positioning
-  document, and shows `[ pending ]` for UEI and CAGE with placeholder rows
-  under Past performance.
 - `/about/testimonials/` carries invented client quotes from the design comp
   and still needs real ones.

@@ -27,4 +27,5 @@
   num: "05"
   label: Public Sector
   url: /who-we-help/public-sector/
+  on_home: false   # parked for launch; see README
   blurb: Capability statement, procurement paperwork, and a partner who answers the phone.

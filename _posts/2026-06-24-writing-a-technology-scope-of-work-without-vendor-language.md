@@ -1,4 +1,7 @@
 ---
+# Parked for launch: the public sector is not offered yet. Delete this
+# line to bring it back (see README, "Parked: public sector").
+published: false
 title: "Writing a technology scope of work without vendor language"
 categories: ["Public Sector"]
 summary: "How to describe what you need so the bids you get are actually comparable."

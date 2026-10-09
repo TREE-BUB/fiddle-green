@@ -1,4 +1,7 @@
 ---
+# Parked for launch: the public sector is not offered yet. Delete this
+# line to bring it back (see README, "Parked: public sector").
+published: false
 title: "Keeping public records readable in ten years"
 categories: ["Public Sector"]
 summary: "File formats outlive the software that made them, and not always gracefully. A note on choosing formats you will still be able to open."
