@@ -1,0 +1,52 @@
+/* FIDDLE,GREEN launch holding page — standalone styles. Values lifted from the FIDDLE,GREEN design system tokens. */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
+:root{
+  --forest:#1a4a28; --deep:#143a1f; --amber:#d4882a; --amber-hover:#e09b41; --on-amber:#221604;
+  --white:#ffffff; --on-green:rgba(255,255,255,.86); --on-green-mute:rgba(255,255,255,.78);
+  --on-green-rule:rgba(255,255,255,.15); --nav-hover:#e8c99a;
+  --shadow-amber:0 2px 14px rgba(212,136,42,.35);
+  --font-sans:"Raleway",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:var(--deep)}
+body{font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
+a{color:var(--white)} a:hover{color:var(--nav-hover)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:3px}
+
+.page{min-height:100vh;display:flex;flex-direction:column;background:var(--forest)}
+.hero{flex:1;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:96px 5% 88px;text-align:center}
+.hero__watermark{position:absolute;right:-4%;top:50%;transform:translateY(-50%);height:118%;opacity:.11;pointer-events:none}
+.hero__inner{position:relative;display:flex;flex-direction:column;align-items:center;gap:40px;max-width:720px;width:100%}
+.wordmark{height:clamp(64px,11vw,104px);max-width:100%;object-fit:contain}
+
+.launch{display:flex;flex-direction:column;align-items:center;gap:22px;width:100%}
+.launch__heading{display:flex;flex-direction:column;align-items:center;gap:12px}
+.launch__title{margin:0;color:var(--white);text-transform:uppercase;font-size:clamp(22px,3.4vw,32px);font-weight:600;line-height:1.3;letter-spacing:.1em;text-wrap:balance}
+.launch__date{margin:0;color:var(--amber);text-transform:uppercase;font-size:clamp(16px,2vw,20px);font-weight:600;line-height:1.4;letter-spacing:.14em}
+.live__eyebrow{margin:0;color:var(--amber);text-transform:uppercase;font-size:15px;font-weight:600;letter-spacing:.14em}
+.live__title{margin:0;color:var(--white);font-size:46px;line-height:1.14;font-weight:300;text-wrap:balance}
+
+.timer{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));width:100%;border-top:1px solid var(--on-green-rule);border-bottom:1px solid var(--on-green-rule)}
+.timer__unit{display:flex;flex-direction:column;align-items:center;gap:6px;padding:22px 8px 20px}
+.timer__value{font-size:clamp(44px,8vw,72px);line-height:1;font-weight:300;color:var(--white);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.timer__label{font-size:11.5px;font-weight:500;letter-spacing:.14em;color:var(--on-green-mute);text-transform:uppercase}
+
+.letter{display:flex;flex-direction:column;gap:22px;max-width:680px}
+.letter p{margin:0;text-wrap:pretty}
+.letter__lede{color:var(--white);font-size:clamp(20px,2.3vw,23px);line-height:1.65;font-weight:400}
+.letter__body{color:var(--on-green);font-size:clamp(18.5px,2.1vw,21px);line-height:1.65;font-weight:400}
+.letter__sign{margin-top:-8px!important;font-size:22px;font-weight:500;color:var(--white)}
+.letter__sign span{color:var(--on-green-mute);font-weight:400}
+
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:inherit;font-size:13.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:15px 30px;border-radius:26px;white-space:nowrap;text-decoration:none;border:1px solid transparent;transition:background-color .15s ease,color .15s ease,border-color .15s ease}
+.btn--amber{background:var(--amber);color:var(--on-amber);box-shadow:var(--shadow-amber)}
+.btn--amber:hover{background:var(--amber-hover);color:var(--on-amber)}
+.btn--white{background:var(--white);color:var(--forest);border-color:var(--white)}
+.btn--white:hover{color:var(--forest)}
+
+.baseline{margin:0;color:var(--on-green);text-transform:uppercase;font-size:clamp(15px,1.8vw,18px);font-weight:500;letter-spacing:.16em}
+.baseline .heart{color:var(--amber)}
+
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

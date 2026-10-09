@@ -1,52 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
+<title>FIDDLE,GREEN — opening 19 October 2026</title>
+<meta name="description" content="FIDDLE,GREEN — technology help for Maine small businesses, startups, and nonprofits. Launching at Maine Tech Week, 19 October 2026.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;1,200;1,400&amp;display=swap" rel="stylesheet">
-<style>
-  html, body { margin: 0; padding: 0; }
-  *, *::before, *::after { box-sizing: border-box; }
-</style>
-</helmet>
+<div class="page">
+  <main class="hero">
+    <img class="hero__watermark" src="assets/fiddlehead-mark.png" alt="">
+    <div class="hero__inner">
+      <img class="wordmark" src="assets/wordmark-light.png" alt="FIDDLE,GREEN">
 
-<div style="min-height: 100vh; width: 100%; background: #1a4a28; font-family: 'Jost', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 56px 24px; overflow: hidden;">
+      <div class="launch">
+        <!-- Shown after launch time -->
+        <div data-live hidden>
+          <p class="live__eyebrow">We are open</p>
+          <h1 class="live__title">The full site is live.</h1>
+        </div>
+        <!-- Shown before launch time -->
+        <div class="launch__heading" data-countdown-only>
+          <h1 class="launch__title">Launching at Maine Tech Week</h1>
+          <p class="launch__date">October 19, 2026 · 8:30am ET</p>
+        </div>
+        <div class="timer" role="timer" aria-live="off" data-countdown-only data-launch="2026-10-19T08:30:00-04:00">
+          <div class="timer__unit"><span class="timer__value" data-unit="days">0</span><span class="timer__label" data-label="days">Days</span></div>
+          <div class="timer__unit"><span class="timer__value" data-unit="hours">00</span><span class="timer__label" data-label="hours">Hours</span></div>
+          <div class="timer__unit"><span class="timer__value" data-unit="minutes">00</span><span class="timer__label" data-label="minutes">Minutes</span></div>
+          <div class="timer__unit"><span class="timer__value" data-unit="seconds">00</span><span class="timer__label" data-label="seconds">Seconds</span></div>
+        </div>
+      </div>
 
-  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 720px; text-align: center; gap: 0;">
+      <div class="letter">
+        <p class="letter__lede">FIDDLE,GREEN is a new business I started because I kept meeting people — neighbors, small business owners, and folks running nonprofits — who were stuck on technology problems and didn’t know where to turn.</p>
+        <p class="letter__body">Maybe you’re not sure your business is protected online. Maybe you have questions about AI and don’t know who to ask. Maybe someone offered you a tech solution and you want a second opinion from someone you can trust.</p>
+        <p class="letter__body">You’re not in this alone — come find us at Maine Tech Week, or send us a message to get the conversation started early.</p>
+        <p class="letter__sign">Jimi Michel <span>· Founder</span></p>
+      </div>
 
-    <div style="font-size: 13px; letter-spacing: 0.42em; text-transform: uppercase; color: #d4882a; font-weight: 500; margin-bottom: 2px; padding-left: 0.42em;">Coming soon</div>
+      <div class="actions">
+        <a class="btn btn--amber" href="mailto:hello@fiddle.green">Start a conversation</a>
+        <a class="btn btn--white" href="https://mainetechweek.com/" target="_blank" rel="noopener" data-countdown-only>Join us at Maine Tech Week</a>
+      </div>
 
-    <img src="assets/wordmark-tight.png" alt="FIDDLE,GREEN" style="display: block; width: 100%; max-width: 520px; height: auto; margin: 0; user-select: none;" draggable="false">
-
-    
-
-    <div style="margin: 6px 0 0; font-family: 'Jost', sans-serif; font-size: 21px; line-height: 1.7; font-weight: 200; color: #ffffff; max-width: 540px; text-wrap: pretty; display: flex; flex-direction: column; gap: 1.1em;">
-      
-      <div style="font-style: italic">FIDDLE,GREEN is a new business I started because I kept meeting people — neighbors, small business owners, and folks running nonprofits — who were stuck on technology problems and didn't know where to turn.</div>
-      <div style="font-style: italic">Maybe you're not sure if your business is protected online. Maybe you've got questions about AI and don't know who to ask. Maybe someone offered you a tech solution and you just want a second opinion from someone you can trust.</div>
-      <div style="font-style: italic">Whatever it is, you don't need to figure it out alone. That's exactly what we're here for. Click below to say hello — no jargon, no pressure, just a conversation to see if we can help.</div><div style="font-style: italic"><span style="font-style: normal;">Jimi Michel, Founder</span></div>
+      <p class="baseline">Made with <span class="heart" aria-hidden="true">♥</span> in Deering Center, Portland</p>
     </div>
-
-    <a href="mailto:hello@fiddle.green" style="display: inline-flex; align-items: center; gap: 12px; margin-top: 40px; background: #d4882a; color: #1a1f1a; text-decoration: none; font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.02em; padding: 16px 30px; border-radius: 999px; transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;" style-hover="background: #e0974a; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.28);">
-      <span style="width: 7px; height: 7px; border-radius: 50%; background: #1a4a28;"></span>
-      hello@fiddle.green
-    </a>
-
-    <div style="margin-top: 28px; font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: 0.04em; color: #a8b89c;">Made with ❤️ in Deering Center, Portland (Maine)</div>
-
-  </div>
-
-  
-
+  </main>
 </div>
-</x-dc>
+<script src="countdown.js"></script>
 </body>
 </html>
