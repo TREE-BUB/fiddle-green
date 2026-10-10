@@ -13,7 +13,7 @@
   --amber-hover:   #E09B41;
   --amber-ink:     #8A6A2E;
   --on-amber:      #221604;
-  --cream:         #FFFEFA;
+  --cream:         #FFFFFF; /* the page background: plain white */
   --sand:          #F5F2E8;
 
   --ink:           rgba(35, 41, 31, .86);
@@ -223,7 +223,9 @@ h1, h2, h3 { text-wrap: pretty; }
 }
 
 .band--cream { background: var(--cream); }
-.band--sand  { background: var(--sand); }
+/* Sand bands are white too now: every page reads as plain white below the
+   home hero. Sand stays as the fill for panels and cards set on the page. */
+.band--sand  { background: var(--cream); }
 
 .eyebrow {
   position: relative;
@@ -1825,7 +1827,7 @@ a.contact-card__value {
 
 .home-segments  { padding-top: 78px; padding-bottom: 20px; }
 .home-expertise { padding-top: 66px; padding-bottom: 78px; }
-.home-clients   { padding-top: 70px; padding-bottom: 4px; }
+.home-clients   { padding-top: 0; padding-bottom: 4px; }
 .home-blog      { padding-top: 70px; padding-bottom: 78px; }
 
 /* The home page runs its grids without intro sentences, so its section
