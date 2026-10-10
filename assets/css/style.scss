@@ -1980,6 +1980,37 @@ a.contact-card__value {
    add its usual bottom margin on top of it. */
 .seg-intro-band { padding-top: 56px; padding-bottom: 0; }
 .seg-intro-band .prose-lede { margin-bottom: 0; }
+
+/* A segment lede with a photo beside it: the prose keeps its reading width,
+   the photo takes what is left, and the two stack once there is no room. */
+.seg-intro--photo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px 56px;
+  align-items: flex-start;
+
+  .prose-lede { flex: 1 1 420px; }
+}
+
+.seg-photo {
+  flex: 1 1 300px;
+  max-width: 440px;
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+  }
+
+  figcaption {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-top: 12px;
+  }
+}
 .gov-proc-band  { padding-top: 56px; padding-bottom: 78px; }
 
 .procurement__eyebrow { margin-bottom: 12px; }

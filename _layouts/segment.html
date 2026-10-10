@@ -6,14 +6,24 @@ layout: page
 {%- comment -%}
   An optional lede above the cards. The paragraphs carry their own markup so
   the copy can link out, which means they are written trusted in seg_pages.yml
-  rather than escaped here.
+  rather than escaped here. An optional `photo` (src, alt, caption, width,
+  height) sits beside the lede, and drops below it on narrow screens.
 {%- endcomment -%}
 {%- if d.intro -%}
   <section class="band band--cream seg-intro-band">
-    <div class="prose-lede">
-      {%- for para in d.intro -%}
-        <p>{{ para }}</p>
-      {%- endfor -%}
+    <div class="seg-intro{% if d.photo %} seg-intro--photo{% endif %}">
+      <div class="prose-lede">
+        {%- for para in d.intro -%}
+          <p>{{ para }}</p>
+        {%- endfor -%}
+      </div>
+      {%- if d.photo -%}
+        <figure class="seg-photo">
+          <img src="{{ d.photo.src | relative_url }}" alt="{{ d.photo.alt | escape }}"
+               width="{{ d.photo.width }}" height="{{ d.photo.height }}" loading="lazy">
+          <figcaption>{{ d.photo.caption | escape_once }}</figcaption>
+        </figure>
+      {%- endif -%}
     </div>
   </section>
 {%- endif -%}
