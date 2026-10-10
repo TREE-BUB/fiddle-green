@@ -209,7 +209,8 @@ h1, h2, h3 { text-wrap: pretty; }
 
   /* With no change of colour to separate them, the crumb and the headline
      beneath it read as one block, so the gap between them closes up. */
-  .band--hero-crumb + .page-title-band { padding-top: 18px; }
+  .band--hero-crumb + .page-title-band,
+  .band--hero-crumb + .seg-intro-band--photo { padding-top: 18px; }
   .band--hero:not(.band--hero-crumb) .breadcrumb { margin-bottom: 18px; }
   .band--hero:not(.band--hero-crumb):not(.band--hero-hub) + .band { padding-top: 44px; }
 
@@ -1989,7 +1990,19 @@ a.contact-card__value {
   gap: 34px 56px;
   align-items: flex-start;
 
-  .prose-lede { flex: 1 1 420px; }
+  .seg-intro__main { flex: 1 1 420px; max-width: 620px; }
+}
+
+.seg-intro__title {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.16;
+  color: var(--forest);
+  margin: 0 0 28px;
+}
+
+@media (max-width: $bp-sm) {
+  .seg-intro__title { font-size: 28px; margin-bottom: 22px; }
 }
 
 .seg-photo {

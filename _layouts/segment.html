@@ -6,22 +6,32 @@ layout: page
 {%- comment -%}
   An optional lede above the cards. The paragraphs carry their own markup so
   the copy can link out, which means they are written trusted in seg_pages.yml
-  rather than escaped here. An optional `photo` (src, alt, caption, width,
-  height) sits beside the lede, and drops below it on narrow screens.
+  rather than escaped here.
+
+  A `photo` in the page's front matter (src, alt, caption, width, height)
+  sits beside the lede, with the headline moved down into the lede's column
+  so the two start level; page.html skips its own headline band for it. The
+  photo drops below the text on narrow screens.
 {%- endcomment -%}
+{%- assign photo = page.photo -%}
 {%- if d.intro -%}
-  <section class="band band--cream seg-intro-band">
-    <div class="seg-intro{% if d.photo %} seg-intro--photo{% endif %}">
-      <div class="prose-lede">
-        {%- for para in d.intro -%}
-          <p>{{ para }}</p>
-        {%- endfor -%}
+  <section class="band band--cream seg-intro-band{% if photo %} seg-intro-band--photo{% endif %}">
+    <div class="seg-intro{% if photo %} seg-intro--photo{% endif %}">
+      <div class="seg-intro__main">
+        {%- if photo -%}
+          <h1 class="seg-intro__title">{{ page.headline | escape_once }}</h1>
+        {%- endif -%}
+        <div class="prose-lede">
+          {%- for para in d.intro -%}
+            <p>{{ para }}</p>
+          {%- endfor -%}
+        </div>
       </div>
-      {%- if d.photo -%}
+      {%- if photo -%}
         <figure class="seg-photo">
-          <img src="{{ d.photo.src | relative_url }}" alt="{{ d.photo.alt | escape }}"
-               width="{{ d.photo.width }}" height="{{ d.photo.height }}" loading="lazy">
-          <figcaption>{{ d.photo.caption | escape_once }}</figcaption>
+          <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt | escape }}"
+               width="{{ photo.width }}" height="{{ photo.height }}">
+          <figcaption>{{ photo.caption | escape_once }}</figcaption>
         </figure>
       {%- endif -%}
     </div>

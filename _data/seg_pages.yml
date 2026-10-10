@@ -12,17 +12,6 @@ startups:
       ongoing work is an option, not a condition of the build. What you get
       throughout is senior engineering, product design, and the judgment to
       prioritize ruthlessly: knowing what matters now and what can wait.
-  photo:
-    src: /assets/photos/petch-bread-and-friends.webp
-    width: 1000
-    height: 998
-    alt: >-
-      Two people smiling at a round café table with coffee cups and a pink
-      Bread & Friends pastry box; one wears red glasses and a red-and-white
-      knit Santa hat.
-    caption: >-
-      Our founder, Jimi Michel, meeting with Tina Lee, founder of PETCH, at
-      Bread & Friends in Portland, and having a lot of fun with a festive hat.
   cards_title: Where we usually come in
   cards:
     - h: A founder with a good idea and no technical team
