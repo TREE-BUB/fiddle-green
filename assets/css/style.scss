@@ -1326,21 +1326,6 @@ a.card:hover { border-color: var(--amber); }
   }
 }
 
-/* Inside a disclosure the quotes are already grouped and bounded, so they drop
-   the card and read as a run of quotations. */
-.quote--stacked {
-  flex: none;
-  max-width: none;
-  background: none;
-  border: 0;
-  border-left: 2px solid var(--amber);
-  border-radius: 0;
-  padding: 2px 0 2px 20px;
-  gap: 12px;
-
-  blockquote { font-size: 16px; color: rgba(35, 41, 31, .82); }
-}
-
 /* The tools we work in, grouped. Columns are sized by their contents rather
    than by a fixed count, so a group with five names does not leave a hole
    next to one with seven. */
@@ -1399,69 +1384,40 @@ a.card:hover { border-color: var(--amber); }
   .topline blockquote { font-size: 21px; }
 }
 
-/* Client quotes grouped by segment. Native <details>, so a closed group still
-   opens without JavaScript and find-in-page can reach the text inside it. */
-.disclosures {
-  border-top: 1px solid var(--hairline);
+/* The quotes under the featured one, as cards three across, each labelled with
+   the kind of organization it comes from. The references panel is the grid's
+   last cell and takes the rest of the final row: two cells beside the fourth
+   quote at three across, a full row at two across and one. */
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+
+  .quote { max-width: none; padding: 28px 26px; }
+  .quote blockquote { font-size: 16px; }
 }
 
-.disclosure {
-  border-bottom: 1px solid var(--hairline);
+.quote-grid__refs { grid-column: span 2; align-self: start; }
+
+@media (max-width: $bp-nav) {
+  .quote-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quote-grid__refs { grid-column: 1 / -1; }
 }
 
-.disclosure__summary {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 20px 2px;
-  cursor: pointer;
-  list-style: none;
-
-  &::-webkit-details-marker { display: none; }
-
-  /* The caret is drawn here rather than left to the browser's own marker,
-     which cannot be positioned or turned. */
-  &::after {
-    content: "";
-    width: 8px;
-    height: 8px;
-    margin-left: auto;
-    border-right: 2px solid var(--amber);
-    border-bottom: 2px solid var(--amber);
-    transform: rotate(45deg) translate(-2px, -2px);
-    transition: transform .18s ease;
-  }
-
-  &:hover .disclosure__title { color: var(--amber-ink); }
+@media (max-width: $bp-sm) {
+  .quote-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
-.disclosure[open] > .disclosure__summary::after {
-  transform: rotate(-135deg) translate(-2px, -2px);
-}
-
-.disclosure__title {
-  font-size: 20px;
+.quote__segment {
+  font-size: 11.5px;
   font-weight: 500;
-  color: var(--forest);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+  margin: 0;
 }
 
-.disclosure__count {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: .12em;
-  color: var(--ink-faint);
-}
-
-.disclosure__body {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  padding: 4px 2px 30px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .disclosure__summary::after { transition: none; }
-}
+.topline .quote__segment { margin-bottom: 14px; }
 
 .quote__name { font-size: 15px; font-weight: 500; color: var(--forest); margin: 0 0 3px; }
 

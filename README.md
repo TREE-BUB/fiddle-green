@@ -90,7 +90,8 @@ flags (each is marked "parked for launch"):
   the two "Public Sector" posts in `_posts/`: delete `published: false`.
 - `_data/nav.yml`: delete `hidden: true` on the Public Sector child.
 - `_data/segments.yml`: delete `on_home: false` on `public-sector`.
-- `about/testimonials.html`: uncomment the Public Sector quote group.
+- `about/testimonials.html`: add public sector quotes with `segment: Public Sector`
+  (the placeholder group from the original design is in git history).
 - `about/blog.html`: add "Public Sector" back to the filter pills.
 
 Site-wide copy that named public agencies was rewritten to name startups,
@@ -118,5 +119,7 @@ Its body copy stays in `_data/exp_pages.yml` under `training`, untouched.
 
 - The blog posts carry final titles, summaries, categories, and dates from
   the approved design, but their bodies are placeholders.
-- `/about/testimonials/` carries invented client quotes from the design comp
-  and still needs real ones.
+- `/about/testimonials/` carries five mock-up quotes (two startup founders, two
+  nonprofit leaders, one small-business owner) with bracketed placeholder names.
+  Each needs replacing with a real client's words, and their permission, before
+  launch.
