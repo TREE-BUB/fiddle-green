@@ -37,20 +37,6 @@ description: >-
     {%- endfor -%}
   </div>
 
-  {%- comment -%}
-    Client logos from _data/clients.yml. Each tile is one link, named by the
-    logo's alt text, out to the client's own site.
-  {%- endcomment -%}
-  <h3 class="clients__title">Some of the organizations we work with</h3>
-  <ul class="clients">
-    {%- for c in site.data.clients -%}
-      <li>
-        <a class="clients__tile" href="{{ c.url }}" rel="noopener" style="{% if c.tile %}background: {{ c.tile }}; {% endif %}{% if c.logo_h %}--logo-h: {{ c.logo_h }}px{% endif %}">
-          <img src="{{ c.logo | relative_url }}" alt="{{ c.name | escape }}" width="{{ c.width }}" height="{{ c.height }}" loading="lazy">
-        </a>
-      </li>
-    {%- endfor -%}
-  </ul>
 </section>
 
 {%- comment -%}
@@ -75,6 +61,28 @@ description: >-
       {%- endunless -%}
     {%- endfor -%}
   </div>
+</section>
+
+<section class="band band--cream home-clients">
+  {%- comment -%}
+    Client logos from _data/clients.yml, each tile one link out to the
+    client's own site. clients.js turns the list into a row that shows three
+    at a time and steps along one logo every few seconds; without it, or for
+    a visitor who has asked for reduced motion, they sit in a plain grid.
+  {%- endcomment -%}
+  <h2 class="clients__title">Some of the organizations we work with</h2>
+  <div class="clients" data-clients>
+    <ul class="clients__track">
+      {%- for c in site.data.clients -%}
+        <li class="clients__item">
+          <a class="clients__tile" href="{{ c.url }}" rel="noopener" style="{% if c.tile %}background: {{ c.tile }}; {% endif %}{% if c.logo_h %}--logo-h: {{ c.logo_h }}px{% endif %}">
+            <img src="{{ c.logo | relative_url }}" alt="{{ c.name | escape }}" width="{{ c.width }}" height="{{ c.height }}" loading="lazy">
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+  <script src="{{ '/assets/js/clients.js' | relative_url }}" defer></script>
 </section>
 
 <section class="band band--cream home-why">
