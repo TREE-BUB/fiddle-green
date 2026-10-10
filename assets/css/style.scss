@@ -1980,6 +1980,9 @@ a.contact-card__value {
     margin-top: 12px;
   }
 }
+
+/* A tall photo at full width would run far below the text beside it. */
+.seg-photo--portrait { flex-basis: 260px; max-width: 340px; }
 .gov-proc-band  { padding-top: 56px; padding-bottom: 78px; }
 
 .procurement__eyebrow { margin-bottom: 12px; }
