@@ -1670,6 +1670,15 @@ a.contact-card__value {
   }
 }
 
+.site-footer__brand .site-footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  a { color: var(--on-green-soft); }
+  a:hover { color: var(--amber); }
+}
+
 .site-footer__col { flex: 0 1 180px; }
 
 .site-footer__col-title {
