@@ -1663,6 +1663,14 @@ a.contact-card__value {
   a:hover { color: var(--amber); }
 }
 
+.site-footer__brand .site-footer__social {
+  display: flex;
+  gap: 18px;
+
+  a { color: var(--on-green-soft); }
+  a:hover { color: var(--amber); }
+}
+
 .site-footer__col { flex: 0 1 180px; }
 
 .site-footer__col-title {
@@ -1885,6 +1893,61 @@ a.contact-card__value {
     .icon-row__icon { background: var(--amber); }
   }
 }
+
+.icon-row__blurb {
+  max-width: 300px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* Client logos: one tile per client, the logo contained in it at a common
+   height so a square seal and a wide wordmark carry about the same weight. */
+.clients__title {
+  margin: 56px 0 22px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  text-align: center;
+}
+
+.clients {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.clients__tile {
+  height: 128px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFF;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  transition: border-color .18s ease, box-shadow .18s ease;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: var(--logo-h, 72px);
+    width: auto;
+    height: auto;
+  }
+
+  &:hover { border-color: var(--amber); box-shadow: 0 2px 14px rgba(27, 74, 40, .08); }
+}
+
+@media (max-width: $bp-nav) {
+  .clients { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 
 .icon-row__icon {
   width: 68px;

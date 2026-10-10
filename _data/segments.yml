@@ -1,5 +1,5 @@
-# Drives the home "Who we help" icons, which show icon + label only, and the
-# blurbs on the /who-we-help/ hub cards.
+# Drives the home "Who we work with" icons, which show the icon, the label and
+# the blurb, and the blurbs on the /who-we-help/ hub cards.
 # on_home: false keeps an entry here but off that row.
 - key: startups
   icon: /assets/icons/noun_Rocket_1123009_338A4A.svg

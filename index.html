@@ -31,10 +31,26 @@ description: >-
         <a class="icon-row__item" href="{{ seg.url | relative_url }}">
           <span class="icon-row__icon" style="--icon: url('{{ seg.icon | relative_url }}')"></span>
           <span class="icon-row__label">{{ seg.label | escape_once }}</span>
+          <span class="icon-row__blurb">{{ seg.blurb | escape_once }}</span>
         </a>
       {%- endunless -%}
     {%- endfor -%}
   </div>
+
+  {%- comment -%}
+    Client logos from _data/clients.yml. Each tile is one link, named by the
+    logo's alt text, out to the client's own site.
+  {%- endcomment -%}
+  <h3 class="clients__title">Some of the organizations we work with</h3>
+  <ul class="clients">
+    {%- for c in site.data.clients -%}
+      <li>
+        <a class="clients__tile" href="{{ c.url }}" rel="noopener" style="{% if c.tile %}background: {{ c.tile }}; {% endif %}{% if c.logo_h %}--logo-h: {{ c.logo_h }}px{% endif %}">
+          <img src="{{ c.logo | relative_url }}" alt="{{ c.name | escape }}" width="{{ c.width }}" height="{{ c.height }}" loading="lazy">
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
 </section>
 
 {%- comment -%}

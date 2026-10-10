@@ -29,6 +29,7 @@
       "slogan": {{ site.tagline | jsonify }},
       "email": {{ site.email | jsonify }},
       "telephone": {{ site.phone_href | jsonify }},
+      "sameAs": [{{ site.linkedin_url | jsonify }}, {{ site.instagram_url | jsonify }}],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Portland",

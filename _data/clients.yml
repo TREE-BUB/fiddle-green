@@ -1,0 +1,36 @@
+# The client logos on the home page, in display order. Each links to the
+# client's own site.
+#
+#   logo, width, height: the file in assets/clients/ and its pixel size
+#   tile:                a background colour for the logo's tile, for a logo
+#                        that only reads on its own brand colour (Petch is
+#                        white on blue). Omit for the default white tile.
+#   logo_h:              the logo's height in the tile, in px (default 72).
+#                        Lets a round seal sit taller and a bold wordmark
+#                        shorter, so they look about the same size.
+- name: Midcoast Symphony Orchestra
+  url: https://midcoastsymphony.org/
+  logo: /assets/clients/midcoast-symphony-orchestra.webp
+  width: 396
+  height: 200
+
+- name: Petch
+  url: https://petchtech.com/
+  logo: /assets/clients/petch.webp
+  width: 291
+  height: 84
+  tile: "#3263AF"
+  logo_h: 52
+
+- name: The Continental
+  url: https://www.thecontinentalportland.com/
+  logo: /assets/clients/the-continental.webp
+  width: 200
+  height: 200
+  logo_h: 96
+
+- name: Survivor Tails Animal Rescue
+  url: https://www.survivortails.org/
+  logo: /assets/clients/survivor-tails.webp
+  width: 592
+  height: 160
