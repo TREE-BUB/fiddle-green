@@ -16,6 +16,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://fiddle.green/about/pricing-and-engagement/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://fiddle.green/about/supporting-maine/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -34,26 +39,6 @@
     <loc>https://fiddle.green/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/how-we-work/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/how-we-work/access-and-discounts/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/how-we-work/engagement-models/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fiddle.green/how-we-work/our-approach/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://fiddle.green/services/</loc>
