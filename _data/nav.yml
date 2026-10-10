@@ -65,6 +65,3 @@
     - title: Testimonials
       url: /about/testimonials/
       blurb: What clients say about working with us, grouped by the kind of organization they run.
-    - title: Contact
-      url: /contact/
-      footer_only: true
