@@ -188,6 +188,31 @@ h1, h2, h3 { text-wrap: pretty; }
 
   .hero__desc { color: var(--ink-muted); }
 
+  /* The breadcrumb band on sub-pages, and the crumb-plus-title band on posts
+     and the 404. Amber text is too light to read on cream at this size, so
+     the current crumb takes the darker amber-ink. */
+  .band--hero:not(.band--hero-hub):not(.band--home-hero) {
+    background: var(--cream);
+    padding-top: calc(var(--header-h) + 44px);
+    padding-bottom: 0;
+
+    h1 { color: var(--forest); }
+  }
+
+  .breadcrumb {
+    color: var(--ink-muted);
+
+    a { color: var(--ink-muted); &:hover { color: var(--forest); } }
+  }
+
+  .breadcrumb__current { color: var(--amber-ink); }
+
+  /* With no change of colour to separate them, the crumb and the headline
+     beneath it read as one block, so the gap between them closes up. */
+  .band--hero-crumb + .page-title-band { padding-top: 18px; }
+  .band--hero:not(.band--hero-crumb) .breadcrumb { margin-bottom: 18px; }
+  .band--hero:not(.band--hero-crumb):not(.band--hero-hub) + .band { padding-top: 44px; }
+
   .rail__btn {
     color: var(--forest);
     background: rgba(212, 136, 42, .08);
@@ -1267,6 +1292,8 @@ a.card:hover { border-color: var(--amber); }
   margin: 0 0 10px !important;
 }
 
+.person__bio { margin: 0 0 12px !important; }
+
 .person__expertise span {
   font-weight: 500;
   color: var(--forest);
@@ -2137,6 +2164,8 @@ a.contact-card__value {
 .topline-band   { padding-top: 62px; padding-bottom: 0; }
 .quotes-band    { padding-top: 58px; padding-bottom: 78px; }
 .contact-band   { padding-top: 70px; padding-bottom: 78px; }
+/* The hero above is cream too, and already brings its own bottom padding. */
+.has-light-hero .band--hero-hub + .contact-band { padding-top: 0; }
 
 .believe__lede {
   font-size: 25px;

@@ -2,10 +2,11 @@
 <html lang="en">
 <head>{% include head.html %}</head>
 {%- comment -%}
-  Hub pages run a light hero, so the transparent header over it needs dark
-  type and the dark wordmark. Everything else keeps the green hero.
+  Every page but Home runs a light hero: the hubs, and the breadcrumb band at
+  the top of every sub-page, post, and the 404. The header carries the green
+  itself there. Home keeps its forest hero, with the header over it.
 {%- endcomment -%}
-<body{% if page.layout == "hub" %} class="has-light-hero"{% endif %}>
+<body{% unless page.url == "/" %} class="has-light-hero"{% endunless %}>
   <a class="skip-link" href="#main">Skip to content</a>
   {% include header.html %}
   <main id="main">

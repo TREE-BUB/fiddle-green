@@ -9,20 +9,55 @@ description: The technology and data professionals behind FIDDLE,GREEN, working 
 people:
   - name: Jimi Michel
     photo: /assets/team/jimi.png
-    role: Founder and Principal
-    expertise: Strategy, AI, training, product
+    role: Principal Consultant
+    bio: >-
+      Jimi has spent his career making technology work for organizations that
+      don't have a technology department. He has served as a fractional CIO for
+      community health centers, led digital strategy on a national immunization
+      program, and built AI chatbots and electronic registries used across
+      entire countries. Along the way he has founded a startup, worked in
+      cybersecurity, and taught graduate-level digital health at Boston
+      University. He's also a conservatory-trained trumpet player, which is
+      either relevant or it isn't, depending on the client.
+    expertise: IT strategy and governance · AI adoption · Vendor management · Digital systems design
   - name: Meryn Robinson
     photo: /assets/team/meryn.jpeg
-    role: Senior Associate, Implementation and Training
-    expertise: Technology evaluation, implementation, training
+    role: Technical Implementation and Education
+    bio: >-
+      Meryn has spent more than ten years putting new technology in place and
+      making sure people can actually use it. At Dimagi, she rolled out mobile
+      health tools in nine countries, training clinicians and field teams on
+      the ground, sometimes in Spanish. She later grew South Africa's national
+      eLearning platform for healthcare workers from 8,000 to more than 140,000
+      users, then prepared the government to run it on its own. Most recently,
+      she led a local business through a full software migration for more than
+      3,000 users.
+    expertise: Software implementation and migration · Staff training and documentation · User adoption · Change management
   - name: Elvis Agah
     photo: /assets/team/elvis.png
     role: Senior Engineer
-    expertise: Software design and development
+    bio: >-
+      Elvis is a senior engineer and product lead who has built software for
+      everything from mobile payments to telehealth. He founded MyApp Labs in
+      Ghana, where he designed and shipped a learning platform, an e-commerce
+      service, and AI-powered health tools, and won the MTN Apps Challenge. In
+      Europe, he has led AI and robotics product work at Alten and won two
+      generative AI innovation awards at Amadeus. When a project needs more
+      hands, he can put together a full development team.
+    expertise: AI product architecture · Full-stack engineering · Product and UX design · Cloud infrastructure
   - name: Sherri Lysy
     photo: /assets/team/sherri_1.jpeg
-    role: Operations and Non-Profit Lead
-    expertise: Data analysis, business workflow optimization, project management
+    role: Operations and Administration
+    bio: >-
+      Sherri has spent more than fifteen years running the operations that keep
+      organizations working. As administration and finance manager for the
+      Unitarian Universalist Association's New England region, she runs
+      budgets, databases, communications, and events, and is writing the
+      manuals that will let others run them. She has managed front-of-house
+      operations at Duckfat and private events at Chaval, and has done policy
+      research for Maine Equal Justice. She studied economics at NYU and social
+      work at the University of Maine.
+    expertise: Nonprofit operations and finance · Process documentation · CRM and database management · Community and policy engagement
 ---
 
 <section class="band band--cream cards-band team-band">
@@ -42,6 +77,9 @@ people:
         <div class="person__body">
           <h2>{{ p.name | escape_once }}</h2>
           <p class="person__role">{{ p.role | escape_once }}</p>
+          {%- if p.bio -%}
+            <p class="person__bio">{{ p.bio | escape_once }}</p>
+          {%- endif -%}
           <p class="person__expertise"><span>Areas of expertise:</span> {{ p.expertise | escape_once }}</p>
         </div>
       </div>
