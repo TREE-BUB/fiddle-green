@@ -45,6 +45,10 @@ a{color:var(--white)} a:hover{color:var(--nav-hover)}
 .btn--white{background:var(--white);color:var(--forest);border-color:var(--white)}
 .btn--white:hover{color:var(--forest)}
 
+.social{display:flex;justify-content:center;gap:18px;margin-top:-12px}
+.social__link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--on-green-rule);border-radius:50%;color:var(--on-green);transition:color .15s ease,border-color .15s ease}
+.social__link:hover{color:var(--nav-hover);border-color:var(--nav-hover)}
+
 .baseline{margin:0;color:var(--on-green);text-transform:uppercase;font-size:clamp(15px,1.8vw,18px);font-weight:500;letter-spacing:.16em}
 .baseline .heart{color:var(--amber)}
 
