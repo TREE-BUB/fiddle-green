@@ -8,6 +8,11 @@ description: >-
 url: https://fiddle.green
 baseurl: ""
 
+# Google Analytics 4. The tag is only written into pages when enabled is true.
+analytics:
+  ga4_id: G-S3YT20W6TC
+  enabled: false
+
 email: hello@fiddle.green
 phone_display: 207-420-6390
 phone_href: "+12074206390"
