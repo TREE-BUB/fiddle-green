@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% include head.html %}</head>
+{%- comment -%}
+  Every page but Home runs a light hero: the hubs, and the breadcrumb band at
+  the top of every sub-page, post, and the 404. The header carries the green
+  itself there. Home keeps its forest hero, with the header over it.
+{%- endcomment -%}
+<body{% unless page.url == "/" %} class="has-light-hero"{% endunless %}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/nav.js' | relative_url }}" defer></script>
+  {% if page.needs_blog_js %}<script src="{{ '/assets/js/blog.js' | relative_url }}" defer></script>{% endif %}
+</body>
+</html>

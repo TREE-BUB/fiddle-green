@@ -1,0 +1,62 @@
+{%- comment -%}
+Transparent header, absolutely positioned over the hero band so the Home
+watermark reads behind it. Nav tree comes from _data/nav.yml.
+{%- endcomment -%}
+<div class="site-header-wrap">
+  <header class="site-header">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/wordmark-light.png' | relative_url }}" alt="FIDDLE,GREEN" width="987" height="133">
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {%- for item in site.data.nav -%}
+        {%- if item.children -%}
+          {%- assign menu_id = item.title | slugify -%}
+          <div class="nav__item nav__item--has-menu" data-dropdown>
+            <a class="nav__link" href="{{ item.url | relative_url }}"
+               aria-expanded="false" aria-controls="menu-{{ menu_id }}" data-dropdown-trigger>
+              {{ item.title | escape_once }}<span class="nav__caret" aria-hidden="true">▾</span>
+            </a>
+            <div class="nav__menu" id="menu-{{ menu_id }}" data-dropdown-menu hidden>
+              {%- for child in item.children -%}
+                {%- unless child.footer_only or child.hidden -%}
+                  <a class="nav__menu-link" href="{{ child.url | relative_url }}">{{ child.title | escape_once }}</a>
+                {%- endunless -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- else -%}
+          <a class="nav__link nav__item" href="{{ item.url | relative_url }}">{{ item.title | escape_once }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+      <a class="btn btn--amber nav__cta" href="{{ '/contact/' | relative_url }}">Contact</a>
+    </nav>
+
+    <div class="site-header__mobile">
+      <a class="btn btn--amber btn--sm" href="{{ '/contact/' | relative_url }}">Contact</a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="mobile-drawer"
+              aria-label="Menu" data-drawer-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="drawer" id="mobile-drawer" hidden>
+    {%- for item in site.data.nav -%}
+      {%- if item.children -%}
+        <div class="drawer__group">
+          <a class="drawer__heading" href="{{ item.url | relative_url }}">{{ item.drawer_title | default: item.title | escape_once }}</a>
+          <div class="drawer__children">
+            {%- for child in item.children -%}
+              {%- unless child.footer_only or child.hidden -%}
+                <a class="drawer__link" href="{{ child.url | relative_url }}">{{ child.title | escape_once }}</a>
+              {%- endunless -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- else -%}
+        <a class="drawer__top-link" href="{{ item.url | relative_url }}">{{ item.title | escape_once }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>

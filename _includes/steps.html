@@ -1,0 +1,43 @@
+{%- comment -%}
+  Sand panel: heading + note on the left, numbered steps on the right.
+
+  Two switches change what the numbers become, because not every list on the
+  site is a sequence:
+
+  include.grid  a set of choices rather than a sequence — the numbering goes
+                away, the list stops being ordered, and the items sit two
+                across.
+  include.mark  a set of values or principles — a fiddlehead in place of each
+                number, and again an unordered list, since numbering them
+                would imply a rank that is not there.
+{%- endcomment -%}
+{%- if include.grid or include.mark -%}
+  {%- assign list_tag = "ul" -%}
+{%- else -%}
+  {%- assign list_tag = "ol" -%}
+{%- endif -%}
+<section class="band band--cream steps-band">
+  <div class="panel panel--split">
+    <div class="panel__aside">
+      {% include section-heading.html title=include.title class="section-heading--sm" %}
+      <p class="panel__note">{{ include.note | escape_once }}</p>
+    </div>
+    <{{ list_tag }} class="steps{% if include.grid %} steps--grid{% endif %}">
+      {%- for step in include.steps -%}
+        <li class="step">
+          {%- if include.mark -%}
+            <img class="step__mark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+          {%- elsif include.grid -%}
+            <span class="step__dot" aria-hidden="true"></span>
+          {%- else -%}
+            <span class="step__num">{{ step.num }}</span>
+          {%- endif -%}
+          <span class="step__body">
+            <b>{{ step.h | escape_once }}</b>
+            <span>{{ step.p | escape_once }}</span>
+          </span>
+        </li>
+      {%- endfor -%}
+    </{{ list_tag }}>
+  </div>
+</section>
