@@ -1254,6 +1254,13 @@ a.card:hover { border-color: var(--amber); }
 
 .roster { max-width: 760px; display: flex; flex-direction: column; gap: 34px; }
 
+/* Two columns on desktop; each person stacks portrait over text so the
+   narrower column still reads comfortably. */
+@media (min-width: 981px) {
+  .roster { max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: 44px 56px; align-items: start; }
+  .roster .person { flex-direction: column; flex-wrap: nowrap; }
+}
+
 .person { display: flex; gap: 20px; flex-wrap: wrap; }
 
 .person__portrait {
