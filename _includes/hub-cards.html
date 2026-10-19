@@ -1,0 +1,27 @@
+{%- comment -%}
+  The children of a hub as linked cards, reading the same nav list the hero
+  rail does so the two can never disagree about what exists.
+
+  Each card's line of copy comes from the child's own blurb, or from a lookup
+  by URL in include.blurbs for the sections that keep theirs in a data file
+  alongside the home-page icons.
+{%- endcomment -%}
+<div class="card-grid">
+  {%- for item in site.data.nav -%}
+    {%- if item.url == include.url -%}
+      {%- for child in item.children -%}
+        {%- unless child.footer_only or child.hidden -%}
+          {%- assign entry = include.blurbs | where: "url", child.url | first -%}
+          {%- assign blurb = child.blurb | default: entry.blurb -%}
+          <a class="card card--flat hub-card" href="{{ child.url | relative_url }}">
+            <h3 class="card__title-lg">{{ child.title | escape_once }}</h3>
+            {%- if blurb -%}
+              <p class="card__body card__body--lg">{{ blurb | escape_once }}</p>
+            {%- endif -%}
+            <span class="hub-card__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+</div>

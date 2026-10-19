@@ -1,0 +1,7 @@
+{%- assign cat = include.post.categories | first -%}
+<a class="card card--post" href="{{ include.post.url | relative_url }}" data-category="{{ cat | escape_once }}">
+  <p class="card__meta">{{ cat | escape_once }} &middot; {{ include.post.date | date: "%b %Y" }}</p>
+  <h2>{{ include.post.title | escape_once }}</h2>
+  <p class="card__body">{{ include.post.summary | escape_once }}</p>
+  <span class="link-more">Read &rarr;</span>
+</a>

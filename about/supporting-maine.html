@@ -1,0 +1,38 @@
+---
+layout: page
+permalink: /about/supporting-maine/
+title: Supporting Maine
+parent_title: About
+parent_url: /about/
+headline: We are a Maine company, and we try to act like one.
+description: No billed travel time anywhere in Maine, and time set aside for pro bono work in whatever community we're working in.
+commitments:
+  - h: We do not bill travel time for in-state work
+    p: Distance should not be the reason good technical help costs more Downeast or in the County than it does in Portland. We do not bill travel time to clients elsewhere in Maine. Actual travel expenses are passed through at cost for longer trips.
+    meta: Statewide
+  - h: We give back
+    p: Wherever we are working, we set aside time for pro bono work in that community — free IT office hours at a nursing home, an afternoon with students at a local school, whatever is genuinely useful. You do not have to arrange it or ask for it.
+    meta: Every visit
+---
+
+<section class="band band--cream maine-band">
+  <div class="prose-lede">
+    <p>FIDDLE,GREEN was founded in Maine, and we take real pride in building up the state. We want to help our neighbors everywhere, not just the ones a twenty-minute drive away.</p>
+  </div>
+</section>
+
+<section class="band band--cream cards-band maine-cards-band">
+  <div class="card-grid">
+    {%- for c in page.commitments -%}
+      <div class="card card--flat">
+        <h2 class="card__title-lg">{{ c.h | escape_once }}</h2>
+        <p class="card__body card__body--lg">{{ c.p | escape_once }}</p>
+        <p class="card__tail">{{ c.meta | escape_once }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% include callout.html
+   eyebrow="Why we do it this way"
+   text="Maine is more than Downeast, and geography should not mean going without — or paying more for the same help." %}

@@ -1,0 +1,123 @@
+# Copy for the data-driven Who We Help sub-pages.
+startups:
+  intro:
+    - >-
+      We know how hard, and how exciting, it is to build something from
+      nothing, and we are comfortable with the uncertainty that comes with it.
+      Most founders start with us the same way: a fixed-price MVP build, scoped
+      and quoted before anyone writes a line of code, so you know what version
+      one costs before you commit to it.
+    - >-
+      After that, some teams are done and some keep us on. Either is fine — the
+      ongoing work is an option, not a condition of the build. What you get
+      throughout is senior engineering, product design, and the judgment to
+      prioritize ruthlessly: knowing what matters now and what can wait.
+  cards_title: Where we usually come in
+  cards:
+    - h: A founder with a good idea and no technical team
+      p: Senior engineering and product design without a headcount, a recruiter, or an equity conversation. We sit beside a non-technical founder and make the calls that would otherwise wait on a first engineering hire.
+    - h: A fixed-price first build
+      p: An MVP with the scope and the price agreed before we start — small enough to put in front of real users and learn from, and yours to walk away with.
+    - h: Ongoing work, if you want it
+      p: Project work or a retainer after the build, for teams that would rather keep the people who already know the codebase. Decided after version one ships, not before.
+    - h: Accounts and ownership
+      p: Domains, email, and shared logins registered to the company — not to whoever set them up on a Tuesday.
+    - h: AI, used carefully
+      p: Where a model genuinely helps, where it leaks your data, and how to write a short internal policy your team will actually follow.
+  steps_note: A scoping conversation, then a fixed-price first build you can stop after.
+  steps:
+    - num: "01"
+      h: A working session.
+      p: Ninety minutes on what you have, what you plan, and where the sharp edges are. Free, and it commits you to nothing.
+    - num: "02"
+      h: A scope and a fixed price.
+      p: What version one includes, what it deliberately leaves out, and what it costs — readable by a non-technical cofounder or board member.
+    - num: "03"
+      h: We build it with you.
+      p: Not for you — with you, so your team knows how it works once we are gone, and owns the code and the accounts outright.
+  cta_title: Want to know what version one would cost?
+  cta_body: MVP builds are quoted as a fixed price in writing before any work starts. Project work and retainers are there afterward if you want them.
+
+businesses:
+  intro:
+    - >-
+      We specialize in the technology side of growing pains. Growth is good.
+      What usually goes wrong is that the systems set up three years ago were
+      configured before anyone asked how the staff actually work — and nobody
+      has had the time to revisit them since.
+    - >-
+      Most small businesses do not have an IT person. It gets handled in the
+      margins of somebody's real job, and it works until it doesn't. That's
+      where we come in.
+  cards_title: We help small businesses...
+  cards:
+    - h: When the register goes down
+      p: The point of sale, the wifi, the email that stopped arriving. One number to call, one person who already knows your setup, and a straight answer about whether the thing is worth fixing or worth replacing.
+    - h: That scheduling thing you're doing by hand
+      p: The spreadsheet somebody retypes every week, the reminders sent one at a time, the invoice chased twice because nobody wrote down that it went out. We find the parts a computer should be doing and set it up to do them.
+    - h: Knowing which numbers to believe
+      p: When the report and the register disagree, we sort out which one is right and why — then set things up so next month nobody has to ask.
+    - h: Get more out of what you own
+      p: You have already paid for Microsoft 365, Google Workspace, and half a dozen other tools. We make them work the way your staff actually work.
+    - h: Bring in AI where it earns its keep
+      p: AI is not magic, but in the right places it genuinely gives people their time back. We help you find those places, and tell you plainly where it is not worth the trouble.
+    - h: We fight for you with vendors who ignore you
+      p: Cut through the smoke and mirrors. We evaluate vendors, work out what a thing will actually return, and make the case on your behalf when one stops returning your calls. You get the leverage you don't have alone.
+  steps_title: How we work with small businesses
+  steps_grid: true
+  steps_note: We provide the flexibility small businesses need. Have something else in mind? Let us know and we'll figure out an arrangement that fits.
+  steps:
+    - h: Needs Assessment
+      p: Usually the first step. We go through everything you are running now, then hand you a short list of what to fix and what order to fix it in.
+    - h: Packages
+      p: Fixed scope and fixed price for a defined piece of work — a one-day AI bootcamp, a website rebuild, a system setup.
+    - h: Project Work
+      p: One specific thing, start to finish, whether that takes a few hours or a few months.
+    - h: Ongoing Partnership
+      p: After a short onboarding we stay on, so there is always someone who already knows your setup when you need them.
+  cta_title: Want a number you can call on a bad day?
+  cta_body: Hourly, short-term, and long-term arrangements are all available, quoted when we talk.
+
+nonprofits:
+  intro:
+    - >-
+      Everything we do for a <a href="/who-we-help/small-businesses/">small
+      business</a> we do for a nonprofit: the same help desk, the same
+      planning, the same people. What changes is what sits around the
+      technology — a board, a funder, a volunteer roster, and a budget that
+      answers to all three.
+    - >-
+      We understand mission-driven work firsthand. Funder compliance,
+      fundraising, and grant reporting are not background noise to us. They are
+      things that should shape how your technology gets built in the first
+      place, rather than requirements you discover after it is finished.
+  cards_title: We know how nonprofits work
+  cards:
+    - h: We help write grants
+      p: Scopes, quotes, budget narratives, and written assessments you can attach to an application or a funder report — in language a program officer will read without translating.
+    - h: Restricted funding, understood
+      p: We know how grant conditions and restricted funds work. Tell us which award this is coming out of and we will help you structure the statement of work so the engagement counts against that grant.
+    - h: Discounts you may not know exist
+      p: TechSoup, Tech for Good, and the nonprofit programs at Google and Microsoft. We work out what you qualify for, chase the donated licenses, and handle the paperwork.
+    - h: Technology that serves the mission
+      p: Before we recommend anything, we ask what it does for the people you serve. If a tool cannot earn its line in the budget, we will say so.
+  work_title: What this looks like for a nonprofit
+  work_note: A sample of the work we get asked for most often. Happy to connect you with a client whose situation looks like yours.
+  work:
+    - Grant reporting dashboards that funders actually trust.
+    - A donor database that does not quietly corrupt itself.
+    - Volunteer scheduling that gives the executive director their hours back.
+    - Compliance documentation that holds up in an audit.
+  steps_note: Discounted rates are standard here, not a favor.
+  steps:
+    - num: "01"
+      h: We learn the program.
+      p: What you do, who you serve, and how technology currently helps or gets in the way.
+    - num: "02"
+      h: We write it down.
+      p: A short assessment you can hand to a board, a funder, or your next hire.
+    - num: "03"
+      h: We work at your pace.
+      p: Around grant cycles, seasonal programs, and the weeks when everyone is at an event.
+  cta_title: Nonprofit discounts are built in.
+  cta_body: Nonprofit organizations with 501(c)(3) status receive a 10% discount on hourly, project, and retainer rates. Ask and we will tell you exactly what your project would run.

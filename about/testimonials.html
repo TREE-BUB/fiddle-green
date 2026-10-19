@@ -1,0 +1,97 @@
+---
+# Parked for launch: the quotes below are still mock-ups. Delete this line
+# to bring the page back (see README, "Parked: testimonials").
+published: false
+layout: page
+permalink: /about/testimonials/
+title: Testimonials
+parent_title: About
+parent_url: /about/
+headline: What it is like to work with us.
+description: What founders, nonprofit leaders, and small-business owners say about working with FIDDLE,GREEN. References available on request.
+# MOCK-UPS. Every quote, name, and organization below is placeholder copy
+# written to show the layout. Replace each with a client's own words, and their
+# permission to use them, before launch. The bracketed names are deliberate:
+# nothing here should go live looking like a real person said it.
+#
+# The featured quote leads the page, set large; the rest follow as cards. Each
+# carries the kind of organization it comes from as its label.
+featured:
+  segment: Startups
+  quote: >-
+    I came in with a pitch deck and no engineers. They scoped a first version I
+    could actually afford, told me plainly which features could wait, and built
+    it with me rather than for me. We had it in front of real users by the end
+    of the quarter.
+  name: "[Founder name]"
+  role: Founder · [Startup name]
+quotes:
+  - segment: Non-profits
+    quote: >-
+      They understood that every dollar we spend on technology is a dollar we
+      are not spending on our programs. The plan they wrote fit our budget, and
+      the documentation went straight into our next grant report.
+    name: "[Name]"
+    role: Executive Director · [Nonprofit name]
+  - segment: Small Businesses
+    quote: >-
+      When our card reader went down on a Saturday, they picked up the phone.
+      Since then they have sorted out our email, our backups, and our Wi-Fi, and
+      for the first time I understand what we are paying for and why.
+    name: "[Name]"
+    role: Owner · [Business name]
+  - segment: Startups
+    quote: >-
+      The fixed price meant no surprises, and when something unexpected came up
+      they told us before it became a problem. We own every line of code and
+      every account, and they made sure we understood all of it before they
+      handed it over.
+    name: "[Name]"
+    role: Co-founder and CEO · [Startup name]
+  - segment: Non-profits
+    quote: >-
+      Our staff went from dreading new software to actually using it. They
+      trained people at the pace people needed, wrote everything down in plain
+      language, and helped us put together an AI policy our board could get
+      behind.
+    name: "[Name]"
+    role: Operations Director · [Nonprofit name]
+---
+
+<section class="band band--cream topline-band">
+  <figure class="topline">
+    <img class="mark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+    <p class="quote__segment">{{ page.featured.segment | escape_once }}</p>
+    <blockquote>&ldquo;{{ page.featured.quote | escape_once }}&rdquo;</blockquote>
+    <figcaption>
+      <p class="quote__name">{{ page.featured.name | escape_once }}</p>
+      <p class="quote__role">{{ page.featured.role | escape_once }}</p>
+    </figcaption>
+  </figure>
+</section>
+
+{%- comment -%}
+  The references panel is the last cell of the quote grid, so it fills
+  whatever the quotes leave of the final row.
+{%- endcomment -%}
+<section class="band band--cream quotes-band">
+  <div class="quote-grid">
+    {%- for t in page.quotes -%}
+      <figure class="quote">
+        <p class="quote__segment">{{ t.segment | escape_once }}</p>
+        <blockquote>&ldquo;{{ t.quote | escape_once }}&rdquo;</blockquote>
+        <figcaption>
+          <p class="quote__name">{{ t.name | escape_once }}</p>
+          <p class="quote__role">{{ t.role | escape_once }}</p>
+        </figcaption>
+      </figure>
+    {%- endfor -%}
+
+    <aside class="cta-panel quote-grid__refs">
+      <p class="eyebrow eyebrow--sm">References</p>
+      <h2>Reach out for more info.</h2>
+      <p class="cta-panel__body">A full history of our work, and references from clients whose situation looks like yours, are available on request.</p>
+      <a class="btn btn--amber" href="{{ '/contact/' | relative_url }}">Request references</a>
+    </aside>
+  </div>
+</section>

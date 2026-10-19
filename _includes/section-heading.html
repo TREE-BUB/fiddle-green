@@ -1,0 +1,9 @@
+{%- comment -%} A small fiddlehead to the left of the heading. {%- endcomment -%}
+<div class="section-heading {{ include.class }}">
+  <img class="mark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+  {%- if include.eyebrow -%}
+    <p class="eyebrow eyebrow--sm">{{ include.eyebrow | escape_once }}</p>
+  {%- else -%}
+    <h2>{{ include.title | escape_once }}</h2>
+  {%- endif -%}
+</div>

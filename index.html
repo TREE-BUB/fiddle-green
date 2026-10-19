@@ -1,74 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FIDDLE,GREEN — opening 19 October 2026</title>
-<meta name="description" content="FIDDLE,GREEN — technology help for Maine small businesses, startups, and nonprofits. Launching at Maine Tech Week, 19 October 2026.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="FIDDLE,GREEN">
-<meta property="og:url" content="https://fiddle.green/">
-<meta property="og:title" content="FIDDLE,GREEN launches at Maine Tech Week, October 19">
-<meta property="og:description" content="Technology help for Maine small businesses, startups, and nonprofits. Opening 8:30am ET, 19 October 2026.">
-<meta property="og:image" content="https://fiddle.green/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="FIDDLE,GREEN — Launching at Maine Tech Week, October 19, 2026, 8:30am ET">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="preload" href="assets/fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css">
-<!-- Google tag (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S3YT20W6TC"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-S3YT20W6TC');
-</script>
-</head>
-<body>
-<div class="page">
-  <main class="hero">
-    <img class="hero__watermark" src="assets/fiddlehead-mark.png" alt="">
-    <div class="hero__inner">
-      <img class="wordmark" src="assets/wordmark-light-2.png" alt="FIDDLE,GREEN">
+---
+layout: default
+title: Home
+description: >-
+  Maine technology help for small organizations — startups, small
+  businesses, and nonprofits.
+---
 
-      <div class="launch">
-        <!-- Shown after launch time -->
-        <div data-live hidden>
-          <p class="live__eyebrow">We are open</p>
-          <h1 class="live__title">The full site is live.</h1>
-        </div>
-        <!-- Shown before launch time -->
-        <div class="launch__heading" data-countdown-only>
-          <h1 class="launch__title">Launching at Maine Tech Week</h1>
-          <p class="launch__date">October 19, 2026 · 8:30am ET</p>
-        </div>
-        <div class="timer" role="timer" aria-live="off" data-countdown-only data-launch="2026-10-19T08:30:00-04:00">
-          <div class="timer__unit"><span class="timer__value" data-unit="days">0</span><span class="timer__label" data-label="days">Days</span></div>
-          <div class="timer__unit"><span class="timer__value" data-unit="hours">00</span><span class="timer__label" data-label="hours">Hours</span></div>
-          <div class="timer__unit"><span class="timer__value" data-unit="minutes">00</span><span class="timer__label" data-label="minutes">Minutes</span></div>
-          <div class="timer__unit"><span class="timer__value" data-unit="seconds">00</span><span class="timer__label" data-label="seconds">Seconds</span></div>
-        </div>
-      </div>
-
-      <div class="letter">
-        <p class="letter__lede">FIDDLE,GREEN is a new business I started because I kept meeting people — neighbors, small business owners, and folks running nonprofits — who were stuck on technology problems and didn’t know where to turn.</p>
-        <p class="letter__body">Maybe you’re not sure your business is protected online. Maybe you have questions about AI and don’t know who to ask. Maybe someone offered you a tech solution and you want a second opinion from someone you can trust.</p>
-        <p class="letter__body">You’re not in this alone — come find us at Maine Tech Week, or send us a message to get the conversation started early. You can also find updates on <a href="https://www.linkedin.com/company/fiddle-green/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://www.instagram.com/fiddle.green/" target="_blank" rel="noopener">Instagram</a>.</p>
-        <p class="letter__sign">Jimi Michel, Principal and Founder</p>
-      </div>
-
-      <div class="actions">
-        <a class="btn btn--amber" href="mailto:hello@fiddle.green">Start a conversation</a>
-        <a class="btn btn--white" href="https://mainetechweek.com/" target="_blank" rel="noopener" data-countdown-only>Join us at Maine Tech Week</a>
-      </div>
-
-      <p class="baseline">Made with <span class="heart" aria-hidden="true">♥</span> in Deering Center, Portland</p>
+<section class="band band--hero band--home-hero">
+  <img class="home-hero__watermark" src="{{ '/assets/fiddlehead.png' | relative_url }}" alt="" width="840" height="1420">
+  <div class="home-hero__inner">
+    <h1>Technology help for small organizations.</h1>
+    <p class="home-hero__lede">FIDDLE,GREEN supports startups, small businesses, and nonprofits, taking on the big challenges that hold organizations back. We built the practice around work at this scale &mdash; so you get experienced experts, real attention, and solid guidance.</p>
+    <div class="actions">
+      <a class="btn btn--amber" href="{{ '/contact/' | relative_url }}">Start a conversation</a>
+      <a class="btn btn--ghost" href="{{ '/services/' | relative_url }}">See what we do</a>
     </div>
-  </main>
-</div>
-<script src="countdown.js"></script>
-</body>
-</html>
+  </div>
+</section>
+
+<section class="band band--cream home-segments">
+  {% include section-heading.html title="Who we work with" %}
+  {%- comment -%}
+    Icon and label sit inside one link: two links to the same page would make a
+    screen reader announce every destination twice. The icon is painted from the
+    stylesheet (see .icon-row__icon), so --icon carries the file it masks.
+  {%- endcomment -%}
+  <div class="icon-row">
+    {%- for seg in site.data.segments -%}
+      {%- unless seg.on_home == false -%}
+        <a class="icon-row__item" href="{{ seg.url | relative_url }}">
+          <span class="icon-row__icon" style="--icon: url('{{ seg.icon | relative_url }}')"></span>
+          <span class="icon-row__label">{{ seg.label | escape_once }}</span>
+          <span class="icon-row__blurb">{{ seg.blurb | escape_once }}</span>
+        </a>
+      {%- endunless -%}
+    {%- endfor -%}
+  </div>
+
+</section>
+
+{%- comment -%}
+  Each service gets its own card so the three things it actually covers are on
+  the page, rather than a label the reader has to click to understand. The
+  whole card is the link, so the icon and the list are not separate stops.
+{%- endcomment -%}
+<section class="band band--sand home-expertise">
+  {% include section-heading.html title="Services" %}
+  <div class="service-grid">
+    {%- for exp in site.data.expertise -%}
+      {%- unless exp.on_home == false -%}
+        <a class="service-card" href="{{ exp.url | relative_url }}">
+          <span class="icon-row__icon service-card__icon" style="--icon: url('{{ exp.icon | relative_url }}')"></span>
+          <h3 class="service-card__title">{{ exp.label | escape_once }}</h3>
+          <ul class="service-card__list">
+            {%- for d in exp.details -%}
+              <li>{{ d | escape_once }}</li>
+            {%- endfor -%}
+          </ul>
+        </a>
+      {%- endunless -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="band band--cream home-clients">
+  {%- comment -%}
+    Client logos from _data/clients.yml, each tile one link out to the
+    client's own site. clients.js turns the list into a row that shows three
+    at a time and steps along one logo every few seconds; without it, or for
+    a visitor who has asked for reduced motion, they sit in a plain grid.
+  {%- endcomment -%}
+  <h2 class="clients__title">Some of the organizations we’ve helped</h2>
+  <div class="clients" data-clients>
+    <ul class="clients__track">
+      {%- for c in site.data.clients -%}
+        <li class="clients__item">
+          <a class="clients__tile" href="{{ c.url }}" rel="noopener" style="{% if c.tile %}background: {{ c.tile }}; {% endif %}{% if c.logo_h %}--logo-h: {{ c.logo_h }}px{% endif %}">
+            <img src="{{ c.logo | relative_url }}" alt="{{ c.name | escape }}" width="{{ c.width }}" height="{{ c.height }}" loading="lazy">
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+  <script src="{{ '/assets/js/clients.js' | relative_url }}" defer></script>
+</section>
+
+<section class="band band--cream home-why">
+  <div class="aside-split">
+    <div class="aside-split__main">
+      {% include section-heading.html title="Why FIDDLE,GREEN?" %}
+      <div class="prose-lede">
+        <p>You are the destination, not a stepping stone. Small organizations are the work we want, not a portfolio we are building to chase bigger clients — which is why the attention is real.</p>
+        <p>Our pricing is transparent. Every engagement is scoped and quoted in writing before work starts, nonprofit discounts are built into the number, and there are no surprises on the invoice.</p>
+        <p>When the job is done, you get the keys: documentation and training so your team can run it without us. The first conversation is free and commits you to nothing.</p>
+      </div>
+    </div>
+    <div class="learn-more-block">
+      <h3 class="learn-more__title">Learn more</h3>
+      <div class="learn-more">
+        <a class="btn btn--square btn--outline-forest" href="{{ '/services/' | relative_url }}">What we do</a>
+        <a class="btn btn--square btn--outline-forest" href="{{ '/about/pricing-and-engagement/' | relative_url }}">Pricing and engagement</a>
+        <a class="btn btn--square btn--outline-forest" href="{{ '/about/team/' | relative_url }}">Meet the team</a>
+        <a class="btn btn--square btn--amber learn-more__primary" href="{{ '/contact/' | relative_url }}">Start the conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
