@@ -64,4 +64,5 @@
       blurb: No billed travel time statewide, and time set aside for pro bono work in every community we visit.
     - title: Testimonials
       url: /about/testimonials/
+      hidden: true   # parked for launch; see README
       blurb: What clients say about working with us, grouped by the kind of organization they run.

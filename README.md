@@ -115,11 +115,18 @@ same way:
 
 Its body copy stays in `_data/exp_pages.yml` under `training`, untouched.
 
+## Parked: testimonials
+
+The testimonials page holds mock-up quotes only, so it is switched off:
+
+- `about/testimonials.html`: delete `published: false`.
+- `_data/nav.yml`: delete `hidden: true` on the Testimonials child.
+- `retired/about/history-and-testimonials.html`: point `redirect_to` back at
+  `/about/testimonials/` if the old address should land there again.
+
 ## Still to confirm
 
 - The blog posts carry final titles, summaries, categories, and dates from
   the approved design, but their bodies are placeholders.
-- `/about/testimonials/` carries five mock-up quotes (two startup founders, two
-  nonprofit leaders, one small-business owner) with bracketed placeholder names.
-  Each needs replacing with a real client's words, and their permission, before
-  launch.
+- `/about/testimonials/` is parked (see above). Its five mock-up quotes need
+  replacing with real clients' words, and their permission, before it returns.

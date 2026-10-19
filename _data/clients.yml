@@ -28,9 +28,3 @@
   width: 200
   height: 200
   logo_h: 96
-
-- name: Survivor Tails Animal Rescue
-  url: https://www.survivortails.org/
-  logo: /assets/clients/survivor-tails.webp
-  width: 592
-  height: 160
